@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF190AC827DD1DA000498779 /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AC727DD1DA000498779 /* dissoApp.swift */; };
-		AF190ACA27DD1DA000498779 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AC927DD1DA000498779 /* ContentView.swift */; };
 		AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACB27DD1DA500498779 /* Assets.xcassets */; };
 		AF190ACF27DD1DA500498779 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACE27DD1DA500498779 /* Preview Assets.xcassets */; };
 		AF190AD927DD1DA600498779 /* dissoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AD827DD1DA600498779 /* dissoTests.swift */; };
 		AF190AE327DD1DA600498779 /* dissoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE227DD1DA600498779 /* dissoUITests.swift */; };
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
-		F50BB6C21974C13192B3EBBD /* Pods_disso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E2E6D9F2EC1EA6B3BA63A0 /* Pods_disso.framework */; };
+		AFCF370627DFCBB0004067AA /* Views in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370527DFCBB0004067AA /* Views */; };
+		AFCF370A27DFCC33004067AA /* ViewModels in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370927DFCC33004067AA /* ViewModels */; };
+		AFCF370C27DFCC41004067AA /* Models in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370B27DFCC41004067AA /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		6C543C28C00EA4B7DA679A42 /* Pods-disso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.debug.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0839FEEC8DA753EADD0585 /* Pods-disso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.release.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.release.xcconfig"; sourceTree = "<group>"; };
 		AF190AC427DD1DA000498779 /* disso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disso.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF190AC727DD1DA000498779 /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
-		AF190AC927DD1DA000498779 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF190ACB27DD1DA500498779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF190ACE27DD1DA500498779 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF190AD427DD1DA600498779 /* dissoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dissoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +47,10 @@
 		AF190AE227DD1DA600498779 /* dissoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITests.swift; sourceTree = "<group>"; };
 		AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E1E2E6D9F2EC1EA6B3BA63A0 /* Pods_disso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_disso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
+		AFCF370527DFCBB0004067AA /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		AFCF370927DFCC33004067AA /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewModels; sourceTree = "<group>"; };
+		AFCF370B27DFCC41004067AA /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50BB6C21974C13192B3EBBD /* Pods_disso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,6 @@
 		9E9A4D50519DF2C037172AF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1E2E6D9F2EC1EA6B3BA63A0 /* Pods_disso.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,6 +88,9 @@
 		AF190ABB27DD1DA000498779 = {
 			isa = PBXGroup;
 			children = (
+				AFCF370B27DFCC41004067AA /* Models */,
+				AFCF370927DFCC33004067AA /* ViewModels */,
+				AFCF370527DFCBB0004067AA /* Views */,
 				AF190AC627DD1DA000498779 /* disso */,
 				AF190AD727DD1DA600498779 /* dissoTests */,
 				AF190AE127DD1DA600498779 /* dissoUITests */,
@@ -111,8 +113,6 @@
 		AF190AC627DD1DA000498779 /* disso */ = {
 			isa = PBXGroup;
 			children = (
-				AF190AC727DD1DA000498779 /* dissoApp.swift */,
-				AF190AC927DD1DA000498779 /* ContentView.swift */,
 				AF190AF127DD29EF00498779 /* GoogleService-Info.plist */,
 				AF190ACB27DD1DA500498779 /* Assets.xcassets */,
 				AF190ACD27DD1DA500498779 /* Preview Content */,
@@ -139,6 +139,7 @@
 		AF190AE127DD1DA600498779 /* dissoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AF190AF427DFC8A600498779 /* Models */,
 				AF190AE227DD1DA600498779 /* dissoUITests.swift */,
 				AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */,
 			);
@@ -260,9 +261,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCF370C27DFCC41004067AA /* Models in Resources */,
 				AF190ACF27DD1DA500498779 /* Preview Assets.xcassets in Resources */,
 				AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */,
 				AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */,
+				AFCF370627DFCBB0004067AA /* Views in Resources */,
+				AFCF370A27DFCC33004067AA /* ViewModels in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF190ACA27DD1DA000498779 /* ContentView.swift in Sources */,
-				AF190AC827DD1DA000498779 /* dissoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +546,6 @@
 		AF190AEC27DD1DA600498779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -563,7 +564,6 @@
 		AF190AED27DD1DA600498779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -582,7 +582,6 @@
 		AF190AEF27DD1DA600498779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -599,7 +598,6 @@
 		AF190AF027DD1DA600498779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
