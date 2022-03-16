@@ -23,7 +23,9 @@ struct ClothesList: View {
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(clothes) { clothes in
-                    ClothingCard(clothes: clothes)
+                    NavigationLink(destination: ClothesView(clothes: clothes)) {
+                        ClothingCard(clothes: clothes)
+                    }
                 }
             }
             .padding(.top)
