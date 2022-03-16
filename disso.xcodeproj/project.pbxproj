@@ -13,9 +13,16 @@
 		AF190AE327DD1DA600498779 /* dissoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE227DD1DA600498779 /* dissoUITests.swift */; };
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
-		AFCF370627DFCBB0004067AA /* Views in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370527DFCBB0004067AA /* Views */; };
-		AFCF370A27DFCC33004067AA /* ViewModels in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370927DFCC33004067AA /* ViewModels */; };
-		AFCF370C27DFCC41004067AA /* Models in Resources */ = {isa = PBXBuildFile; fileRef = AFCF370B27DFCC41004067AA /* Models */; };
+		AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF370D27DFD798004067AA /* dissoApp.swift */; };
+		AFCF371527DFD90C004067AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371427DFD90C004067AA /* ContentView.swift */; };
+		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
+		AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371827DFDA7E004067AA /* CategoriesView.swift */; };
+		AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371A27DFDAC8004067AA /* AddClothesView.swift */; };
+		AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371C27DFDAFA004067AA /* FavouritesView.swift */; };
+		AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF372027DFDB3F004067AA /* SettingsView.swift */; };
+		AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF372227DFDB8A004067AA /* TabBar.swift */; };
+		AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF375C27E230CA004067AA /* ClothingModel.swift */; };
+		AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF375E27E238E2004067AA /* ClothingCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +55,16 @@
 		AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
-		AFCF370527DFCBB0004067AA /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
-		AFCF370927DFCC33004067AA /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewModels; sourceTree = "<group>"; };
-		AFCF370B27DFCC41004067AA /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		AFCF370D27DFD798004067AA /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
+		AFCF371427DFD90C004067AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AFCF371827DFDA7E004067AA /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		AFCF371A27DFDAC8004067AA /* AddClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesView.swift; sourceTree = "<group>"; };
+		AFCF371C27DFDAFA004067AA /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		AFCF372027DFDB3F004067AA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AFCF372227DFDB8A004067AA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		AFCF375C27E230CA004067AA /* ClothingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingModel.swift; sourceTree = "<group>"; };
+		AFCF375E27E238E2004067AA /* ClothingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +102,9 @@
 		AF190ABB27DD1DA000498779 = {
 			isa = PBXGroup;
 			children = (
-				AFCF370B27DFCC41004067AA /* Models */,
-				AFCF370927DFCC33004067AA /* ViewModels */,
-				AFCF370527DFCBB0004067AA /* Views */,
+				AFCF375B27E2309F004067AA /* ViewModels */,
+				AFCF375A27E23099004067AA /* Models */,
+				AFCF371027DFD86D004067AA /* Views */,
 				AF190AC627DD1DA000498779 /* disso */,
 				AF190AD727DD1DA600498779 /* dissoTests */,
 				AF190AE127DD1DA600498779 /* dissoUITests */,
@@ -113,6 +127,7 @@
 		AF190AC627DD1DA000498779 /* disso */ = {
 			isa = PBXGroup;
 			children = (
+				AFCF370D27DFD798004067AA /* dissoApp.swift */,
 				AF190AF127DD29EF00498779 /* GoogleService-Info.plist */,
 				AF190ACB27DD1DA500498779 /* Assets.xcassets */,
 				AF190ACD27DD1DA500498779 /* Preview Content */,
@@ -144,6 +159,60 @@
 				AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */,
 			);
 			path = dissoUITests;
+			sourceTree = "<group>";
+		};
+		AFCF371027DFD86D004067AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF371327DFD8ED004067AA /* Components */,
+				AFCF371227DFD8E3004067AA /* Detail */,
+				AFCF371127DFD8D0004067AA /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFCF371127DFD8D0004067AA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF371427DFD90C004067AA /* ContentView.swift */,
+				AFCF372227DFDB8A004067AA /* TabBar.swift */,
+				AFCF371627DFDA2B004067AA /* HomeView.swift */,
+				AFCF371827DFDA7E004067AA /* CategoriesView.swift */,
+				AFCF371A27DFDAC8004067AA /* AddClothesView.swift */,
+				AFCF371C27DFDAFA004067AA /* FavouritesView.swift */,
+				AFCF372027DFDB3F004067AA /* SettingsView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AFCF371227DFD8E3004067AA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		AFCF371327DFD8ED004067AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF375E27E238E2004067AA /* ClothingCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AFCF375A27E23099004067AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF375C27E230CA004067AA /* ClothingModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFCF375B27E2309F004067AA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C0B3F9942B8D8373963BC984 /* Pods */ = {
@@ -261,12 +330,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCF370C27DFCC41004067AA /* Models in Resources */,
 				AF190ACF27DD1DA500498779 /* Preview Assets.xcassets in Resources */,
 				AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */,
 				AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */,
-				AFCF370627DFCBB0004067AA /* Views in Resources */,
-				AFCF370A27DFCC33004067AA /* ViewModels in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +399,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
+				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
+				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
+				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
+				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
+				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
+				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
+				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
+				AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */,
+				AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +622,7 @@
 		AF190AEC27DD1DA600498779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -564,6 +641,7 @@
 		AF190AED27DD1DA600498779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -582,6 +660,7 @@
 		AF190AEF27DD1DA600498779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -598,6 +677,7 @@
 		AF190AF027DD1DA600498779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -1,6 +1,6 @@
 //
-//  ContentView.swift
-//  Main
+//  Settings.swift
+//  disso
 //
 //  Created by Nika Pakravan on 14/03/2022.
 //
@@ -8,16 +8,17 @@
 import Foundation
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     var body: some View {
         NavigationView {
-            TabBar()
+            Text("My Clothes")
+                .navigationTitle("My Clothes")
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
