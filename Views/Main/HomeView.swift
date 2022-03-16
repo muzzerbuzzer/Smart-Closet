@@ -11,10 +11,10 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            List(Clothes.all) { clothes in
-                Text(clothes.name)
-                    .navigationTitle("My Clothes")
+            ScrollView {
+                ClothesList(clothes: Clothes.all)
             }
+            .navigationTitle("My Clothing")
         }
         .navigationViewStyle(.stack)
     }

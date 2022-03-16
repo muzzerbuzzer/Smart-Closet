@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9D27E2415F00FB7123 /* ClothesList.swift */; };
+		AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9F27E244B600FB7123 /* ClothesView.swift */; };
 		AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACB27DD1DA500498779 /* Assets.xcassets */; };
 		AF190ACF27DD1DA500498779 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACE27DD1DA500498779 /* Preview Assets.xcassets */; };
 		AF190AD927DD1DA600498779 /* dissoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AD827DD1DA600498779 /* dissoTests.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		6C543C28C00EA4B7DA679A42 /* Pods-disso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.debug.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0839FEEC8DA753EADD0585 /* Pods-disso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.release.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.release.xcconfig"; sourceTree = "<group>"; };
+		AF025A9D27E2415F00FB7123 /* ClothesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesList.swift; sourceTree = "<group>"; };
+		AF025A9F27E244B600FB7123 /* ClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesView.swift; sourceTree = "<group>"; };
 		AF190AC427DD1DA000498779 /* disso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF190ACB27DD1DA500498779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF190ACE27DD1DA500498779 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		AFCF371227DFD8E3004067AA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AF025A9F27E244B600FB7123 /* ClothesView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				AFCF375E27E238E2004067AA /* ClothingCard.swift */,
+				AF025A9D27E2415F00FB7123 /* ClothesList.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -404,8 +410,10 @@
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
+				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
+				AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */,
 				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
 				AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */,
 				AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */,
