@@ -11,7 +11,18 @@ import SwiftUI
 struct CategoriesView: View {
     var body: some View {
         NavigationView {
-            Text("Categories")
+            List {
+                ForEach(Category.allCases) { category in
+                    NavigationLink {
+                        ScrollView {
+                            ClothesList(clothes: Clothes.all.filter{ $0.category == category.rawValue})
+                        }
+                        .navigationTitle(category.rawValue)
+                    } label: {
+                        Text(category.rawValue)
+                    }
+                }
+            }
                 .navigationTitle("Categories")
         }
         .navigationViewStyle(.stack)
