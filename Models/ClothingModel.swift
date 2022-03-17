@@ -24,6 +24,7 @@ enum Category: String, CaseIterable, Identifiable {
     case jumper = "Jumper"
     case jumpsuit = "Jumpsuit"
     case leggings = "Leggings"
+    case other = "Other"
     case overalls = "Overalls"
     case panties = "Panties"
     case pants = "Pants"
