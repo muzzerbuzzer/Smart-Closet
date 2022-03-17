@@ -12,6 +12,10 @@ struct NewClothesView: View {
     @State private var selectedCategory: Category = Category.other
     @State private var colour: String = ""
     @State private var pattern: String = ""
+    @State private var navigateToClothingItem = false
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationView {
             Form {
@@ -41,7 +45,7 @@ struct NewClothesView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        
+                        dismiss()
                     } label: {
                         Label("Cancel", systemImage: "xmark")
                             .labelStyle(.iconOnly)
@@ -49,11 +53,16 @@ struct NewClothesView: View {
                 }
                 
                 ToolbarItem {
-                    Button {
-                        
+                    NavigationLink(isActive: $navigateToClothingItem) {
+                        ClothesView(clothes: Clothes.all.sorted{ $0.dateAdded > $1.dateAdded} [0])
+                            .navigationBarBackButtonHidden(true)
                     } label: {
-                        Label("Save", systemImage: "checkmark")
-                            .labelStyle(.iconOnly)
+                        Button {
+                            navigateToClothingItem = true
+                        } label: {
+                            Label("Save", systemImage: "checkmark")
+                                .labelStyle(.iconOnly)
+                        }
                     }
                     .disabled(name.isEmpty)
                 }

@@ -9,12 +9,19 @@ import Foundation
 import SwiftUI
 
 struct AddClothesView: View {
+    @State private var showNewClothes = false
+    
     var body: some View {
         NavigationView {
-            Text("New Clothes")
-                .navigationTitle("New Clothes")
+            Button("Add new clothing item") {
+                showNewClothes = true
+            }
+            .navigationTitle("New Clothes")
         }
         .navigationViewStyle(.stack)
+        .sheet(isPresented: $showNewClothes) {
+            NewClothesView()
+        }
     }
 }
 
