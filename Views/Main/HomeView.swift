@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                ClothesList(clothes: Clothes.all)
+                ClothesList(clothes: clothesViewModel.clothes)
             }
             .navigationTitle("My Clothing")
         }
@@ -23,5 +25,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(ClothesViewModel())
     }
 }

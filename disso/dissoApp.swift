@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct dissoApp: App {
+    @StateObject var clothesViewModel = ClothesViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(clothesViewModel)
         }
     }
 }

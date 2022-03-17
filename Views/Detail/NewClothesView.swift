@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewClothesView: View {
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
+    
     @State private var name: String = ""
     @State private var selectedCategory: Category = Category.other
     @State private var colour: String = ""
@@ -54,7 +56,7 @@ struct NewClothesView: View {
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        ClothesView(clothes: Clothes.all.sorted{ $0.dateAdded > $1.dateAdded} [0])
+                        ClothesView(clothes: clothesViewModel.clothes.sorted{ $0.dateAdded > $1.dateAdded} [0])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {
@@ -77,5 +79,6 @@ struct NewClothesView: View {
 struct NewClothesView_Previews: PreviewProvider {
     static var previews: some View {
         NewClothesView()
+            .environmentObject(ClothesViewModel())
     }
 }
