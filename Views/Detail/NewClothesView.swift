@@ -60,6 +60,7 @@ struct NewClothesView: View {
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {
+                            saveItem()
                             navigateToClothingItem = true
                         } label: {
                             Label("Save", systemImage: "checkmark")
@@ -80,5 +81,21 @@ struct NewClothesView_Previews: PreviewProvider {
     static var previews: some View {
         NewClothesView()
             .environmentObject(ClothesViewModel())
+    }
+}
+
+extension NewClothesView {
+    private func saveItem() {
+        let now = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let dateAdded = dateFormatter.string(from: now)
+        print (dateAdded)
+        
+        let clothes = Clothes(name: name, image: "", colour: colour, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
+        
+        clothesViewModel.addClothes(clothes: clothes)
     }
 }

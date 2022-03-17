@@ -14,5 +14,10 @@ class ClothesViewModel: ObservableObject {
     init() {
         clothes = Clothes.all
     }
+    
+    func addClothes(clothes: Clothes) {
+        clothes.append(clothes)
+    }
 }
+
 
