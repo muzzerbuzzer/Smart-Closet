@@ -67,7 +67,7 @@ struct NewClothesView: View {
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        ClothesView(clothes: clothesViewModel.clothes.sorted{ $0.dateAdded > $1.dateAdded} [0])
+                        ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [0])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {
@@ -108,6 +108,5 @@ extension NewClothesView {
         let clothes = Clothes(name: name, image: "", colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
-        //recipesVM.addRecipe(recipe: recipe)
     }
 }

@@ -17,7 +17,7 @@ struct CategoriesView: View {
                 ForEach(Category.allCases) { category in
                     NavigationLink {
                         ScrollView {
-                            ClothesList(clothes: clothesViewModel.clothes.filter{ $0.category == category.rawValue})
+                            ClothesList(clothes: clothesViewModel.closet.filter{ $0.category == category.rawValue})
                         }
                         .navigationTitle(category.rawValue)
                     } label: {
