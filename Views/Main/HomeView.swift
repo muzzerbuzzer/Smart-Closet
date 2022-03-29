@@ -28,3 +28,5 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(ClothesViewModel())
     }
 }
+
+

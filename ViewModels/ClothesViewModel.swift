@@ -8,15 +8,15 @@
 import Foundation
 
 class ClothesViewModel: ObservableObject {
-    @Published private(set) var items: [Clothes] = []
+    @Published private(set) var clothes: [Clothes] = []
     
     // this is where the data would be fetched from a database
     init() {
-        items = Clothes.all
+        clothes = Clothes.all
     }
     
     func addClothes(clothes: Clothes) {
-        items.append(clothes)
+        //clothes.append(clothes)
     }
 }
 

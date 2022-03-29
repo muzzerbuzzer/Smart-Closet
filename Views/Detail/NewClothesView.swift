@@ -11,9 +11,10 @@ struct NewClothesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     
     @State private var name: String = ""
-    @State private var selectedCategory: Category = Category.other
-    @State private var colour: String = ""
+    @State private var selectedCategory: Category = Category.bag
+    @State private var selectedColour: Colour = Colour.red
     @State private var pattern: String = ""
+    @State private var image: String = ""
     @State private var navigateToClothingItem = false
     
     @Environment(\.dismiss) private var dismiss
@@ -36,11 +37,21 @@ struct NewClothesView: View {
                 }
                 
                 Section(header: Text("Colour")) {
-                    TextEditor(text: $colour)
+                    Picker("Colour", selection: $selectedColour) {
+                        ForEach(Colour.allCases) { colour in
+                            Text(colour.rawValue)
+                                .tag(colour)
+                        }
+                    }
+                    .pickerStyle(.menu)
                 }
                 
                 Section(header: Text("Pattern")) {
                     TextEditor(text: $pattern)
+                }
+                
+                Section(header: Text("Image")) {
+                    TextEditor(text: $image)
                 }
 
             }
@@ -94,8 +105,9 @@ extension NewClothesView {
         let dateAdded = dateFormatter.string(from: now)
         print (dateAdded)
         
-        let clothes = Clothes(name: name, image: "", colour: colour, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
+        let clothes = Clothes(name: name, image: "", colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
+        //recipesVM.addRecipe(recipe: recipe)
     }
 }

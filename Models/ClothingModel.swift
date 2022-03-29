@@ -45,11 +45,24 @@ enum Category: String, CaseIterable, Identifiable {
     
 }
 
+enum Colour: String, CaseIterable, Identifiable {
+    var id: String { self.rawValue }
+    
+    case red = "Red"
+    case orange = "Orange"
+    case yellow = "Yellow"
+    case green = "Green"
+    case blue = "Blue"
+    case indigo = "Indigo"
+    case violet = "Violet"
+    
+}
+
 struct Clothes: Identifiable {
     let id = UUID()
     let name: String
     let image: String
-    let colour: String
+    let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
     let dateAdded: String
