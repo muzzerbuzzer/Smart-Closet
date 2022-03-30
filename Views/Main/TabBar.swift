@@ -35,6 +35,7 @@ struct TabBar: View {
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
+            
         }
     }
 }
