@@ -105,7 +105,7 @@ extension NewClothesView {
         let dateAdded = dateFormatter.string(from: now)
         print (dateAdded)
         
-        let clothes = Clothes(name: name, image: "", colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
+        let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
     }

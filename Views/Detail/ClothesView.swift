@@ -35,28 +35,25 @@ struct ClothesView: View {
                     
                 if !clothes.colour.isEmpty {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Colour: ")
+                        Text("Colour: \(clothes.colour)")
                             .font(.headline)
-                            
-                        Text(clothes.colour)
+
                     }
                 }
                 
                 if !clothes.pattern.isEmpty {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Pattern: ")
+                        Text("Pattern: \(clothes.pattern)")
                             .font(.headline)
-                        
-                        Text(clothes.pattern)
+
                     }
                 }
 
                 if !clothes.category.isEmpty {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Category: ")
+                        Text("Category: \(clothes.category)")
                             .font(.headline)
-                        
-                        Text(clothes.category)
+
                     }
                 }
 
