@@ -17,6 +17,11 @@
 		AF190AE327DD1DA600498779 /* dissoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE227DD1DA600498779 /* dissoUITests.swift */; };
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
+		AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA027FA150E006B9D3F /* LoginView.swift */; };
+		AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */; };
+		AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */; };
+		AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA927FA1F28006B9D3F /* InputPasswordView.swift */; };
+		AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADAB27FB239F006B9D3F /* ButtonComponentView.swift */; };
 		AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF370D27DFD798004067AA /* dissoApp.swift */; };
 		AFCF371527DFD90C004067AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371427DFD90C004067AA /* ContentView.swift */; };
 		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
@@ -63,6 +68,11 @@
 		AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
+		AFA2ADA027FA150E006B9D3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
+		AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
+		AFA2ADA927FA1F28006B9D3F /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
+		AFA2ADAB27FB239F006B9D3F /* ButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentView.swift; sourceTree = "<group>"; };
 		AFCF370D27DFD798004067AA /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
 		AFCF371427DFD90C004067AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -135,6 +145,8 @@
 		AF190AC627DD1DA000498779 /* disso */ = {
 			isa = PBXGroup;
 			children = (
+				AFA2ADA227FA17AF006B9D3F /* Base */,
+				AFA2AD9D27FA14C2006B9D3F /* Feature */,
 				AFCF370D27DFD798004067AA /* dissoApp.swift */,
 				AF190AF127DD29EF00498779 /* GoogleService-Info.plist */,
 				AF190ACB27DD1DA500498779 /* Assets.xcassets */,
@@ -167,6 +179,57 @@
 				AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */,
 			);
 			path = dissoUITests;
+			sourceTree = "<group>";
+		};
+		AFA2AD9D27FA14C2006B9D3F /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2AD9E27FA14E4006B9D3F /* Login */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		AFA2AD9E27FA14E4006B9D3F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2AD9F27FA14EA006B9D3F /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AFA2AD9F27FA14EA006B9D3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADA027FA150E006B9D3F /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFA2ADA227FA17AF006B9D3F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADA627FA1D1F006B9D3F /* Modifier */,
+				AFA2ADA327FA17BF006B9D3F /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AFA2ADA327FA17BF006B9D3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */,
+				AFA2ADA927FA1F28006B9D3F /* InputPasswordView.swift */,
+				AFA2ADAB27FB239F006B9D3F /* ButtonComponentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFA2ADA627FA1D1F006B9D3F /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		AFCF371027DFD86D004067AA /* Views */ = {
@@ -414,14 +477,19 @@
 				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
 				AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */,
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
+				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
+				AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */,
 				AF14EF6227E26F5C00776376 /* NewClothesView.swift in Sources */,
+				AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */,
 				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,
+				AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
 				AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */,
+				AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */,
 				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
 				AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */,
 				AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */,
