@@ -12,6 +12,27 @@ struct LoginView: View {
         
         VStack(spacing: 16) {
             
+            VStack(spacing: 16) {
+                InputTextFieldView(text: .constant(""),
+                                   placeholder: "Email",
+                                   keyboardType: .emailAddress,
+                                   sfSymbol: "envelope")
+                
+                InputPasswordView(password: .constant(""),
+                                  placeholder: "Password",
+                                  sfSymbol: "lock")
+            }
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    //forgot password
+                }, label: {
+                    Text("Forgot Password?")
+                })
+                .font(.system(size: 16, weight: .bold))
+            }
+            
         }
         
         .padding(.horizontal, 15)
