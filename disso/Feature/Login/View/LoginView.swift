@@ -29,8 +29,23 @@ struct LoginView: View {
                     //forgot password
                 }, label: {
                     Text("Forgot Password?")
+                        .foregroundColor(.purple)
                 })
                 .font(.system(size: 16, weight: .bold))
+            }
+            
+            VStack(spacing: 16) {
+                
+                ButtonComponentView(title: "Login") {
+                    //handler here
+                }
+                
+                ButtonComponentView(title: "Register",
+                                    background: .clear,
+                                    foreground: .purple,
+                                    border: .purple) {
+                                    //handler
+                }
             }
             
         }

@@ -22,6 +22,7 @@
 		AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */; };
 		AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA927FA1F28006B9D3F /* InputPasswordView.swift */; };
 		AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADAB27FB239F006B9D3F /* ButtonComponentView.swift */; };
+		AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADAF27FB4C1F006B9D3F /* SignUpView.swift */; };
 		AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF370D27DFD798004067AA /* dissoApp.swift */; };
 		AFCF371527DFD90C004067AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371427DFD90C004067AA /* ContentView.swift */; };
 		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
@@ -73,6 +74,7 @@
 		AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
 		AFA2ADA927FA1F28006B9D3F /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
 		AFA2ADAB27FB239F006B9D3F /* ButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentView.swift; sourceTree = "<group>"; };
+		AFA2ADAF27FB4C1F006B9D3F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AFCF370D27DFD798004067AA /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
 		AFCF371427DFD90C004067AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		AFA2AD9D27FA14C2006B9D3F /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				AFA2ADAD27FB4BDE006B9D3F /* Register */,
 				AFA2AD9E27FA14E4006B9D3F /* Login */,
 			);
 			path = Feature;
@@ -230,6 +233,22 @@
 				AFA2ADA727FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		AFA2ADAD27FB4BDE006B9D3F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADAE27FB4BFB006B9D3F /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		AFA2ADAE27FB4BFB006B9D3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADAF27FB4C1F006B9D3F /* SignUpView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AFCF371027DFD86D004067AA /* Views */ = {
@@ -475,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
+				AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */,
 				AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */,
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
