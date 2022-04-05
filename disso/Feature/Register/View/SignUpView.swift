@@ -9,25 +9,43 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         
         NavigationView {
             
             VStack(spacing: 32) {
                 
+                VStack(spacing: 16) {
+                    
+                    InputTextFieldView(text: .constant(""),
+                                       placeholder: "Email",
+                                       keyboardType: .emailAddress,
+                                       sfSymbol: "envelope")
+                    
+                    InputPasswordView(password: .constant(""),
+                                      placeholder: "Password",
+                                      sfSymbol: "lock")
+                    
+                    Divider()
+                    
+                    InputTextFieldView(text: .constant(""),
+                                       placeholder: "First Name",
+                                       keyboardType: .namePhonePad,
+                                       sfSymbol: nil)
+                    
+                    InputTextFieldView(text: .constant(""),
+                                       placeholder: "Last Name",
+                                       keyboardType: .namePhonePad,
+                                       sfSymbol: nil)
+                }
+                
+                ButtonComponentView(title: "Sign Up") {
+                    //handle create action here
+                }
             }
             .padding(.horizontal, 15)
             .navigationTitle("Sign Up")
-            .toolbar {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "xmark")
-                       
-                })
-            }
+            .applyClose()
         }
     }
 }

@@ -12,21 +12,24 @@ struct HomeView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView {
                 ClothesList(clothes: clothesViewModel.closet)
                 
             }
             .navigationTitle("My Clothing")
-        }
+        //}
         .navigationViewStyle(.stack)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(ClothesViewModel())
+        NavigationView {
+            HomeView()
+                .environmentObject(ClothesViewModel())
+        }
+
     }
 }
 
