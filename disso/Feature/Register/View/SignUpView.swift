@@ -9,6 +9,11 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    @StateObject private var vm = RegistrationViewModelImpl(
+        service: RegistrationServiceImpl()
+    )
+    
+    
     var body: some View {
         
         NavigationView {
@@ -17,30 +22,30 @@ struct SignUpView: View {
                 
                 VStack(spacing: 16) {
                     
-                    InputTextFieldView(text: .constant(""),
+                    InputTextFieldView(text: $vm.userDetails.email,
                                        placeholder: "Email",
                                        keyboardType: .emailAddress,
                                        sfSymbol: "envelope")
                     
-                    InputPasswordView(password: .constant(""),
+                    InputPasswordView(password: $vm.userDetails.password,
                                       placeholder: "Password",
                                       sfSymbol: "lock")
                     
                     Divider()
                     
-                    InputTextFieldView(text: .constant(""),
+                    InputTextFieldView(text: $vm.userDetails.firstName,
                                        placeholder: "First Name",
                                        keyboardType: .namePhonePad,
                                        sfSymbol: nil)
                     
-                    InputTextFieldView(text: .constant(""),
+                    InputTextFieldView(text: $vm.userDetails.lastName,
                                        placeholder: "Last Name",
                                        keyboardType: .namePhonePad,
                                        sfSymbol: nil)
                 }
                 
                 ButtonComponentView(title: "Sign Up") {
-                    //handle create action here
+                    vm.register()
                 }
             }
             .padding(.horizontal, 15)

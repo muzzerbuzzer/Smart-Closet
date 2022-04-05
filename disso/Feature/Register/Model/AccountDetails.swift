@@ -13,3 +13,16 @@ struct AccountDetails {
     var firstName: String
     var lastName: String
 }
+
+extension AccountDetails {
+    
+    static var new: AccountDetails {
+        AccountDetails(email: "",
+                       password: "",
+                       firstName: "",
+                       lastName: "")
+        
+        
+    }
+    
+}
