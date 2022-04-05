@@ -5,9 +5,15 @@
 //  Created by Nika Pakravan on 03/04/2022.
 //
 
+
+//for the buttons - register & forgot password, its placed both in a stack & not outside just in case someone has an older version of ios (14 & below) so that there are no bugs
 import SwiftUI
 
 struct LoginView: View {
+    
+    @State private var showRegistration = false
+    @State private var showForgotPassword = false
+    
     var body: some View {
         
         VStack(spacing: 16) {
@@ -26,12 +32,16 @@ struct LoginView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    //forgot password
+                    showForgotPassword.toggle()
                 }, label: {
                     Text("Forgot Password?")
                         .foregroundColor(.purple)
                 })
                 .font(.system(size: 16, weight: .bold))
+                .sheet(isPresented: $showForgotPassword,
+                       content: {
+                    ResetPasswordView()
+                })
             }
             
             VStack(spacing: 16) {
@@ -44,8 +54,12 @@ struct LoginView: View {
                                     background: .clear,
                                     foreground: .purple,
                                     border: .purple) {
-                                    //handler
+                    showRegistration.toggle()
                 }
+                .sheet(isPresented: $showRegistration,
+                       content: {
+                    SignUpView()
+                })
             }
             
         }

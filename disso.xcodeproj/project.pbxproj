@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04D3E6665E8FAB905D414CB /* Pods_disso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3721CE70F958288B07A63A6E /* Pods_disso.framework */; };
 		AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9D27E2415F00FB7123 /* ClothesList.swift */; };
 		AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9F27E244B600FB7123 /* ClothesView.swift */; };
 		AF14EF6227E26F5C00776376 /* NewClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14EF6127E26F5C00776376 /* NewClothesView.swift */; };
@@ -25,6 +26,8 @@
 		AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADAF27FB4C1F006B9D3F /* SignUpView.swift */; };
 		AFA2ADB227FCAD83006B9D3F /* CloseModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADB127FCAD83006B9D3F /* CloseModifier.swift */; };
 		AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADB527FCB4AF006B9D3F /* ResetPasswordView.swift */; };
+		AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADB827FCC21A006B9D3F /* AccountDetails.swift */; };
+		AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */; };
 		AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF370D27DFD798004067AA /* dissoApp.swift */; };
 		AFCF371527DFD90C004067AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371427DFD90C004067AA /* ContentView.swift */; };
 		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
@@ -35,6 +38,7 @@
 		AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF372227DFDB8A004067AA /* TabBar.swift */; };
 		AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF375C27E230CA004067AA /* ClothingModel.swift */; };
 		AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF375E27E238E2004067AA /* ClothingCard.swift */; };
+		AFEC295F27FCCDC500FAEF8F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC295E27FCCDC500FAEF8F /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3721CE70F958288B07A63A6E /* Pods_disso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_disso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C543C28C00EA4B7DA679A42 /* Pods-disso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.debug.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0839FEEC8DA753EADD0585 /* Pods-disso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.release.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.release.xcconfig"; sourceTree = "<group>"; };
 		AF025A9D27E2415F00FB7123 /* ClothesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesList.swift; sourceTree = "<group>"; };
@@ -79,6 +84,8 @@
 		AFA2ADAF27FB4C1F006B9D3F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AFA2ADB127FCAD83006B9D3F /* CloseModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseModifier.swift; sourceTree = "<group>"; };
 		AFA2ADB527FCB4AF006B9D3F /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		AFA2ADB827FCC21A006B9D3F /* AccountDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetails.swift; sourceTree = "<group>"; };
+		AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		AFCF370D27DFD798004067AA /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
 		AFCF371427DFD90C004067AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		AFCF372227DFDB8A004067AA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AFCF375C27E230CA004067AA /* ClothingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingModel.swift; sourceTree = "<group>"; };
 		AFCF375E27E238E2004067AA /* ClothingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingCard.swift; sourceTree = "<group>"; };
+		AFEC295E27FCCDC500FAEF8F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04D3E6665E8FAB905D414CB /* Pods_disso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +128,7 @@
 		9E9A4D50519DF2C037172AF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3721CE70F958288B07A63A6E /* Pods_disso.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,6 +254,9 @@
 		AFA2ADAD27FB4BDE006B9D3F /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC295D27FCCDA900FAEF8F /* ViewModel */,
+				AFA2ADBA27FCC496006B9D3F /* Service */,
+				AFA2ADB727FCC1CD006B9D3F /* Model */,
 				AFA2ADAE27FB4BFB006B9D3F /* View */,
 			);
 			path = Register;
@@ -271,6 +284,22 @@
 				AFA2ADB527FCB4AF006B9D3F /* ResetPasswordView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AFA2ADB727FCC1CD006B9D3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADB827FCC21A006B9D3F /* AccountDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFA2ADBA27FCC496006B9D3F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AFCF371027DFD86D004067AA /* Views */ = {
@@ -329,6 +358,14 @@
 				AF14EF6327E3AD2000776376 /* ClothesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AFEC295D27FCCDA900FAEF8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC295E27FCCDC500FAEF8F /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0B3F9942B8D8373963BC984 /* Pods */ = {
@@ -523,6 +560,7 @@
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
+				AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
 				AFA2ADB227FCAD83006B9D3F /* CloseModifier.swift in Sources */,
 				AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */,
@@ -530,9 +568,11 @@
 				AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */,
 				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,
 				AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */,
+				AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
 				AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */,
+				AFEC295F27FCCDC500FAEF8F /* RegistrationViewModel.swift in Sources */,
 				AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */,
 				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
 				AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */,
