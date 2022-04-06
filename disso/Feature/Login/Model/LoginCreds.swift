@@ -11,3 +11,12 @@ struct LoginCreds {
     var email: String
     var password: String
 }
+
+extension LoginCreds {
+    
+    static var new: LoginCreds {
+        LoginCreds(email: "", password: "")
+    }
+    
+}
+

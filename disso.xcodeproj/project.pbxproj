@@ -42,6 +42,8 @@
 		AFEC296527FCD3CC00FAEF8F /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296427FCD3CC00FAEF8F /* SessionUserDetails.swift */; };
 		AFEC296827FCD43C00FAEF8F /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296727FCD43C00FAEF8F /* SessionService.swift */; };
 		AFEC296B27FDCCE400FAEF8F /* LoginCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */; };
+		AFEC296E27FDCD9300FAEF8F /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296D27FDCD9300FAEF8F /* LoginService.swift */; };
+		AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		AFEC296427FCD3CC00FAEF8F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
 		AFEC296727FCD43C00FAEF8F /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCreds.swift; sourceTree = "<group>"; };
+		AFEC296D27FDCD9300FAEF8F /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 		AFA2AD9E27FA14E4006B9D3F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC297027FDCF7300FAEF8F /* ViewModel */,
+				AFEC296C27FDCD8800FAEF8F /* Service */,
 				AFEC296927FDCCCC00FAEF8F /* Model */,
 				AFA2AD9F27FA14EA006B9D3F /* View */,
 			);
@@ -409,6 +415,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AFEC296C27FDCD8800FAEF8F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC296D27FDCD9300FAEF8F /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AFEC297027FDCF7300FAEF8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C0B3F9942B8D8373963BC984 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,11 +617,13 @@
 			files = (
 				AFEC296527FCD3CC00FAEF8F /* SessionUserDetails.swift in Sources */,
 				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
+				AFEC296E27FDCD9300FAEF8F /* LoginService.swift in Sources */,
 				AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */,
 				AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */,
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
+				AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
 				AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */,
