@@ -10,6 +10,7 @@ import SwiftUI
 struct ResetPasswordView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @StateObject private var vm = ForgotPasswordViewModelImpl(service: ForgotPasswordServiceImpl())
     
     var body: some View {
         
@@ -19,13 +20,13 @@ struct ResetPasswordView: View {
                 
                 Text("Enter the email address associated with your account and we'll send an email to help reset your password!")
                 
-                InputTextFieldView(text: .constant(""),
+                InputTextFieldView(text: $vm.email,
                                    placeholder: "Email",
                                    keyboardType: .emailAddress,
                                    sfSymbol: "envelope")
                 
                 ButtonComponentView(title: "Submit"){
-                    //handle password reset action
+                    vm.sendPasswordReset()
                     presentationMode.wrappedValue.dismiss()
                 }
                 

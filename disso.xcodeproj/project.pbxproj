@@ -44,6 +44,8 @@
 		AFEC296B27FDCCE400FAEF8F /* LoginCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */; };
 		AFEC296E27FDCD9300FAEF8F /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296D27FDCD9300FAEF8F /* LoginService.swift */; };
 		AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */; };
+		AFEC297527FDDC7900FAEF8F /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297427FDDC7900FAEF8F /* ForgotPasswordService.swift */; };
+		AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCreds.swift; sourceTree = "<group>"; };
 		AFEC296D27FDCD9300FAEF8F /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AFEC297427FDDC7900FAEF8F /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
+		AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,8 @@
 		AFA2ADB327FCB479006B9D3F /* Forgot Password */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC297627FDDDAD00FAEF8F /* ViewModel */,
+				AFEC297327FDDC6900FAEF8F /* Service */,
 				AFA2ADB427FCB487006B9D3F /* View */,
 			);
 			path = "Forgot Password";
@@ -427,6 +433,22 @@
 			isa = PBXGroup;
 			children = (
 				AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AFEC297327FDDC6900FAEF8F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC297427FDDC7900FAEF8F /* ForgotPasswordService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AFEC297627FDDDAD00FAEF8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -623,6 +645,7 @@
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
+				AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */,
 				AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
@@ -635,6 +658,7 @@
 				AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */,
 				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,
 				AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */,
+				AFEC297527FDDC7900FAEF8F /* ForgotPasswordService.swift in Sources */,
 				AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
