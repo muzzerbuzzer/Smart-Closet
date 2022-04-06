@@ -16,6 +16,7 @@ enum RegistrationState {
 
 protocol RegistrationViewModel {
     func register()
+    var hasError: Bool { get }
     var service: RegistrationService { get }
     var state: RegistrationState { get }
     var userDetails: AccountDetails { get }
@@ -24,9 +25,10 @@ protocol RegistrationViewModel {
 
 final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     
-    let service: RegistrationService
+    @Published var hasError: Bool = false
+    @Published var state: RegistrationState = .na
     
-    var state: RegistrationState = .na
+    let service: RegistrationService
     
     @Published var userDetails: AccountDetails = AccountDetails.new
     
@@ -34,6 +36,7 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     
     init(service: RegistrationService) {
         self.service = service
+        setupErrorSubscriptions()
     }
     
     // user details are going to be binded to the view, that's why they are not being passed here
@@ -56,3 +59,23 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     }
     
 }
+
+private extension RegistrationViewModelImpl {
+    
+    func setupErrorSubscriptions() {
+        
+        $state
+            .map { state -> Bool in
+                switch state {
+                case .successfull,
+                     .na:
+                    return false
+                case .failed:
+                    return true
+                }
+            }
+            .assign(to: &$hasError)
+    }
+    
+}
+

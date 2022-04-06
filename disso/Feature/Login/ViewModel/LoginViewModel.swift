@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 enum LoginState {
     case successfull
@@ -19,11 +20,13 @@ protocol LoginViewModel {
     var service: LoginService { get }
     var state: LoginState { get }
     var credentials: LoginCreds { get }
+    var hasError: Bool { get }
     init(service: LoginService)
 }
 
 final class LoginViewModelImpl: ObservableObject, LoginViewModel {
     
+    @Published var hasError: Bool = false
     @Published var state: LoginState = .na
     @Published var credentials: LoginCreds = LoginCreds.new
     
@@ -33,6 +36,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
     
     init(service: LoginService) {
         self.service = service
+        setupErrorSubscriptions()
     }
     
     func login() {
@@ -50,6 +54,25 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
                 self?.state = .successfull
             }
             .store(in: &subscriptions)
+    }
+    
+}
+
+private extension LoginViewModelImpl {
+    
+    func setupErrorSubscriptions() {
+        
+        $state
+            .map { state -> Bool in
+                switch state {
+                case .successfull,
+                     .na:
+                    return false
+                case .failed:
+                    return true
+                }
+            }
+            .assign(to: &$hasError)
     }
     
 }
