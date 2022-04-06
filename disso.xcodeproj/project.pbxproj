@@ -41,6 +41,7 @@
 		AFEC295F27FCCDC500FAEF8F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC295E27FCCDC500FAEF8F /* RegistrationViewModel.swift */; };
 		AFEC296527FCD3CC00FAEF8F /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296427FCD3CC00FAEF8F /* SessionUserDetails.swift */; };
 		AFEC296827FCD43C00FAEF8F /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296727FCD43C00FAEF8F /* SessionService.swift */; };
+		AFEC296B27FDCCE400FAEF8F /* LoginCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		AFEC295E27FCCDC500FAEF8F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		AFEC296427FCD3CC00FAEF8F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
 		AFEC296727FCD43C00FAEF8F /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCreds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		AFA2AD9E27FA14E4006B9D3F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC296927FDCCCC00FAEF8F /* Model */,
 				AFA2AD9F27FA14EA006B9D3F /* View */,
 			);
 			path = Login;
@@ -396,6 +399,14 @@
 				AFEC296727FCD43C00FAEF8F /* SessionService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AFEC296927FDCCCC00FAEF8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC296A27FDCCE400FAEF8F /* LoginCreds.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C0B3F9942B8D8373963BC984 /* Pods */ = {
@@ -595,6 +606,7 @@
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
 				AFA2ADB227FCAD83006B9D3F /* CloseModifier.swift in Sources */,
 				AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */,
+				AFEC296B27FDCCE400FAEF8F /* LoginCreds.swift in Sources */,
 				AF14EF6227E26F5C00776376 /* NewClothesView.swift in Sources */,
 				AFA2ADA827FA1D40006B9D3F /* PreviewLayoutComponentModifier.swift in Sources */,
 				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,

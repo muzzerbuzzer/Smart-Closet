@@ -33,7 +33,7 @@ final class SessionServiceImpl: ObservableObject, SessionService {
     }
     
     func logout() {
-        <#code#>
+        try? Auth.auth().signOut()
     }
     
 }

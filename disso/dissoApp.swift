@@ -21,11 +21,20 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 struct dissoApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var sessionService = SessionServiceImpl()
+    @StateObject var clothesViewModel = ClothesViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView() 
+                switch sessionService.state {
+                case .loggedIn:
+                    ContentView()
+                        .environmentObject(sessionService)
+                        .environmentObject(clothesViewModel)
+                case .loggedOut:
+                    LoginView()
+                }
             }
         }
     }

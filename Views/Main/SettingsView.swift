@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var sessionService: SessionServiceImpl
+    
     var body: some View {
         //NavigationView {
         
@@ -17,12 +19,12 @@ struct SettingsView: View {
             
             VStack(alignment: .leading,
                    spacing: 16) {
-                Text("First Name: <Placeholder>")
-                Text("Last Name: <Placeholder>")
+                Text("First Name: \(sessionService.userDetails? .firstName ?? "N/A")")
+                Text("Last Name: \(sessionService.userDetails? .lastName ?? "N/A")")
             }
             
             ButtonComponentView(title: "Logout") {
-                //logout action here
+                sessionService.logout()
             }
             
         }
@@ -38,6 +40,7 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SettingsView()
+                //.environmentObject(SessionServiceImpl())
         }
     }
 }

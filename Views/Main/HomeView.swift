@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
+    @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
         //NavigationView {
@@ -28,6 +29,7 @@ struct HomeView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(ClothesViewModel())
+                .environmentObject(SessionServiceImpl())
         }
 
     }
