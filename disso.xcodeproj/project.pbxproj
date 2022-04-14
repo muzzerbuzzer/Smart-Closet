@@ -46,6 +46,8 @@
 		AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */; };
 		AFEC297527FDDC7900FAEF8F /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297427FDDC7900FAEF8F /* ForgotPasswordService.swift */; };
 		AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */; };
+		AFECFD412804C38900ABB119 /* AddOutfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECFD402804C38900ABB119 /* AddOutfitView.swift */; };
+		AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECFD422804CC9100ABB119 /* NewOutfitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		AFEC297127FDCF8600FAEF8F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AFEC297427FDDC7900FAEF8F /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
 		AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		AFECFD402804C38900ABB119 /* AddOutfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitView.swift; sourceTree = "<group>"; };
+		AFECFD422804CC9100ABB119 /* NewOutfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOutfitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +346,7 @@
 				AFCF371A27DFDAC8004067AA /* AddClothesView.swift */,
 				AFCF371C27DFDAFA004067AA /* FavouritesView.swift */,
 				AFCF372027DFDB3F004067AA /* SettingsView.swift */,
+				AFECFD402804C38900ABB119 /* AddOutfitView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 			children = (
 				AF025A9F27E244B600FB7123 /* ClothesView.swift */,
 				AF14EF6127E26F5C00776376 /* NewClothesView.swift */,
+				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */,
 				AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */,
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
+				AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */,
@@ -651,6 +658,7 @@
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
 				AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
+				AFECFD412804C38900ABB119 /* AddOutfitView.swift in Sources */,
 				AFA2ADB227FCAD83006B9D3F /* CloseModifier.swift in Sources */,
 				AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */,
 				AFEC296B27FDCCE400FAEF8F /* LoginCreds.swift in Sources */,
@@ -830,6 +838,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"disso/Preview Content\"";
+				DEVELOPMENT_TEAM = B3N9GKABUW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -837,6 +846,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -859,6 +869,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"disso/Preview Content\"";
+				DEVELOPMENT_TEAM = B3N9GKABUW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -866,6 +877,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

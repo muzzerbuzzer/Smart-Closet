@@ -110,3 +110,4 @@ extension NewClothesView {
         clothesViewModel.addClothes(clothes: clothes)
     }
 }
+

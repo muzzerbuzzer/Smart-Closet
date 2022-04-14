@@ -18,7 +18,7 @@ struct HomeView: View {
                 ClothesList(clothes: clothesViewModel.closet)
                 
             }
-            .navigationTitle("My Clothing")
+            .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
         //}
         .navigationViewStyle(.stack)
     }

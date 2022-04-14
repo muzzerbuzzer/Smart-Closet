@@ -30,3 +30,4 @@ struct AddClothesView_Previews: PreviewProvider {
         AddClothesView()
     }
 }
+

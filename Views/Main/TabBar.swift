@@ -15,19 +15,24 @@ struct TabBar: View {
                     Label("Home", systemImage: "house")
                 }
             
-            FavouritesView()
+            AddClothesView()
+                .tabItem {
+                    Label("Add Clothes", systemImage: "plus")
+                }
+            
+            AddOutfitView()
+                .tabItem {
+                    Label("Add Outfit", systemImage: "tshirt.fill")
+                }
+            
+            /*FavouritesView()
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
-                }
+                }*/
             
             CategoriesView()
                 .tabItem {
                     Label("Categories", systemImage: "square.fill.text.grid.1x2")
-                }
-            
-            AddClothesView()
-                .tabItem {
-                    Label("Add Clothes", systemImage: "plus")
                 }
             
             
@@ -44,5 +49,6 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
             .environmentObject(ClothesViewModel())
+            .environmentObject(SessionServiceImpl())
     }
 }
