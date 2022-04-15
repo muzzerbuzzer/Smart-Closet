@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Photos
+import PhotosUI
 
 struct NewClothesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
@@ -17,10 +19,15 @@ struct NewClothesView: View {
     @State private var image: String = ""
     @State private var navigateToClothingItem = false
     
+    @State private var addImage = false
+    @State var openGallery = false
+    @State var imageChosen = UIImage()
+    
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
+            
             Form {
                 Section(header: Text("Name")) {
                     TextField("Item Name", text: $name)
@@ -51,10 +58,29 @@ struct NewClothesView: View {
                 }
                 
                 Section(header: Text("Image")) {
-                    TextEditor(text: $image)
+                    Button(action: {
+                            addImage = true
+                            openGallery = true
+                        
+                    }, label: {
+                        Text("Add Image")
+                        if addImage {
+                            Image(uiImage: imageChosen)
+                        } else {
+                            Image("logo")
+                        }
+                        
+                        })
                 }
+               
 
+ 
             }
+            
+            .sheet(isPresented: $openGallery) {
+                ImagePickerModel(sourceType: .photoLibrary)
+            }
+            
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -95,7 +121,7 @@ struct NewClothesView_Previews: PreviewProvider {
     }
 }
 
-extension NewClothesView {
+extension NewClothesView{
     private func saveItem() {
         let now = Date()
         
@@ -109,5 +135,13 @@ extension NewClothesView {
         
         clothesViewModel.addClothes(clothes: clothes)
     }
+    
+    /*private func addImage() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }*/
 }
 
