@@ -21,7 +21,8 @@ struct NewClothesView: View {
     
     @State var addImage = false
     @State var openGallery = false
-    @State var imageChosen = UIImage()
+    //@State var imageChosen = UIImage()
+    @State var image = UIImage()
     
     @Environment(\.dismiss) private var dismiss
     
@@ -65,7 +66,7 @@ struct NewClothesView: View {
                     }, label: {
                         Text("Add Image")
                         if addImage {
-                            Image(uiImage: imageChosen)
+                            Image(uiImage: image)
                         }
                         
                         })
@@ -76,7 +77,7 @@ struct NewClothesView: View {
             }
             
             .sheet(isPresented: $openGallery) {
-                ImagePickerModel(selectedImage: $imageChosen, sourceType: .photoLibrary)
+                ImagePickerModel(selectedImage: $image, sourceType: .photoLibrary)
             }
             
             .toolbar(content: {
@@ -129,7 +130,7 @@ extension NewClothesView{
         let dateAdded = dateFormatter.string(from: now)
         print (dateAdded)
         
-        let clothes = Clothes(name: name, image: imageChosen, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
+        let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
     }

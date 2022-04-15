@@ -56,6 +56,9 @@ enum Colour: String, CaseIterable, Identifiable {
     case blue = "Blue"
     case indigo = "Indigo"
     case violet = "Violet"
+    case pink = "Pink"
+    case white = "White"
+    case black = "Black"
     
 }
 

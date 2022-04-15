@@ -6,15 +6,46 @@
 //
 
 import SwiftUI
+import Photos
+import PhotosUI
 
 struct ClothingCard: View {
     var clothes: Clothes
     
-    @State var imageChosen = UIImage()
+    
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: clothes.image)) { image in
+            
+            Image(uiImage: clothes.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .overlay(alignment: .bottom) {
+                    Text(clothes.name)
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: 136)
+                        .padding()
+                }
+            
+            /*placeholder: {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40, alignment: .center)
+                        .foregroundColor(.white.opacity(0.7))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .overlay(alignment: .bottom) {
+                            Text(clothes.name)
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: 136)
+                                .padding()
+                        }
+                }*/
+            
+            
+            /*Image(selectedImage: image) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -40,7 +71,7 @@ struct ClothingCard: View {
                             .frame(maxWidth: 136)
                             .padding()
                     }
-            }
+            }*/
         }
         .frame(width: 160, height: 217, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors:[Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
