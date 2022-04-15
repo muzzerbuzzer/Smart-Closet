@@ -16,10 +16,10 @@ struct NewClothesView: View {
     @State private var selectedCategory: Category = Category.bag
     @State private var selectedColour: Colour = Colour.red
     @State private var pattern: String = ""
-    @State private var image: String = ""
+    //@State private var image: String = ""
     @State private var navigateToClothingItem = false
     
-    @State private var addImage = false
+    @State var addImage = false
     @State var openGallery = false
     @State var imageChosen = UIImage()
     
@@ -66,8 +66,6 @@ struct NewClothesView: View {
                         Text("Add Image")
                         if addImage {
                             Image(uiImage: imageChosen)
-                        } else {
-                            Image("logo")
                         }
                         
                         })
@@ -78,7 +76,7 @@ struct NewClothesView: View {
             }
             
             .sheet(isPresented: $openGallery) {
-                ImagePickerModel(sourceType: .photoLibrary)
+                ImagePickerModel(selectedImage: $imageChosen, sourceType: .photoLibrary)
             }
             
             .toolbar(content: {
@@ -131,7 +129,7 @@ extension NewClothesView{
         let dateAdded = dateFormatter.string(from: now)
         print (dateAdded)
         
-        let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
+        let clothes = Clothes(name: name, image: imageChosen, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
     }

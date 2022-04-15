@@ -10,6 +10,8 @@ import SwiftUI
 struct ClothingCard: View {
     var clothes: Clothes
     
+    @State var imageChosen = UIImage()
+    
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: clothes.image)) { image in

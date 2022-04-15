@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Category: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
@@ -61,7 +62,7 @@ enum Colour: String, CaseIterable, Identifiable {
 struct Clothes: Identifiable {
     let id = UUID()
     let name: String
-    let image: String
+    let image: UIImage
     let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
@@ -70,9 +71,9 @@ struct Clothes: Identifiable {
 
 extension Clothes {
     static let all: [Clothes] = [
-        Clothes(
+        /*Clothes(
             name: "Flower Corset",
-            image: "https://i.pinimg.com/474x/da/17/14/da1714131be5faab9eaffb63160a8d29.jpg",
+            //image: "https://i.pinimg.com/474x/da/17/14/da1714131be5faab9eaffb63160a8d29.jpg",
             colour: "Multicolour",
             pattern: "Floral",
             category: "Corset",
@@ -80,7 +81,7 @@ extension Clothes {
         ),
         Clothes(
             name: "Wide-Leg Light-Wash Jeans",
-            image: "https://assetsprx.matchesfashion.com/img/product/920/1364600_1.jpg",
+            //image: "https://assetsprx.matchesfashion.com/img/product/920/1364600_1.jpg",
             colour: "Light Blue",
             pattern: "Jean",
             category: "Jeans",
@@ -88,7 +89,7 @@ extension Clothes {
         ),
         Clothes(
             name: "Platform Converse",
-            image: "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwecab2c34/images/a_107/560846C_A_107X1.jpg?sw=2000",
+            //image: "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwecab2c34/images/a_107/560846C_A_107X1.jpg?sw=2000",
             colour: "White",
             pattern: "Plain",
             category: "Shoes",
@@ -96,11 +97,11 @@ extension Clothes {
         ),
         Clothes(
             name: "The New Yorker Tote",
-            image: "https://pictures.depop.com/b0/7092085/371707248_vQt0PR5IOG/P0.jpg",
+            //image: "https://pictures.depop.com/b0/7092085/371707248_vQt0PR5IOG/P0.jpg",
             colour: "White",
             pattern: "Letters",
             category: "Bag",
             dateAdded: "2022-16-03"
-        )
+        )*/
     ]
 }
