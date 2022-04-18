@@ -67,6 +67,8 @@ struct NewClothesView: View {
                         Text("Add Image")
                         if addImage {
                             Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
                         }
                         
                         })
@@ -92,7 +94,7 @@ struct NewClothesView: View {
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [0])
+                        ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [1])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {

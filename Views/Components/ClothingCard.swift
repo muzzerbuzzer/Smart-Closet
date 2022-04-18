@@ -13,10 +13,10 @@ struct ClothingCard: View {
     var clothes: Clothes
     
     
-    
     var body: some View {
         VStack {
             
+            if (clothes.image != nil) {
             Image(uiImage: clothes.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -27,24 +27,22 @@ struct ClothingCard: View {
                         .frame(maxWidth: 136)
                         .padding()
                 }
-            
-            /*placeholder: {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .foregroundColor(.white.opacity(0.7))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .overlay(alignment: .bottom) {
-                            Text(clothes.name)
-                                .font(.headline)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: 136)
-                                .padding()
-                        }
-                }*/
-            
-            
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .foregroundColor(.white.opacity(0.7))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .overlay(alignment: .bottom) {
+                        Text(clothes.name)
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: 136)
+                            .padding()
+                    }
+            }
+
             /*Image(selectedImage: image) { image in
                 image
                     .resizable()
