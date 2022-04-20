@@ -11,57 +11,58 @@ import SwiftUI
 struct NewOutfitView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @State private var showCategories = false
+    
+    @State var showCategories = false
+    @State var addImage = false
+    @State var image = UIImage()
     
     var body: some View {
         NavigationView {
+                
+            VStack {
+            
             Text("beep boop")
             
+            if addImage {
+                Image(uiImage: image)
+                    .resizable()
+                    //.aspectRatio(contentMode: .fill)
+                    .scaledToFit()
+            }
+            
+        }
+                .sheet(isPresented: $showCategories) {
+                    ImagePickerModel(selectedImage: $image, sourceType: .photoLibrary)
+                }
+            
                 .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    /*ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             dismiss()
                         } label: {
                             Label("Cancel", systemImage: "xmark")
                                 .labelStyle(.iconOnly)
                         }
-                    }
+                    }*/
                     
                     ToolbarItem {
                         Button {
+                            addImage = true
                             showCategories = true
+                            
                         } label: {
                             Label("Add", systemImage: "plus")
                                 .labelStyle(.iconOnly)
                         }
                     }
                     
-
-                
-                     
-                    /*ToolbarItem {
-                        NavigationLink(isActive: $navigateToClothingItem) {
-                            ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [1])
-                                .navigationBarBackButtonHidden(true)
-                        } label: {
-                            Button {
-                                saveItem()
-                                navigateToClothingItem = true
-                            } label: {
-                                Label("Save", systemImage: "checkmark")
-                                    .labelStyle(.iconOnly)
-                            }
-                        }
-                        .disabled(name.isEmpty)
-                    }*/
                 })
             
-                .navigationTitle("New Outfit")
-                .navigationBarTitleDisplayMode(.inline)
-        }
-        .sheet(isPresented: $showCategories) {
-           CategoriesView()
-        .navigationViewStyle(.stack)
+            
+            
+            
+                /*.navigationTitle("New Outfit")
+                .navigationBarTitleDisplayMode(.inline)*/
         }
     }
 }

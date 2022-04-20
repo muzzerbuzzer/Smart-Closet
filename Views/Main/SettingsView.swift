@@ -12,7 +12,7 @@ struct SettingsView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
-        //NavigationView {
+        NavigationView {
         
         VStack(alignment: .leading,
                spacing: 16) {
@@ -31,16 +31,16 @@ struct SettingsView: View {
         
         .padding(.horizontal, 16)
         .navigationTitle("Settings")
-        //}
+        }
         .navigationViewStyle(.stack)
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        //NavigationView {
             SettingsView()
                 .environmentObject(SessionServiceImpl())
-        }
+        //}
     }
 }

@@ -20,6 +20,7 @@ class ClothesViewModel: ObservableObject {
     func addClothes(clothes: Clothes) {
         closet.append(clothes)
     }
+    
 }
 
 

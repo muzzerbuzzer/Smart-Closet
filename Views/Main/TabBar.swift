@@ -20,7 +20,7 @@ struct TabBar: View {
                     Label("Add Clothes", systemImage: "plus")
                 }
             
-            AddOutfitView()
+            NewOutfitView()
                 .tabItem {
                     Label("Add Outfit", systemImage: "tshirt.fill")
                 }
@@ -49,6 +49,6 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
             .environmentObject(ClothesViewModel())
-            .environmentObject(SessionServiceImpl())
+            //.environmentObject(SessionServiceImpl())
     }
 }

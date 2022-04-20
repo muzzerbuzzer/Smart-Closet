@@ -10,11 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabBar()
-       /* NavigationView {
+       //NavigationView {
             TabBar()
             
-        }*/
+        //}
         
         
     }
@@ -24,6 +23,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(ClothesViewModel())
-            .environmentObject(SessionServiceImpl())
+            //.environmentObject(SessionServiceImpl())
     }
 }

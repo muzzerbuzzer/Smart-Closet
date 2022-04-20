@@ -15,6 +15,7 @@ struct HomeView: View {
     var body: some View {
         //NavigationView {
             ScrollView {
+                
                 ClothesList(clothes: clothesViewModel.closet)
                 
             }

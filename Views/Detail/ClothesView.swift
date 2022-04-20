@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClothesView: View {
     var clothes: Clothes
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
     
     var body: some View {
         ScrollView {
@@ -73,11 +74,23 @@ struct ClothesView: View {
 
                     }
                 }
+                
+                NavigationLink(destination: NewOutfitView()) {
+                    Text("Add to Outfit")
+                        .navigationBarBackButtonHidden(true)
+                }
+                
+                Button("Delete") {
+                    //
+                }
+                
 
             }
+            
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
+
     }
 }
 
