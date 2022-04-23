@@ -15,6 +15,18 @@ struct ContentView: View {
             
         //}
         
+            .toolbar(content: {
+
+                ToolbarItem {
+                    
+                    NavigationLink(destination: AddOutfitView()) {
+                        Label("Calendar", systemImage: "calendar")
+                            .labelStyle(.iconOnly)
+                            .foregroundColor(.purple)
+                    }
+           }
+        })
+        
         
     }
 }
@@ -23,6 +35,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(ClothesViewModel())
-            //.environmentObject(SessionServiceImpl())
+            .environmentObject(SessionServiceImpl())
     }
 }

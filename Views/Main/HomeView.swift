@@ -14,11 +14,14 @@ struct HomeView: View {
     
     var body: some View {
         //NavigationView {
+        
             ScrollView {
                 
                 ClothesList(clothes: clothesViewModel.closet)
                 
+                
             }
+        
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
         //}
         .navigationViewStyle(.stack)

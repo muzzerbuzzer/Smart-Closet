@@ -9,7 +9,10 @@ import Foundation
 import SwiftUI
 
 struct AddOutfitView: View {
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
     @State private var showNewOutfit = false
+    
+    
     
     var body: some View {
         NavigationView {
@@ -20,7 +23,7 @@ struct AddOutfitView: View {
         }
         .navigationViewStyle(.stack)
         .sheet(isPresented: $showNewOutfit) {
-            NewOutfitView()
+            //NewOutfitView(clothes: clothes)
         }
     }
 }

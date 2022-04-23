@@ -10,6 +10,10 @@
 		A04D3E6665E8FAB905D414CB /* Pods_disso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3721CE70F958288B07A63A6E /* Pods_disso.framework */; };
 		AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9D27E2415F00FB7123 /* ClothesList.swift */; };
 		AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF025A9F27E244B600FB7123 /* ClothesView.swift */; };
+		AF06E3E82814811C00DF0E87 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3E72814811C00DF0E87 /* CustomDatePicker.swift */; };
+		AF06E3EA2814817800DF0E87 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3E92814817800DF0E87 /* CalendarView.swift */; };
+		AF06E3EC2814818800DF0E87 /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */; };
+		AF06E3EE28148BCD00DF0E87 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3ED28148BCD00DF0E87 /* DateValue.swift */; };
 		AF14EF6227E26F5C00776376 /* NewClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14EF6127E26F5C00776376 /* NewClothesView.swift */; };
 		AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14EF6327E3AD2000776376 /* ClothesViewModel.swift */; };
 		AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACB27DD1DA500498779 /* Assets.xcassets */; };
@@ -75,6 +79,10 @@
 		8E0839FEEC8DA753EADD0585 /* Pods-disso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-disso.release.xcconfig"; path = "Target Support Files/Pods-disso/Pods-disso.release.xcconfig"; sourceTree = "<group>"; };
 		AF025A9D27E2415F00FB7123 /* ClothesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesList.swift; sourceTree = "<group>"; };
 		AF025A9F27E244B600FB7123 /* ClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesView.swift; sourceTree = "<group>"; };
+		AF06E3E72814811C00DF0E87 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		AF06E3E92814817800DF0E87 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeView.swift; sourceTree = "<group>"; };
+		AF06E3ED28148BCD00DF0E87 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		AF14EF6127E26F5C00776376 /* NewClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClothesView.swift; sourceTree = "<group>"; };
 		AF14EF6327E3AD2000776376 /* ClothesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewModel.swift; sourceTree = "<group>"; };
 		AF190AC427DD1DA000498779 /* disso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disso.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +359,7 @@
 				AFCF371C27DFDAFA004067AA /* FavouritesView.swift */,
 				AFCF372027DFDB3F004067AA /* SettingsView.swift */,
 				AFECFD402804C38900ABB119 /* AddOutfitView.swift */,
+				AF06E3E92814817800DF0E87 /* CalendarView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 				AF14EF6127E26F5C00776376 /* NewClothesView.swift */,
 				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
 				AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */,
+				AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -371,6 +381,7 @@
 			children = (
 				AFCF375E27E238E2004067AA /* ClothingCard.swift */,
 				AF025A9D27E2415F00FB7123 /* ClothesList.swift */,
+				AF06E3E72814811C00DF0E87 /* CustomDatePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 			children = (
 				AFCF375C27E230CA004067AA /* ClothingModel.swift */,
 				AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */,
+				AF06E3ED28148BCD00DF0E87 /* DateValue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -651,6 +663,7 @@
 			files = (
 				AFEC296527FCD3CC00FAEF8F /* SessionUserDetails.swift in Sources */,
 				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
+				AF06E3E82814811C00DF0E87 /* CustomDatePicker.swift in Sources */,
 				AFEC296E27FDCD9300FAEF8F /* LoginService.swift in Sources */,
 				AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */,
 				AF7DA19C280895690003EFE0 /* ImagePickerModel.swift in Sources */,
@@ -660,6 +673,7 @@
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
 				AF1CBAAD28144C4A00A4C156 /* ClothesImagesView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
+				AF06E3EA2814817800DF0E87 /* CalendarView.swift in Sources */,
 				AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */,
 				AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */,
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
@@ -675,6 +689,8 @@
 				AF025AA027E244B600FB7123 /* ClothesView.swift in Sources */,
 				AFA2ADAC27FB239F006B9D3F /* ButtonComponentView.swift in Sources */,
 				AFEC297527FDDC7900FAEF8F /* ForgotPasswordService.swift in Sources */,
+				AF06E3EC2814818800DF0E87 /* CalendarHomeView.swift in Sources */,
+				AF06E3EE28148BCD00DF0E87 /* DateValue.swift in Sources */,
 				AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
