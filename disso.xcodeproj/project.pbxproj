@@ -18,6 +18,7 @@
 		AF190AE327DD1DA600498779 /* dissoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE227DD1DA600498779 /* dissoUITests.swift */; };
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
+		AF1CBAAD28144C4A00A4C156 /* ClothesImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */; };
 		AF7DA19C280895690003EFE0 /* ImagePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */; };
 		AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA027FA150E006B9D3F /* LoginView.swift */; };
 		AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */; };
@@ -86,6 +87,7 @@
 		AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
+		AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImagesView.swift; sourceTree = "<group>"; };
 		AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerModel.swift; sourceTree = "<group>"; };
 		AFA2ADA027FA150E006B9D3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				AF025A9F27E244B600FB7123 /* ClothesView.swift */,
 				AF14EF6127E26F5C00776376 /* NewClothesView.swift */,
 				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
+				AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
+				AF1CBAAD28144C4A00A4C156 /* ClothesImagesView.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */,
 				AFEC297227FDCF8600FAEF8F /* LoginViewModel.swift in Sources */,

@@ -75,10 +75,7 @@ struct ClothesView: View {
                     }
                 }
                 
-                NavigationLink(destination: NewOutfitView()) {
-                    Text("Add to Outfit")
-                        .navigationBarBackButtonHidden(true)
-                }
+            
                 
                 Button("Delete") {
                     //
