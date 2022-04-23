@@ -19,7 +19,7 @@ struct ContentView: View {
 
                 ToolbarItem {
                     
-                    NavigationLink(destination: AddOutfitView()) {
+                    NavigationLink(destination: CalendarView()) {
                         Label("Calendar", systemImage: "calendar")
                             .labelStyle(.iconOnly)
                             .foregroundColor(.purple)
