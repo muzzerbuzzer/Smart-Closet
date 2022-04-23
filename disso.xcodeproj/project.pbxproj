@@ -14,6 +14,7 @@
 		AF06E3EA2814817800DF0E87 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3E92814817800DF0E87 /* CalendarView.swift */; };
 		AF06E3EC2814818800DF0E87 /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */; };
 		AF06E3EE28148BCD00DF0E87 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3ED28148BCD00DF0E87 /* DateValue.swift */; };
+		AF06E3F02814978700DF0E87 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06E3EF2814978700DF0E87 /* Task.swift */; };
 		AF14EF6227E26F5C00776376 /* NewClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14EF6127E26F5C00776376 /* NewClothesView.swift */; };
 		AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14EF6327E3AD2000776376 /* ClothesViewModel.swift */; };
 		AF190ACC27DD1DA500498779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF190ACB27DD1DA500498779 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		AF06E3E92814817800DF0E87 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeView.swift; sourceTree = "<group>"; };
 		AF06E3ED28148BCD00DF0E87 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		AF06E3EF2814978700DF0E87 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		AF14EF6127E26F5C00776376 /* NewClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClothesView.swift; sourceTree = "<group>"; };
 		AF14EF6327E3AD2000776376 /* ClothesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewModel.swift; sourceTree = "<group>"; };
 		AF190AC427DD1DA000498779 /* disso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disso.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +394,7 @@
 				AFCF375C27E230CA004067AA /* ClothingModel.swift */,
 				AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */,
 				AF06E3ED28148BCD00DF0E87 /* DateValue.swift */,
+				AF06E3EF2814978700DF0E87 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				AFEC296E27FDCD9300FAEF8F /* LoginService.swift in Sources */,
 				AFA2ADB027FB4C1F006B9D3F /* SignUpView.swift in Sources */,
 				AF7DA19C280895690003EFE0 /* ImagePickerModel.swift in Sources */,
+				AF06E3F02814978700DF0E87 /* Task.swift in Sources */,
 				AF14EF6427E3AD2000776376 /* ClothesViewModel.swift in Sources */,
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */,
