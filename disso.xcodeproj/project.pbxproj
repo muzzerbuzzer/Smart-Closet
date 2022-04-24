@@ -168,8 +168,10 @@
 		AF190ABB27DD1DA000498779 = {
 			isa = PBXGroup;
 			children = (
+				AF2FFB412815CB9C006EB313 /* Calendar */,
+				AF2FFB402815CB97006EB313 /* Clothes */,
+				AF2FFB3F2815CB83006EB313 /* Outfit */,
 				AFCF375B27E2309F004067AA /* ViewModels */,
-				AFCF375A27E23099004067AA /* Models */,
 				AFCF371027DFD86D004067AA /* Views */,
 				AF190AC627DD1DA000498779 /* disso */,
 				AF190AD727DD1DA600498779 /* dissoTests */,
@@ -227,6 +229,87 @@
 				AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */,
 			);
 			path = dissoUITests;
+			sourceTree = "<group>";
+		};
+		AF2FFB3F2815CB83006EB313 /* Outfit */ = {
+			isa = PBXGroup;
+			children = (
+				AF2FFB472815CC0A006EB313 /* Main */,
+				AF2FFB462815CBE7006EB313 /* Detail */,
+			);
+			path = Outfit;
+			sourceTree = "<group>";
+		};
+		AF2FFB402815CB97006EB313 /* Clothes */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF371127DFD8D0004067AA /* Main */,
+				AFCF371227DFD8E3004067AA /* Detail */,
+				AFCF371327DFD8ED004067AA /* Components */,
+				AFCF375A27E23099004067AA /* Models */,
+			);
+			path = Clothes;
+			sourceTree = "<group>";
+		};
+		AF2FFB412815CB9C006EB313 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				AF2FFB452815CBD7006EB313 /* Components */,
+				AF2FFB442815CBC3006EB313 /* Main */,
+				AF2FFB432815CBB9006EB313 /* Detail */,
+				AF2FFB422815CBAC006EB313 /* Models */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		AF2FFB422815CBAC006EB313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF06E3ED28148BCD00DF0E87 /* DateValue.swift */,
+				AF06E3EF2814978700DF0E87 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF2FFB432815CBB9006EB313 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		AF2FFB442815CBC3006EB313 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AF06E3E92814817800DF0E87 /* CalendarView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AF2FFB452815CBD7006EB313 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AF06E3E72814811C00DF0E87 /* CustomDatePicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AF2FFB462815CBE7006EB313 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */,
+				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		AF2FFB472815CC0A006EB313 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AFECFD402804C38900ABB119 /* AddOutfitView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		AFA2AD9D27FA14C2006B9D3F /* Feature */ = {
@@ -343,9 +426,6 @@
 		AFCF371027DFD86D004067AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AFCF371327DFD8ED004067AA /* Components */,
-				AFCF371227DFD8E3004067AA /* Detail */,
-				AFCF371127DFD8D0004067AA /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,8 +440,6 @@
 				AFCF371A27DFDAC8004067AA /* AddClothesView.swift */,
 				AFCF371C27DFDAFA004067AA /* FavouritesView.swift */,
 				AFCF372027DFDB3F004067AA /* SettingsView.swift */,
-				AFECFD402804C38900ABB119 /* AddOutfitView.swift */,
-				AF06E3E92814817800DF0E87 /* CalendarView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -371,9 +449,6 @@
 			children = (
 				AF025A9F27E244B600FB7123 /* ClothesView.swift */,
 				AF14EF6127E26F5C00776376 /* NewClothesView.swift */,
-				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
-				AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */,
-				AF06E3EB2814818800DF0E87 /* CalendarHomeView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -383,7 +458,6 @@
 			children = (
 				AFCF375E27E238E2004067AA /* ClothingCard.swift */,
 				AF025A9D27E2415F00FB7123 /* ClothesList.swift */,
-				AF06E3E72814811C00DF0E87 /* CustomDatePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -393,8 +467,6 @@
 			children = (
 				AFCF375C27E230CA004067AA /* ClothingModel.swift */,
 				AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */,
-				AF06E3ED28148BCD00DF0E87 /* DateValue.swift */,
-				AF06E3EF2814978700DF0E87 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
