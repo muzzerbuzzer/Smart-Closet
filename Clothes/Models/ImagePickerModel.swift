@@ -7,11 +7,15 @@
 
 import SwiftUI
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
 
 struct ImagePickerModel: UIViewControllerRepresentable {
     
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
+    
+    
     
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
@@ -52,6 +56,24 @@ struct ImagePickerModel: UIViewControllerRepresentable {
             
             //dismisses sheet when all is completed
             parent.presentationMode.wrappedValue.dismiss()
+            
+            let reference = Storage.storage().reference().child("clothesImage/item.jpg")
+            var data = NSData()
+            data = parent.selectedImage.jpegData(compressionQuality: 0.8)! as NSData
+            
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/png"
+            
+            reference.putData(data as Data, metadata: metaData) { (metadata, error) in
+                if error == nil {
+                    reference.downloadURL(completion: { (url, error) in
+                        print("Done, URL is \(String(describing: url))")
+                    })
+                } else {
+                    print("Error \(String(describing: error))")
+                }
+            }
+            
         }
         
     }

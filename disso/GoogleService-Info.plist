@@ -31,6 +31,6 @@
 	<key>GOOGLE_APP_ID</key>
 	<string>1:24362785246:ios:d981e54e2ea4da8b71654f</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please allow permission to select photos to import to the application.</string>
+	<string>Please allow permission to select photos from the photo library.</string>
 </dict>
 </plist>

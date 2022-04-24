@@ -171,8 +171,6 @@
 				AF2FFB412815CB9C006EB313 /* Calendar */,
 				AF2FFB402815CB97006EB313 /* Clothes */,
 				AF2FFB3F2815CB83006EB313 /* Outfit */,
-				AFCF375B27E2309F004067AA /* ViewModels */,
-				AFCF371027DFD86D004067AA /* Views */,
 				AF190AC627DD1DA000498779 /* disso */,
 				AF190AD727DD1DA600498779 /* dissoTests */,
 				AF190AE127DD1DA600498779 /* dissoUITests */,
@@ -243,6 +241,7 @@
 		AF2FFB402815CB97006EB313 /* Clothes */ = {
 			isa = PBXGroup;
 			children = (
+				AFCF375B27E2309F004067AA /* ViewModels */,
 				AFCF371127DFD8D0004067AA /* Main */,
 				AFCF371227DFD8E3004067AA /* Detail */,
 				AFCF371327DFD8ED004067AA /* Components */,
@@ -421,13 +420,6 @@
 				AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		AFCF371027DFD86D004067AA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		AFCF371127DFD8D0004067AA /* Main */ = {
