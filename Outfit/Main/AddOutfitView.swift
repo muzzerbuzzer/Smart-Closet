@@ -16,15 +16,21 @@ struct AddOutfitView: View {
     
     var body: some View {
         NavigationView {
-            Button("Click here to add a new outfit!") {
+            /*Button("Click here to add a new outfit!") {
                 showNewOutfit = true
+            }*/
+            NavigationLink(destination: NewOutfitView()) {
+                Label("Click here to add a new Outfit!", systemImage: "plus")
+                    .foregroundColor(.purple)
             }
+            
+            
             .navigationTitle("New Outfit")
         }
         .navigationViewStyle(.stack)
-        .sheet(isPresented: $showNewOutfit) {
-            //NewOutfitView(clothes: clothes)
-        }
+        /*.sheet(isPresented: $showNewOutfit) {
+            NewOutfitView(clothes: clothes)
+        }*/
     }
 }
 

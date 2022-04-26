@@ -15,7 +15,7 @@ struct NewOutfitView: View {
     var body: some View {
         NavigationView {
             
-            Text("beep boop")
+            Text("Hello, World!")
             
             
             .toolbar(content: {

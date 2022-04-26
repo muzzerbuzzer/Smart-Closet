@@ -137,12 +137,5 @@ extension NewClothesView{
         clothesViewModel.addClothes(clothes: clothes)
     }
     
-    /*private func addImage() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
-    }*/
 }
 
