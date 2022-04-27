@@ -10,38 +10,67 @@ import SwiftUI
 
 struct NewOutfitView: View {
     
-    @State private var showClothesImages = false
-    
-    var body: some View {
-        NavigationView {
-            
-            Text("Hello, World!")
-            
-            
-            .toolbar(content: {
+    var clothes: [Clothes]
 
-                ToolbarItem {
-                    Button {
-                        showClothesImages = true
-                    } label: {
-                    Label("Add", systemImage: "plus")
-                    .labelStyle(.iconOnly)
-             }
-           }
-        })
-                /*.navigationTitle("New Outfit")
-                .navigationBarTitleDisplayMode(.inline)*/
-        }
-        .sheet(isPresented: $showClothesImages) {
-            ClothesImagesView(clothes: Clothes.all)
-        .navigationViewStyle(.stack)
+    var body: some View {
+        
+        VStack {
+            Divider()
+            ScrollView(.horizontal) {
+                HStack(spacing: 5) {
+                    ForEach(clothes) { clothes in
+                        RectangleView(/*label: clothes.name, */image: clothes.image)
+                    }
+                }.padding()
+            }.frame(height: 70)
+            
+            Divider()
+            Spacer()
+            HStack {
+                Text("The content of the Home view")
+            }
+            Spacer()
+    }
+}
+}
+
+struct RectangleView: View {
+    //@State var label: String
+    @State var image: UIImage!
+
+    var body: some View {
+        ZStack {
+            HStack {
+                if (image != nil) {
+                Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                //.border(Color.gray, width: 1)
+                .frame(width: 70, height: 70)
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .foregroundColor(.white.opacity(0.7))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
+            /*VStack {
+                Spacer()
+                Text(label)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                    .background(Color.white)
+            }*/
         }
     }
 }
 
 struct NewOutfitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewOutfitView()
+        NewOutfitView(clothes: Clothes.all)
+            .environmentObject(ClothesViewModel())
     }
 }
 

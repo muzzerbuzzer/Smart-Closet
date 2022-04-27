@@ -48,7 +48,7 @@ struct ImagePickerModel: UIViewControllerRepresentable {
         //didFinishPickingMediaWithInfo is when the image is picked, and this is what happens after
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
            
-            guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+            /*guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
                   let url = URL(string: urlString) else {
                         return
             }
@@ -58,7 +58,7 @@ struct ImagePickerModel: UIViewControllerRepresentable {
                     return
                 }
                 
-            })
+            })*/
                 
             /*image is wrapped as a UIImage, and then saving as image
             which is then grabbed and then saved in NewClothesView as the image*/

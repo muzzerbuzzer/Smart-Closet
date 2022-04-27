@@ -15,14 +15,14 @@ struct ClothesImagesView: View {
         //VStack {
         ScrollView {
             
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+            /*LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(clothes) { clothes in
-                    NavigationLink(destination: NewOutfitView()){
+                    NavigationLink(destination: NewOutfitView(clothes: Clothes)){
                         ClothingCard(clothes: clothes)
                     }
                 }
-            }
-            .padding(.top)
+            }*/
+            //.padding(.top)
         }
       //}
       //.padding(.horizontal)

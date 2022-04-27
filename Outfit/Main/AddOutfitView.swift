@@ -10,22 +10,20 @@ import SwiftUI
 
 struct AddOutfitView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
-    @State private var showNewOutfit = false
-    
-    
+    //@State private var showNewOutfit = false
     
     var body: some View {
         NavigationView {
             /*Button("Click here to add a new outfit!") {
                 showNewOutfit = true
             }*/
-            NavigationLink(destination: NewOutfitView()) {
+            NavigationLink(destination: NewOutfitView(clothes: clothesViewModel.closet)) {
                 Label("Click here to add a new Outfit!", systemImage: "plus")
                     .foregroundColor(.purple)
             }
             
             
-            .navigationTitle("New Outfit")
+            //.navigationTitle("New Outfit")
         }
         .navigationViewStyle(.stack)
         /*.sheet(isPresented: $showNewOutfit) {

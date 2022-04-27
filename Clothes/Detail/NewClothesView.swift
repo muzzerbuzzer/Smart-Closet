@@ -42,6 +42,7 @@ struct NewClothesView: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    .accentColor(.purple)
                 }
                 
                 Section(header: Text("Colour")) {
@@ -52,6 +53,7 @@ struct NewClothesView: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    .accentColor(.purple)
                 }
                 
                 Section(header: Text("Pattern")) {
@@ -65,6 +67,7 @@ struct NewClothesView: View {
                         
                     }, label: {
                         Text("Add Image")
+                            .foregroundColor(.purple)
                         if addImage {
                             Image(uiImage: image)
                                 .resizable()
@@ -89,13 +92,15 @@ struct NewClothesView: View {
                     } label: {
                         Label("Cancel", systemImage: "xmark")
                             .labelStyle(.iconOnly)
+                            .foregroundColor(.purple)
                     }
                 }
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [1])
+                        /*ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [1])
                             .navigationBarBackButtonHidden(true)
+                            .foregroundColor(.purple)*/
                     } label: {
                         Button {
                             saveItem()

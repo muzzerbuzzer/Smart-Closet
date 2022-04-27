@@ -20,7 +20,7 @@ struct TabBar: View {
                     Label("Add Clothes", systemImage: "plus")
                 }
             
-            NewOutfitView()
+            AddOutfitView()
                 .tabItem {
                     Label("Add Outfit", systemImage: "tshirt.fill")
                 }
