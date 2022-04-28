@@ -12,6 +12,9 @@ struct HomeView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     @EnvironmentObject var sessionService: SessionServiceImpl
     
+    @State private var selectedView = "Clothes"
+    let views = ["Clothes", "Outfits"]
+    
     var body: some View {
         //NavigationView {
         
@@ -25,6 +28,15 @@ struct HomeView: View {
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
         //}
         .navigationViewStyle(.stack)
+        
+        /*.toolbar(content: {
+            Picker("Category", selection: $selectedView) {
+                ForEach(views, id: \.self) {
+                }
+            }
+            .pickerStyle(.menu)
+            .accentColor(.purple)
+        })*/
     }
 }
 

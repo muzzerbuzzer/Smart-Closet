@@ -30,11 +30,6 @@ class ClothesViewModel: ObservableObject {
     private let encoder = JSONEncoder()
     
     
-    init() {
-        closet = Clothes.all
-
-    }
-    
     func addClothes(clothes: Clothes) {
         // previously defined databasePath
         guard let databasePath = databasePath else {
@@ -60,6 +55,11 @@ class ClothesViewModel: ObservableObject {
             print("an error occured", error)
         }
     }*/
+    
+    init() {
+        closet = Clothes.all
+
+    }
     
     func addClothes(clothes: Clothes) {
         closet.append(clothes)

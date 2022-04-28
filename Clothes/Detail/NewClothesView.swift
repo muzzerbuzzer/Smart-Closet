@@ -98,9 +98,9 @@ struct NewClothesView: View {
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        /*ClothesView(clothes: clothesViewModel.closet.sorted{ $0.dateAdded < $1.dateAdded} [1])
+                        ClothesView(clothes: clothesViewModel.closet.sorted {
+                            $0.dateAdded < $1.dateAdded} [1])
                             .navigationBarBackButtonHidden(true)
-                            .foregroundColor(.purple)*/
                     } label: {
                         Button {
                             saveItem()

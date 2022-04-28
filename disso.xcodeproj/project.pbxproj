@@ -23,7 +23,6 @@
 		AF190AE327DD1DA600498779 /* dissoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE227DD1DA600498779 /* dissoUITests.swift */; };
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
-		AF1CBAAD28144C4A00A4C156 /* ClothesImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */; };
 		AF7DA19C280895690003EFE0 /* ImagePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */; };
 		AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA027FA150E006B9D3F /* LoginView.swift */; };
 		AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */; };
@@ -55,6 +54,11 @@
 		AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */; };
 		AFECFD412804C38900ABB119 /* AddOutfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECFD402804C38900ABB119 /* AddOutfitView.swift */; };
 		AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECFD422804CC9100ABB119 /* NewOutfitView.swift */; };
+		AFFB8747281B290300C33214 /* OutfitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB8746281B290300C33214 /* OutfitsView.swift */; };
+		AFFB874A281B2AB000C33214 /* OutfitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB8749281B2AB000C33214 /* OutfitsViewModel.swift */; };
+		AFFB874D281B2B8400C33214 /* OutfitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB874C281B2B8400C33214 /* OutfitModel.swift */; };
+		AFFB8750281B2D4400C33214 /* OutfitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB874F281B2D4400C33214 /* OutfitCard.swift */; };
+		AFFB8752281B2E0C00C33214 /* OutfitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB8751281B2E0C00C33214 /* OutfitList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +101,6 @@
 		AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
-		AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImagesView.swift; sourceTree = "<group>"; };
 		AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerModel.swift; sourceTree = "<group>"; };
 		AFA2ADA027FA150E006B9D3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
@@ -129,6 +132,11 @@
 		AFEC297727FDDDC100FAEF8F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AFECFD402804C38900ABB119 /* AddOutfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitView.swift; sourceTree = "<group>"; };
 		AFECFD422804CC9100ABB119 /* NewOutfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOutfitView.swift; sourceTree = "<group>"; };
+		AFFB8746281B290300C33214 /* OutfitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsView.swift; sourceTree = "<group>"; };
+		AFFB8749281B2AB000C33214 /* OutfitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsViewModel.swift; sourceTree = "<group>"; };
+		AFFB874C281B2B8400C33214 /* OutfitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitModel.swift; sourceTree = "<group>"; };
+		AFFB874F281B2D4400C33214 /* OutfitCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCard.swift; sourceTree = "<group>"; };
+		AFFB8751281B2E0C00C33214 /* OutfitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,9 @@
 		AF2FFB3F2815CB83006EB313 /* Outfit */ = {
 			isa = PBXGroup;
 			children = (
+				AFFB874E281B2D3100C33214 /* Components */,
+				AFFB874B281B2B7900C33214 /* Models */,
+				AFFB8748281B2AA000C33214 /* ViewModels */,
 				AF2FFB472815CC0A006EB313 /* Main */,
 				AF2FFB462815CBE7006EB313 /* Detail */,
 			);
@@ -297,7 +308,7 @@
 		AF2FFB462815CBE7006EB313 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				AF1CBAAC28144C4900A4C156 /* ClothesImagesView.swift */,
+				AFFB8746281B290300C33214 /* OutfitsView.swift */,
 				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
 			);
 			path = Detail;
@@ -544,6 +555,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AFFB8748281B2AA000C33214 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AFFB8749281B2AB000C33214 /* OutfitsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AFFB874B281B2B7900C33214 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFFB874C281B2B8400C33214 /* OutfitModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFFB874E281B2D3100C33214 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AFFB874F281B2D4400C33214 /* OutfitCard.swift */,
+				AFFB8751281B2E0C00C33214 /* OutfitList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C0B3F9942B8D8373963BC984 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFB874A281B2AB000C33214 /* OutfitsViewModel.swift in Sources */,
 				AFEC296527FCD3CC00FAEF8F /* SessionUserDetails.swift in Sources */,
 				AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */,
 				AF06E3E82814811C00DF0E87 /* CustomDatePicker.swift in Sources */,
@@ -739,7 +776,7 @@
 				AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */,
 				AFECFD432804CC9100ABB119 /* NewOutfitView.swift in Sources */,
 				AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */,
-				AF1CBAAD28144C4A00A4C156 /* ClothesImagesView.swift in Sources */,
+				AFFB8750281B2D4400C33214 /* OutfitCard.swift in Sources */,
 				AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */,
 				AF06E3EA2814817800DF0E87 /* CalendarView.swift in Sources */,
 				AFEC297827FDDDC100FAEF8F /* ForgotPasswordViewModel.swift in Sources */,
@@ -747,6 +784,7 @@
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
 				AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */,
+				AFFB874D281B2B8400C33214 /* OutfitModel.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
 				AFECFD412804C38900ABB119 /* AddOutfitView.swift in Sources */,
 				AFA2ADB227FCAD83006B9D3F /* CloseModifier.swift in Sources */,
@@ -759,11 +797,13 @@
 				AFEC297527FDDC7900FAEF8F /* ForgotPasswordService.swift in Sources */,
 				AF06E3EC2814818800DF0E87 /* CalendarHomeView.swift in Sources */,
 				AF06E3EE28148BCD00DF0E87 /* DateValue.swift in Sources */,
+				AFFB8747281B290300C33214 /* OutfitsView.swift in Sources */,
 				AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
 				AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */,
 				AFEC295F27FCCDC500FAEF8F /* RegistrationViewModel.swift in Sources */,
+				AFFB8752281B2E0C00C33214 /* OutfitList.swift in Sources */,
 				AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */,
 				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
 				AFEC296827FCD43C00FAEF8F /* SessionService.swift in Sources */,
