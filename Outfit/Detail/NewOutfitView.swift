@@ -24,7 +24,8 @@ struct NewOutfitView: View {
         Divider()
         Spacer()
             HStack {
-                Text("outfit creation happens here")
+                //DropArea(image: image, active: active)
+                //Text("outfit creation happens here")
             }
             Spacer()
             Divider()
@@ -59,6 +60,9 @@ struct NewOutfitView: View {
         
 }
     
+
+    
+    
 }
 
 
@@ -86,8 +90,49 @@ struct ScrollingClothingView: View {
     }
 }
 
+struct DropArea: View {
+    @State var image: [UIImage?]
+    @State var active = 0
+    
+    var body: some View {
+        let dropDelegate = ImageDropDelegate(image: $image, active: $active)
+        
+        return VStack {
+            HStack {
+                GridCell(active: self.active == 1, image: image[1])
+                GridCell(active: self.active == 3, image: image[3])
+            }
+            
+            HStack {
+                GridCell(active: self.active == 2, image: image[2])
+                GridCell(active: self.active == 4, image: image[4])
+            }
+        }
+        .background(Rectangle().fill(Color.gray))
+        .frame(width: 300, height: 300)
+        .onDrop(of: ["outfitImage.jpg"], delegate: dropDelegate)
+    }
+}
+
+struct GridCell: View {
+    let active: Bool
+    let image: UIImage?
+    
+    var body: some View {
+        let img = Image(uiImage: image!)
+            .resizable()
+            .frame(width: 150, height: 150)
+        
+        return Rectangle()
+            .fill(self.active ? Color.purple : Color.clear)
+            .frame(width: 150, height: 150)
+            .overlay(img)
+    }
+}
+
 struct ImageDropDelegate: DropDelegate {
     @Binding var image: [UIImage?]
+    @Binding var active: Int
     
     func performDrop(info: DropInfo) -> Bool {
         guard info.hasItemsConforming(to: ["outfitImage.jpg"]) else {
@@ -105,6 +150,30 @@ struct ImageDropDelegate: DropDelegate {
         }
         
         return true
+    }
+    
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        self.active = getGridPosition(location: info.location)
+        
+        return nil
+    }
+    
+    func dropExited(info: DropInfo) {
+        self.active = 0
+    }
+    
+    func getGridPosition(location: CGPoint) -> Int {
+        if location.x > 150 && location.y > 150 {
+            return 4
+        } else if location.x > 150 && location.y < 150 {
+            return 3
+        } else if location.x < 150 && location.y > 150 {
+            return 2
+        } else if location.x < 150 && location.y < 150 {
+            return 1
+        } else {
+            return 0
+        }
     }
 }
 
