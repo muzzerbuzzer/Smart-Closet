@@ -20,9 +20,23 @@ struct NewOutfitView: View {
 
     var body: some View {
         
-        VStack(spacing: 0 ) {
-            //documentBody
-            palette
+        VStack {
+        Divider()
+        Spacer()
+            HStack {
+                Text("outfit creation happens here")
+            }
+            Spacer()
+            Divider()
+             ScrollView(.horizontal) {
+                 HStack {
+                     ForEach(clothes) { clothes in
+                         ScrollingClothingView(image: clothes.image)
+                             .onDrag {return NSItemProvider(object: clothes.image as UIImage)}
+                     }
+                 }
+                 .padding()
+         } .frame(height: 70)
         }
         
         .toolbar(content: {
@@ -45,28 +59,8 @@ struct NewOutfitView: View {
         
 }
     
-    /*var documentBody: some View {
-        ZStack {
-            
-        }
-    }*/
+}
 
-    
-    var palette: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(clothes) { clothes in
-                    ScrollingClothingView(image: clothes.image)
-                        .onDrag {return NSItemProvider(object: clothes.image as UIImage)}
-                }
-            }
-            .padding()
-            .frame(height: 70)
-        
-    }
-}
-    
-}
 
 struct ScrollingClothingView: View {
     @State var image: UIImage!
@@ -92,106 +86,27 @@ struct ScrollingClothingView: View {
     }
 }
 
-struct OutfitArea: View {
-      @State private var image: UIImage!
-      @State private var active = 0
-      
-      var body: some View {
-          let dropDelegate = MyDropDelegate(image: $image, active: $active)
-          
-          return VStack {
-              HStack {
-                  GridCell(active: self.active == 1, image: image)
-                  
-                  GridCell(active: self.active == 3, image: image)
-              }
-              
-              HStack {
-                  GridCell(active: self.active == 2, image: image)
-
-                  GridCell(active: self.active == 4, image: image)
-              }
-              
-          }
-          .background(Rectangle().fill(Color.gray))
-          .frame(width: 300, height: 300)
-          .onDrop(of: ["clothesImage.jpg"], delegate: dropDelegate)
-          
-      }
-  }
-
-struct GridCell: View {
-    let active: Bool
-    let image: UIImage?
-    
-    var body: some View {
-        let droppedImage = Image(uiImage: image!)
-            .resizable()
-            .frame(width: 150, height: 150)
-        
-        return Rectangle()
-            .fill(self.active ? Color.green : Color.clear)
-            .frame(width: 150, height: 150)
-            .overlay(droppedImage)
-    }
-}
-  
-struct MyDropDelegate: DropDelegate {
-    @Binding var image: UIImage!
-    @Binding var active: Int
-    
-    func validateDrop(info: DropInfo) -> Bool {
-                return info.hasItemsConforming(to: ["clothesImage.jpg"])
-            }
+struct ImageDropDelegate: DropDelegate {
+    @Binding var image: [UIImage?]
     
     func performDrop(info: DropInfo) -> Bool {
-        
-        let gridPosition = getGridPosition(location: info.location)
-        self.active = gridPosition
-        
-        if let item = info.itemProviders(for: ["clothesImage.jpg"]).first {
-            item.loadItem(forTypeIdentifier: "clothesImage.jpg", options: nil) { (imageData, error) in
-                DispatchQueue.main.async {
-                    /*if let imageData = imageData as? Data {
-                        self.image[gridPosition] =
-                        (UIImage(data: imageData))
-                    }*/
-                }
-            }
-            return true
-            
-        } else {
+        guard info.hasItemsConforming(to: ["outfitImage.jpg"]) else {
             return false
         }
-
-    }
-    
-    func dropUpdated(info: DropInfo) -> DropProposal? {
-                self.active = getGridPosition(location: info.location)
-                            
-                return nil
-            }
-    
-    func dropExited(info: DropInfo) {
-                self.active = 0
-            }
-    
-    func getGridPosition(location: CGPoint) -> Int {
-                if location.x > 150 && location.y > 150 {
-                    return 4
-                } else if location.x > 150 && location.y < 150 {
-                    return 3
-                } else if location.x < 150 && location.y > 150 {
-                    return 2
-                } else if location.x < 150 && location.y < 150 {
-                    return 1
-                } else {
-                    return 0
+        
+        if let item = info.itemProviders(for: ["outfitImage.jpg"]).first {
+            item.loadItem(forTypeIdentifier: "outfitImage.jpg", options: nil) {(imageData, error) in
+                DispatchQueue.main.async {
+                    if let imageData = imageData as? [UIImage] {
+                        self.image = imageData
+                    }
                 }
             }
         }
-
-
+        
+        return true
+    }
+}
 
 struct NewOutfitView_Previews: PreviewProvider {
     static var previews: some View {
