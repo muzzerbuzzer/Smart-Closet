@@ -13,6 +13,7 @@ import SwiftUI
 struct Task: Identifiable {
     var id = UUID().uuidString
     var title: String
+    var outfit: UIImage
     var time: Date = Date()
 }
 
@@ -35,7 +36,7 @@ func getSampleDate(offset: Int) -> Date {
 // sample tasks
 var tasks: [TaskMetaData] = [
 
-    TaskMetaData(task: [
+    /*TaskMetaData(task: [
     
         Task(title: "Talk to iJustine"),
         Task(title: "Work on Dissertation"),
@@ -70,6 +71,6 @@ var tasks: [TaskMetaData] = [
     TaskMetaData(task: [
         
         Task(title: "Dinner with Neil")
-    ], taskDate: getSampleDate(offset: -20)),
+    ], taskDate: getSampleDate(offset: -20)),*/
     
 ]

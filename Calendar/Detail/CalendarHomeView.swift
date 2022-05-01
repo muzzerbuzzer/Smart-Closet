@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarHomeView: View {
     
     @State var currentDate: Date = Date()
+    @State private var showAddOutfitToCalendar = false
     
     var body: some View {
         
@@ -27,7 +28,7 @@ struct CalendarHomeView: View {
             HStack {
                 
                 Button {
-                    
+                    showAddOutfitToCalendar = true
                 } label: {
                     Text("Add Outfit")
                         .fontWeight(.bold)
@@ -41,6 +42,9 @@ struct CalendarHomeView: View {
             .padding(.top, 10)
             .foregroundColor(.white)
             .background(.ultraThinMaterial)
+        }
+        .sheet(isPresented: $showAddOutfitToCalendar) {
+            AddOutfittoCalendarView()
         }
     }
 }
