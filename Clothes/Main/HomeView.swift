@@ -45,6 +45,7 @@ struct HomeView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(ClothesViewModel())
+                .environmentObject(OutfitsViewModel())
                 .environmentObject(SessionServiceImpl())
         }
 

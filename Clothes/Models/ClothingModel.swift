@@ -66,7 +66,7 @@ enum Colour: String, CaseIterable, Identifiable {
 struct Clothes: Identifiable {
     let id = UUID()
     let name: String
-    let image: UIImage!
+    let image: UIImage
     let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
@@ -75,7 +75,7 @@ struct Clothes: Identifiable {
 
 extension Clothes {
     static let all: [Clothes] = [
-        Clothes(
+        /*Clothes(
             name: "Flower Corset hfjdhfs",
             image: nil,
             //image: "https://i.pinimg.com/474x/da/17/14/da1714131be5faab9eaffb63160a8d29.jpg",
@@ -92,7 +92,7 @@ extension Clothes {
             pattern: "Jean",
             category: "Jeans",
             dateAdded: "2022-16-03"
-        )/*,
+        )*//*,
         Clothes(
             name: "Platform Converse",
             //image: "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwecab2c34/images/a_107/560846C_A_107X1.jpg?sw=2000",

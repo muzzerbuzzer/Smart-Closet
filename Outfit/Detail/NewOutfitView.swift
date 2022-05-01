@@ -9,14 +9,24 @@ import Foundation
 import SwiftUI
 
 struct NewOutfitView: View {
+    
+    @State var selection: Set<UUID> = []
 
     var clothes: [Clothes]
-    var outfits: [Outfits]
+    //var outfits: [Outfits]
     @EnvironmentObject var clothesViewModel: ClothesViewModel
-    @EnvironmentObject var outfitsViewModel: OutfitsViewModel
+    //@EnvironmentObject var outfitsViewModel: OutfitsViewModel
 
     @State var image = UIImage()
     @State private var navigateToCreatedOutfit = false
+    
+   var outfitView: some View {
+        Text("outfit creation happens here")
+            .padding()
+            .background(Color.purple)
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+    }
 
     var body: some View {
         
@@ -24,8 +34,9 @@ struct NewOutfitView: View {
         Divider()
         Spacer()
             HStack {
-                //DropArea(image: image, active: active)
+                //DropArea()
                 //Text("outfit creation happens here")
+                outfitView
             }
             Spacer()
             Divider()
@@ -33,12 +44,12 @@ struct NewOutfitView: View {
                  HStack {
                      ForEach(clothes) { clothes in
                          ScrollingClothingView(image: clothes.image)
-                             .onDrag {return NSItemProvider(object: clothes.image as UIImage)}
                      }
                  }
                  .padding()
          } .frame(height: 70)
         }
+        
         
         .toolbar(content: {
             ToolbarItem {
@@ -47,7 +58,9 @@ struct NewOutfitView: View {
                         .navigationBarBackButtonHidden(true)*/
                 } label: {
                     Button {
-                        //saveOutfit()
+                        let outfitImage = outfitView.asImage
+                        
+                        print(outfitImage)
                         navigateToCreatedOutfit = true
                     } label: {
                         Label("Save", systemImage: "checkmark")
@@ -60,52 +73,42 @@ struct NewOutfitView: View {
         
 }
     
-
-    
     
 }
 
 
 struct ScrollingClothingView: View {
-    @State var image: UIImage!
+    let image: UIImage
 
     var body: some View {
         ZStack {
             HStack {
-                if (image != nil) {
                 Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
-                } else {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100, alignment: .center)
-                        .foregroundColor(.white.opacity(0.7))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                }
+                .onDrag {return NSItemProvider(object: self.image as UIImage)}
             }
         }
     }
 }
 
 struct DropArea: View {
-    @State var image: [UIImage?]
+    @State var draggedImage: UIImage
     @State var active = 0
     
     var body: some View {
-        let dropDelegate = ImageDropDelegate(image: $image, active: $active)
+        let dropDelegate = ImageDropDelegate(image: $draggedImage, active: $active)
         
         return VStack {
             HStack {
-                GridCell(active: self.active == 1, image: image[1])
-                GridCell(active: self.active == 3, image: image[3])
+                GridCell(active: self.active == 1, image: draggedImage)
+                GridCell(active: self.active == 3, image: draggedImage)
             }
             
             HStack {
-                GridCell(active: self.active == 2, image: image[2])
-                GridCell(active: self.active == 4, image: image[4])
+                GridCell(active: self.active == 2, image: draggedImage)
+                GridCell(active: self.active == 4, image: draggedImage)
             }
         }
         .background(Rectangle().fill(Color.gray))
@@ -131,7 +134,7 @@ struct GridCell: View {
 }
 
 struct ImageDropDelegate: DropDelegate {
-    @Binding var image: [UIImage?]
+    @Binding var image: UIImage
     @Binding var active: Int
     
     func performDrop(info: DropInfo) -> Bool {
@@ -142,7 +145,7 @@ struct ImageDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: ["outfitImage.jpg"]).first {
             item.loadItem(forTypeIdentifier: "outfitImage.jpg", options: nil) {(imageData, error) in
                 DispatchQueue.main.async {
-                    if let imageData = imageData as? [UIImage] {
+                    if let imageData = imageData as? UIImage {
                         self.image = imageData
                     }
                 }
@@ -179,24 +182,30 @@ struct ImageDropDelegate: DropDelegate {
 
 struct NewOutfitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewOutfitView(clothes: Clothes.all, outfits: Outfits.all)
+        NewOutfitView(clothes: Clothes.all/*, outfits: Outfits.all*/)
             .environmentObject(ClothesViewModel())
+            //.environmentObject(OutfitsViewModel())
     }
 }
 
-/*extension NewOutfitView{
-    private func saveOutfit() {
-        let now = Date()
+extension NewOutfitView {
+    var asImage: UIImage {
+        //must ignore safe area due to bug in ios 15+
+        let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.top))
+        let view = controller.view
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: CGPoint(x: 0, y: 0), size: targetSize)
+        view?.backgroundColor = .clear
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        let dateAdded = dateFormatter.string(from: now)
-        print (dateAdded)
-        
-        let outfits = Outfits(image: image/*, dateAdded: dateAdded*/)
-        
-        outfitsViewModel.addOutfit(outfits: outfits)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 3 //ensures 3x-scale images; can be customised
+        let renderer = UIGraphicsImageRenderer(size: targetSize, format: format)
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
     }
-    
-}*/
+}
+
+        
+        //outfitsViewModel.addOutfit(outfits: outfits)
+

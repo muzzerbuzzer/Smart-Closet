@@ -98,9 +98,10 @@ struct NewClothesView: View {
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToClothingItem) {
-                        ClothesView(clothes: clothesViewModel.closet.sorted {
+                        /*ClothesView(clothes: clothesViewModel.closet.sorted {
                             $0.dateAdded < $1.dateAdded} [1])
-                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true)*/
+                        HomeView()
                     } label: {
                         Button {
                             saveItem()
