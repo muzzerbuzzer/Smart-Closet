@@ -10,12 +10,10 @@ import SwiftUI
 
 struct NewOutfitView: View {
     
-    @State var selection: Set<UUID> = []
-
     var clothes: [Clothes]
-    //var outfits: [Outfits]
+    var outfits: [Outfits]
     @EnvironmentObject var clothesViewModel: ClothesViewModel
-    //@EnvironmentObject var outfitsViewModel: OutfitsViewModel
+    @EnvironmentObject var outfitsViewModel: OutfitsViewModel
 
     @State var image = UIImage()
     @State private var navigateToCreatedOutfit = false
@@ -54,13 +52,14 @@ struct NewOutfitView: View {
         .toolbar(content: {
             ToolbarItem {
                 NavigationLink(isActive: $navigateToCreatedOutfit) {
-                    /*OutfitsView(outfits: Outfits.all[0])
-                        .navigationBarBackButtonHidden(true)*/
+                    OutfitImagesView()
                 } label: {
                     Button {
                         let outfitImage = outfitView.asImage
                         
-                        print(outfitImage)
+                        let outfits = Outfits(image: outfitImage)
+                        outfitsViewModel.addOutfit(outfits: outfits)
+                        
                         navigateToCreatedOutfit = true
                     } label: {
                         Label("Save", systemImage: "checkmark")
@@ -182,13 +181,13 @@ struct ImageDropDelegate: DropDelegate {
 
 struct NewOutfitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewOutfitView(clothes: Clothes.all/*, outfits: Outfits.all*/)
+        NewOutfitView(clothes: Clothes.all, outfits: Outfits.all)
             .environmentObject(ClothesViewModel())
-            //.environmentObject(OutfitsViewModel())
+            .environmentObject(OutfitsViewModel())
     }
 }
 
-extension NewOutfitView {
+extension View {
     var asImage: UIImage {
         //must ignore safe area due to bug in ios 15+
         let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.top))

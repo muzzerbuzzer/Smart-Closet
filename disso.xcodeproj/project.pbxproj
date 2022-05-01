@@ -39,7 +39,7 @@
 		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
 		AFCF371927DFDA7E004067AA /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371827DFDA7E004067AA /* CategoriesView.swift */; };
 		AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371A27DFDAC8004067AA /* AddClothesView.swift */; };
-		AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371C27DFDAFA004067AA /* FavouritesView.swift */; };
+		AFCF371D27DFDAFA004067AA /* OutfitImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371C27DFDAFA004067AA /* OutfitImagesView.swift */; };
 		AFCF372127DFDB3F004067AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF372027DFDB3F004067AA /* SettingsView.swift */; };
 		AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF372227DFDB8A004067AA /* TabBar.swift */; };
 		AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF375C27E230CA004067AA /* ClothingModel.swift */; };
@@ -117,7 +117,7 @@
 		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AFCF371827DFDA7E004067AA /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		AFCF371A27DFDAC8004067AA /* AddClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesView.swift; sourceTree = "<group>"; };
-		AFCF371C27DFDAFA004067AA /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		AFCF371C27DFDAFA004067AA /* OutfitImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitImagesView.swift; sourceTree = "<group>"; };
 		AFCF372027DFDB3F004067AA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AFCF372227DFDB8A004067AA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AFCF375C27E230CA004067AA /* ClothingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingModel.swift; sourceTree = "<group>"; };
@@ -318,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				AFECFD402804C38900ABB119 /* AddOutfitView.swift */,
+				AFCF371C27DFDAFA004067AA /* OutfitImagesView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -441,7 +442,6 @@
 				AFCF371627DFDA2B004067AA /* HomeView.swift */,
 				AFCF371827DFDA7E004067AA /* CategoriesView.swift */,
 				AFCF371A27DFDAC8004067AA /* AddClothesView.swift */,
-				AFCF371C27DFDAFA004067AA /* FavouritesView.swift */,
 				AFCF372027DFDB3F004067AA /* SettingsView.swift */,
 			);
 			path = Main;
@@ -807,7 +807,7 @@
 				AFA2ADAA27FA1F28006B9D3F /* InputPasswordView.swift in Sources */,
 				AFCF371527DFD90C004067AA /* ContentView.swift in Sources */,
 				AFEC296827FCD43C00FAEF8F /* SessionService.swift in Sources */,
-				AFCF371D27DFDAFA004067AA /* FavouritesView.swift in Sources */,
+				AFCF371D27DFDAFA004067AA /* OutfitImagesView.swift in Sources */,
 				AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

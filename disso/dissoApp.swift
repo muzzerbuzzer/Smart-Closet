@@ -23,6 +23,7 @@ struct dissoApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var sessionService = SessionServiceImpl()
     @StateObject var clothesViewModel = ClothesViewModel()
+    @StateObject var outfitsViewModel = OutfitsViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -32,6 +33,7 @@ struct dissoApp: App {
                     ContentView()
                         .environmentObject(sessionService)
                         .environmentObject(clothesViewModel)
+                        .environmentObject(outfitsViewModel)
                 case .loggedOut:
                     LoginView()
                 }

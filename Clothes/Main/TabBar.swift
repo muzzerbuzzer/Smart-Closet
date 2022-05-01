@@ -25,10 +25,10 @@ struct TabBar: View {
                     Label("Add Outfit", systemImage: "tshirt.fill")
                 }
             
-            /*FavouritesView()
+            OutfitImagesView()
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
-                }*/
+                }
             
             CategoriesView()
                 .tabItem {

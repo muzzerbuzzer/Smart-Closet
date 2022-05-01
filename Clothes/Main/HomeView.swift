@@ -12,8 +12,8 @@ struct HomeView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     @EnvironmentObject var sessionService: SessionServiceImpl
     
-    @State private var selectedView = "Clothes"
-    let views = ["Clothes", "Outfits"]
+    /*@State private var selectedView = "Clothes"
+    let views = ["Clothes", "Outfits"]*/
     
     var body: some View {
         //NavigationView {
@@ -45,7 +45,6 @@ struct HomeView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(ClothesViewModel())
-                .environmentObject(OutfitsViewModel())
                 .environmentObject(SessionServiceImpl())
         }
 
