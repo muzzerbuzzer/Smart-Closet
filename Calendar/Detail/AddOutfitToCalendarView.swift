@@ -73,7 +73,7 @@ struct AddOutfittoCalendarView: View {
                     } label: {
                         Button {
                             let task = Task(title: name, outfit: outfitImage)
-                            calendarViewModel.addTask(task)
+                            //calendarViewModel.addTask(task)
                             
                             navigateToCalendar = true
                         } label: {

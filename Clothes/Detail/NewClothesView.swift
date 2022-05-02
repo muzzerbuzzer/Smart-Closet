@@ -8,6 +8,9 @@
 import SwiftUI
 import Photos
 import PhotosUI
+import FirebaseAuth
+import FirebaseStorage
+import Firebase
 
 struct NewClothesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
@@ -105,7 +108,9 @@ struct NewClothesView: View {
                     } label: {
                         Button {
                             saveItem()
+                            uploadItem()
                             navigateToClothingItem = true
+
                         } label: {
                             Label("Save", systemImage: "checkmark")
                                 .labelStyle(.iconOnly)
@@ -141,6 +146,20 @@ extension NewClothesView{
         let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
+    }
+    
+    private func uploadItem() {
+        let imgData = image.jpegData(compressionQuality: 0.4)
+        let user = Auth.auth().currentUser?.uid
+        let db = Firestore.firestore()
+        let imgN = UUID().uuidString
+        let ref = Storage.storage().reference().child("users").child(user!).child("clothes")
+
+        ref.child(imgN).putData(imgData!, metadata: nil) { (meta, err) in
+            if err != nil {return}
+        }
+
+        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "category": selectedCategory, "colour": selectedColour, "pattern": pattern])
     }
     
 }
