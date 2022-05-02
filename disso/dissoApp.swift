@@ -24,6 +24,7 @@ struct dissoApp: App {
     @StateObject var sessionService = SessionServiceImpl()
     @StateObject var clothesViewModel = ClothesViewModel()
     @StateObject var outfitsViewModel = OutfitsViewModel()
+    @StateObject var calendarViewModel = CalendarViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -34,6 +35,8 @@ struct dissoApp: App {
                         .environmentObject(sessionService)
                         .environmentObject(clothesViewModel)
                         .environmentObject(outfitsViewModel)
+                        .environmentObject(calendarViewModel)
+                    
                 case .loggedOut:
                     LoginView()
                 }

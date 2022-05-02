@@ -50,6 +50,7 @@ struct TabBar_Previews: PreviewProvider {
         TabBar()
             .environmentObject(ClothesViewModel())
             .environmentObject(OutfitsViewModel())
+            .environmentObject(CalendarViewModel())
             //.environmentObject(SessionServiceImpl())
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CalendarHomeView: View {
     
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
+    
     @State var currentDate: Date = Date()
     @State private var showAddOutfitToCalendar = false
     
@@ -52,5 +54,6 @@ struct CalendarHomeView: View {
 struct CalendarHomeView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarHomeView()
+            .environmentObject(CalendarViewModel())
     }
 }

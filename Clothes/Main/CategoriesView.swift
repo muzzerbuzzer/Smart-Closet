@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CategoriesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
     
     var body: some View {
         NavigationView {
@@ -35,5 +36,6 @@ struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesView()
             .environmentObject(ClothesViewModel())
+            .environmentObject(CalendarViewModel())
     }
 }

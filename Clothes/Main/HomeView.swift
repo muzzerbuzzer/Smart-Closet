@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     @EnvironmentObject var sessionService: SessionServiceImpl
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
     
     /*@State private var selectedView = "Clothes"
     let views = ["Clothes", "Outfits"]*/
@@ -27,7 +28,9 @@ struct HomeView: View {
         
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
         //}
-        .navigationViewStyle(.stack)
+        .navigationViewStyle(StackNavigationViewStyle())
+        
+
         
         /*.toolbar(content: {
             Picker("Category", selection: $selectedView) {
@@ -46,6 +49,19 @@ struct HomeView_Previews: PreviewProvider {
             HomeView()
                 .environmentObject(ClothesViewModel())
                 .environmentObject(SessionServiceImpl())
+                .environmentObject(CalendarViewModel())
+            
+                .toolbar(content: {
+
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        
+                        NavigationLink(destination: CalendarView()) {
+                            Label("Calendar", systemImage: "calendar")
+                                .labelStyle(.iconOnly)
+                                .foregroundColor(.purple)
+                        }
+               }
+            })
         }
 
     }

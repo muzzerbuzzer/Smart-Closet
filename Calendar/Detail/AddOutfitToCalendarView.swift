@@ -11,7 +11,7 @@ import Photos
 import PhotosUI
 
 struct AddOutfittoCalendarView: View {
-    @EnvironmentObject var clothesViewModel: ClothesViewModel
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
     
     @State private var name: String = ""
     @State private var outfitImage = UIImage()
@@ -65,14 +65,16 @@ struct AddOutfittoCalendarView: View {
                             .labelStyle(.iconOnly)
                             .foregroundColor(.purple)
                     }
-                }
+                } 
                 
                 ToolbarItem {
                     NavigationLink(isActive: $navigateToCalendar) {
                         CalendarHomeView()
                     } label: {
                         Button {
-                            //saveItem()
+                            let task = Task(title: name, outfit: outfitImage)
+                            calendarViewModel.addTask(task)
+                            
                             navigateToCalendar = true
                         } label: {
                             Label("Save", systemImage: "checkmark")
@@ -93,6 +95,6 @@ struct AddOutfittoCalendarView: View {
 struct AddOutfittoCalendarView_Previews: PreviewProvider {
     static var previews: some View {
         AddOutfittoCalendarView()
-            .environmentObject(ClothesViewModel())
+            .environmentObject(CalendarViewModel())
     }
 }

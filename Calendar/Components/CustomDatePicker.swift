@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CustomDatePicker: View {
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
+    
     @Binding var currentDate: Date
     
     //to update the month when the arrow button is clicked
@@ -240,6 +242,7 @@ struct CustomDatePicker: View {
 struct CustomDatePicker_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()
+            .environmentObject(CalendarViewModel())
     }
 }
 

@@ -24,6 +24,7 @@
 		AF190AE527DD1DA600498779 /* dissoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF190AE427DD1DA600498779 /* dissoUITestsLaunchTests.swift */; };
 		AF190AF227DD29EF00498779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF190AF127DD29EF00498779 /* GoogleService-Info.plist */; };
 		AF62B354281F3AD30007255D /* AddOutfitToCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62B353281F3AD30007255D /* AddOutfitToCalendarView.swift */; };
+		AF62B357281F4B630007255D /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62B356281F4B630007255D /* CalendarViewModel.swift */; };
 		AF7DA19C280895690003EFE0 /* ImagePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */; };
 		AFA2ADA127FA150E006B9D3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA027FA150E006B9D3F /* LoginView.swift */; };
 		AFA2ADA527FA17EA006B9D3F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */; };
@@ -103,6 +104,7 @@
 		AF190AF127DD29EF00498779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF190AF427DFC8A600498779 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = /Users/NikaPakravan/Desktop/uni/disso/disso/dissoUITests/Models; sourceTree = "<absolute>"; };
 		AF62B353281F3AD30007255D /* AddOutfitToCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitToCalendarView.swift; sourceTree = "<group>"; };
+		AF62B356281F4B630007255D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		AF7DA19B280895680003EFE0 /* ImagePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerModel.swift; sourceTree = "<group>"; };
 		AFA2ADA027FA150E006B9D3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AFA2ADA427FA17EA006B9D3F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		AF2FFB412815CB9C006EB313 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				AF62B355281F4B540007255D /* ViewModel */,
 				AF2FFB452815CBD7006EB313 /* Components */,
 				AF2FFB442815CBC3006EB313 /* Main */,
 				AF2FFB432815CBB9006EB313 /* Detail */,
@@ -324,6 +327,14 @@
 				AFCF371C27DFDAFA004067AA /* OutfitImagesView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		AF62B355281F4B540007255D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF62B356281F4B630007255D /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AFA2AD9D27FA14C2006B9D3F /* Feature */ = {
@@ -805,6 +816,7 @@
 				AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */,
 				AFCF371B27DFDAC8004067AA /* AddClothesView.swift in Sources */,
 				AFCF375D27E230CA004067AA /* ClothingModel.swift in Sources */,
+				AF62B357281F4B630007255D /* CalendarViewModel.swift in Sources */,
 				AF025A9E27E2416000FB7123 /* ClothesList.swift in Sources */,
 				AFEC295F27FCCDC500FAEF8F /* RegistrationViewModel.swift in Sources */,
 				AFFB8752281B2E0C00C33214 /* OutfitList.swift in Sources */,

@@ -15,7 +15,7 @@ struct ContentView: View {
             
         //}
         
-            .toolbar(content: {
+            /*.toolbar(content: {
 
                 ToolbarItem {
                     
@@ -25,7 +25,7 @@ struct ContentView: View {
                             .foregroundColor(.purple)
                     }
            }
-        })
+        })*/
         
         
     }
@@ -36,5 +36,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(ClothesViewModel())
             .environmentObject(SessionServiceImpl())
+            .environmentObject(CalendarViewModel())
+            .environmentObject(OutfitsViewModel())
     }
 }
