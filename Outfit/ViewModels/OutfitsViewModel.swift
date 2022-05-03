@@ -19,6 +19,8 @@ class OutfitsViewModel: ObservableObject {
         createdOutfits.append(outfits)
     }
     
+
+    
 }
 
  

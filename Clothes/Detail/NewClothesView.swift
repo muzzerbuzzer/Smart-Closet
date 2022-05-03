@@ -107,7 +107,7 @@ struct NewClothesView: View {
                         HomeView()
                     } label: {
                         Button {
-                            saveItem()
+                            //saveItem()
                             uploadItem()
                             navigateToClothingItem = true
 
@@ -134,7 +134,7 @@ struct NewClothesView_Previews: PreviewProvider {
 }
 
 extension NewClothesView{
-    private func saveItem() {
+    /*private func saveItem() {
         let now = Date()
         
         let dateFormatter = DateFormatter()
@@ -146,7 +146,7 @@ extension NewClothesView{
         let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue, dateAdded: dateAdded)
         
         clothesViewModel.addClothes(clothes: clothes)
-    }
+    }*/
     
     private func uploadItem() {
         let imgData = image.jpegData(compressionQuality: 0.4)
@@ -159,8 +159,13 @@ extension NewClothesView{
             if err != nil {return}
         }
 
-        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "category": selectedCategory, "colour": selectedColour, "pattern": pattern])
+        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "pattern": pattern])
+        
+        let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)
+        
+        clothesViewModel.addClothes(clothes: clothes)
     }
     
 }
 
+//"category": selectedCategory, "colour": selectedColour,

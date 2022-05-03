@@ -11,6 +11,7 @@ struct ClothesView: View {
     var clothes: Clothes
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     
+    
     var body: some View {
         ScrollView {
             
@@ -69,6 +70,9 @@ struct ClothesView: View {
             
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
+        }
+        .onAppear() {
+            self.clothesViewModel.getAllData(clothes: clothes)
         }
 
     }

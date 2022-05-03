@@ -70,7 +70,7 @@ struct Clothes: Identifiable {
     let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
-    let dateAdded: String
+    //let dateAdded: String
 }
 
 extension Clothes {
