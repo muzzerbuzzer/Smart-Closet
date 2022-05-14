@@ -14,12 +14,13 @@ import Firebase
 
 struct NewClothesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
+    @ObservedObject private var viewModel = ClothesViewModel()
     
     @State private var name: String = ""
     @State private var selectedCategory: Category = Category.bag
     @State private var selectedColour: Colour = Colour.red
     @State private var pattern: String = ""
-    //@State private var image: String = ""
+    @State private var clothingImage: String = ""
     @State private var navigateToClothingItem = false
     
     @State var addImage = false
@@ -159,13 +160,13 @@ extension NewClothesView{
             if err != nil {return}
         }
 
-        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "pattern": pattern])
+        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "pattern": pattern, "category": selectedCategory.rawValue, "colour": selectedColour.rawValue])
         
-        let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)
+        /*let clothes = Clothes(name: name, image: clothingImage, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)
         
-        clothesViewModel.addClothes(clothes: clothes)
+        clothesViewModel.addClothes(clothes: clothes)*/
     }
     
 }
 
-//"category": selectedCategory, "colour": selectedColour,
+

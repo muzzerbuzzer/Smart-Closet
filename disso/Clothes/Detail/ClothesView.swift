@@ -10,17 +10,16 @@ import SwiftUI
 struct ClothesView: View {
     var clothes: Clothes
     @EnvironmentObject var clothesViewModel: ClothesViewModel
+    @ObservedObject private var viewModel = ClothesViewModel()
     
     
     var body: some View {
         ScrollView {
-            
-            if (clothes.image != nil) {
-            Image(uiImage: clothes.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                
-            } else {
+            AsyncImage(url: URL(string: clothes.image)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
@@ -71,15 +70,15 @@ struct ClothesView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
-        /*.onAppear() {
-            self.clothesViewModel.getAllData(clothes: clothes)
-        }*/
+        .onAppear() {
+            self.viewModel.fetchClothes()
+        }
 
     }
 }
 
-struct ClothesView_Previews: PreviewProvider {
+/*struct ClothesView_Previews: PreviewProvider {
     static var previews: some View {
-        ClothesView(clothes: Clothes.all[0])
+        //ClothesView(clothes: Clothes.all[0])
     }
-}
+}*/

@@ -66,14 +66,14 @@ enum Colour: String, CaseIterable, Identifiable {
 struct Clothes: Identifiable {
     let id = UUID()
     let name: String
-    let image: UIImage
+    let image: String
     let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
     //let dateAdded: String
 }
 
-extension Clothes {
+/*extension Clothes {
     static let all: [Clothes] = [
         /*Clothes(
             name: "Flower Corset hfjdhfs",
@@ -110,4 +110,4 @@ extension Clothes {
             dateAdded: "2022-16-03"
         )*/
     ]
-}
+}*/

@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+import FirebaseAuth
+import FirebaseStorage
+import Firebase
 
 struct NewOutfitView: View {
     
@@ -41,9 +44,9 @@ struct NewOutfitView: View {
             Divider()
              ScrollView(.horizontal) {
                  HStack {
-                     ForEach(clothes) { clothes in
+                     /*ForEach(clothes) { clothes in
                          ScrollingClothingView(image: clothes.image)
-                     }
+                     }*/
                  }
                  .padding()
          } .frame(height: 70)
@@ -180,11 +183,33 @@ struct ImageDropDelegate: DropDelegate {
     }
 }
 
-struct NewOutfitView_Previews: PreviewProvider {
+/*struct NewOutfitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewOutfitView(clothes: Clothes.all, outfits: Outfits.all)
+        /*NewOutfitView(clothes: Clothes.all, outfits: Outfits.all)
             .environmentObject(ClothesViewModel())
-            .environmentObject(OutfitsViewModel())
+            .environmentObject(OutfitsViewModel())*/
+    }
+}*/
+
+extension NewOutfitView {
+    private func uploadItem() {
+        let imgData = image.jpegData(compressionQuality: 0.4)
+        let user = Auth.auth().currentUser?.uid
+        let db = Firestore.firestore()
+        let imgN = UUID().uuidString
+        let ref = Storage.storage().reference().child("users").child(user!).child("outfits")
+
+        ref.child(imgN).putData(imgData!, metadata: nil) { (meta, err) in
+            if err != nil {return}
+        }
+
+        db.collection("users").document(user!).collection("outfits").addDocument(data: ["imgName":imgN])
+        
+        let outfits = Outfits(image: image)
+        
+        /*let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)*/
+        
+        //clothesViewModel.addClothes(clothes: clothes)
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClothesList: View {
     var clothes: [Clothes]
+    @ObservedObject private var viewModel = ClothesViewModel()
     
     var body: some View {
         VStack {
@@ -32,13 +33,16 @@ struct ClothesList: View {
                                 
       }
       .padding(.horizontal)
+      .onAppear() {
+          self.viewModel.fetchClothes()
+      }
   }
 }
 
 struct ClothesList_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
-            ClothesList(clothes: Clothes.all)
+            //ClothesList(clothes: Clothes.all)
         }
     }
 }

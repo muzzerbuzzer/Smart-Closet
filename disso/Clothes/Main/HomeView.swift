@@ -13,6 +13,8 @@ struct HomeView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     @EnvironmentObject var calendarViewModel: CalendarViewModel
     
+    @ObservedObject private var viewModel = ClothesViewModel()
+    
     /*@State private var selectedView = "Clothes"
     let views = ["Clothes", "Outfits"]*/
     
@@ -23,10 +25,12 @@ struct HomeView: View {
                 
                 ClothesList(clothes: clothesViewModel.closet)
                 
-                
             }
         
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
+            .onAppear() {
+                self.viewModel.fetchClothes()
+            }
         //}
         .navigationViewStyle(StackNavigationViewStyle())
         
