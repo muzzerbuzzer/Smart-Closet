@@ -19,11 +19,12 @@ struct NewOutfitView: View {
     @State private var navigateToCreatedOutfit = false
     
    var outfitView: some View {
-        Text("outfit creation happens here")
+        /*Text("outfit creation happens here")
             .padding()
             .background(Color.purple)
             .foregroundColor(.white)
-            .clipShape(Capsule())
+            .clipShape(Capsule())*/
+       DropArea(draggedImage: image)
     }
 
     var body: some View {
@@ -32,7 +33,7 @@ struct NewOutfitView: View {
         Divider()
         Spacer()
             HStack {
-                //DropArea()
+                //DropArea(draggedImage: UIImage())
                 //Text("outfit creation happens here")
                 outfitView
             }

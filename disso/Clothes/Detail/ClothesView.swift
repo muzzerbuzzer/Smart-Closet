@@ -71,9 +71,9 @@ struct ClothesView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
-        .onAppear() {
+        /*.onAppear() {
             self.clothesViewModel.getAllData(clothes: clothes)
-        }
+        }*/
 
     }
 }

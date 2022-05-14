@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import Firebase
 
 class OutfitsViewModel: ObservableObject {
     @Published private(set) var createdOutfits: [Outfits] = []
     
-    init() {
+    
+    private var db = Firestore.firestore()
+    
+    func fetchData() {
+        db.collection("outfits")
+    }
+    
+    
+    
+    /*init() {
         createdOutfits = Outfits.all
 
     }
     
     func addOutfit(outfits: Outfits) {
         createdOutfits.append(outfits)
-    }
+    }*/
     
 
     
