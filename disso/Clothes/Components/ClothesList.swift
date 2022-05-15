@@ -41,12 +41,12 @@ struct ClothesList: View {
 
 }
 
-struct ClothesList_Previews: PreviewProvider {
+/*struct ClothesList_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
-            //ClothesList(clothes: Clothes.all)
+            ClothesList(clothes: Clothes.all)
         }
     }
-}
+}*/
 
 

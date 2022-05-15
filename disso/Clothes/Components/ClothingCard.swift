@@ -76,7 +76,7 @@ struct ClothingCard: View {
         }
         .frame(width: 160, height: 217, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors:[Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        //.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
         /*.onAppear() {
             self.clothesViewModel.fetchClothes()
@@ -86,7 +86,7 @@ struct ClothingCard: View {
 
 /*struct ClothingCard_Previews: PreviewProvider {
     static var previews: some View {
-        //ClothingCard(clothes:Clothes.all[0])
+        ClothingCard(clothes:Clothes.all[0])
     }
 }*/
 

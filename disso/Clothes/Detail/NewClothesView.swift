@@ -150,17 +150,34 @@ extension NewClothesView{
     }*/
     
     private func uploadItem() {
-        let imgData = image.jpegData(compressionQuality: 0.4)
+        let photoData = image.jpegData(compressionQuality: 0.5)
         let user = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         let imgN = UUID().uuidString
         let ref = Storage.storage().reference().child("users").child(user!).child("clothes")
+        
+        //create image metadata so it can be viewed in firebase console
+        let imageMetaData = StorageMetadata()
+        imageMetaData.contentType = "image/jpeg"
 
-        ref.child(imgN).putData(imgData!, metadata: nil) { (meta, err) in
+        ref.child(imgN).putData(photoData!, metadata: imageMetaData) { (meta, err) in
             if err != nil {return}
+            
+            ref.child(imgN).downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                
+                let imageURL = url.absoluteString
+                print("Download URL: \(imageURL)")
+                UserDefaults.standard.set(imageURL, forKey: "url")
+                
+                db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName": imageURL ,"name": name, "pattern": pattern, "category": selectedCategory.rawValue, "colour": selectedColour.rawValue])
+                
+            })
         }
 
-        db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName":imgN,"name": name, "pattern": pattern, "category": selectedCategory.rawValue, "colour": selectedColour.rawValue])
+        /*db.collection("users").document(user!).collection("clothes").addDocument(data: ["imgName": imgN ,"name": name, "pattern": pattern, "category": selectedCategory.rawValue, "colour": selectedColour.rawValue])*/
         
         /*let clothes = Clothes(name: name, image: clothingImage, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)
         
