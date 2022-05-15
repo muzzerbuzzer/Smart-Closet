@@ -22,6 +22,9 @@ struct OutfitImagesView: View {
         
                 .navigationTitle("Outfits")
         .navigationViewStyle(.stack)
+        .onAppear() {
+            self.outfitsViewModel.fetchOutfits()
+        }
     }
 }
 

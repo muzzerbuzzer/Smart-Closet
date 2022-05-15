@@ -16,9 +16,24 @@ struct OutfitCard: View {
     var body: some View {
         VStack {
             
-            Image(uiImage: outfits.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+            AsyncImage(url: URL(string: outfits.image)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .overlay(alignment: .bottom) {
+
+                    }
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .foregroundColor(.white.opacity(0.7))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .overlay(alignment: .bottom) {
+
+                    }
+            }
             }
         .frame(width: 160, height: 217, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors:[Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))

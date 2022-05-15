@@ -12,28 +12,6 @@ class OutfitsViewModel: ObservableObject {
     @Published private(set) var createdOutfits: [Outfits] = []
     
     
-    /*private var db = Firestore.firestore()
-    
-    func fetchData() {
-        db.collection("outfits").addSnapshotListener {(querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("no documents")
-                return
-            }
-            
-            documents.map { (queryDocumentSnapshot) -> Outfits in
-                let data = queryDocumentSnapshot.data()
-                
-                let outfitImage = data["image"]
-                
-                let outfit = Outfits(image: outfitImage as! UIImage)
-                return outfit
-            }
-        }
-    }*/
-    
-    
-    
     init() {
         createdOutfits = Outfits.all
 
@@ -43,7 +21,27 @@ class OutfitsViewModel: ObservableObject {
         createdOutfits.append(outfits)
     }
     
+    private var db = Firestore.firestore()
+    
+    func fetchOutfits() {
+        let user = Auth.auth().currentUser?.uid
+        
+        db.collection("users").document(user!).collection("clothes").addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
 
+                self.createdOutfits = documents.map { (queryDocumentSnapshot) -> Outfits in
+                    let data = queryDocumentSnapshot.data()
+                    
+                    let outfitImage = data["outfitLink"] as? String ?? ""
+                    
+                    return Outfits(image: outfitImage)
+
+                }
+            }
+    }
     
 }
 

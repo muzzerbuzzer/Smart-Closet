@@ -18,6 +18,7 @@ struct NewOutfitView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     @EnvironmentObject var outfitsViewModel: OutfitsViewModel
 
+    @State var clothingImage = String()
     @State var image = UIImage()
     @State private var navigateToCreatedOutfit = false
     
@@ -27,7 +28,7 @@ struct NewOutfitView: View {
             .background(Color.purple)
             .foregroundColor(.white)
             .clipShape(Capsule())*/
-       DropArea(draggedImage: image)
+       DropArea(draggedImage: clothingImage)
     }
 
     var body: some View {
@@ -44,9 +45,9 @@ struct NewOutfitView: View {
             Divider()
              ScrollView(.horizontal) {
                  HStack {
-                     /*ForEach(clothes) { clothes in
-                         ScrollingClothingView(image: clothes.image)
-                     }*/
+                     ForEach(clothesViewModel.closet) { clothes in
+                         ScrollingClothingView(clothingImage: clothes.image)
+                     }
                  }
                  .padding()
          } .frame(height: 70)
@@ -60,9 +61,10 @@ struct NewOutfitView: View {
                 } label: {
                     Button {
                         let outfitImage = outfitView.asImage
+                        uploadOutfit()
                         
-                        let outfits = Outfits(image: outfitImage)
-                        outfitsViewModel.addOutfit(outfits: outfits)
+                        /*let outfits = Outfits(image: outfitImage)
+                        outfitsViewModel.addOutfit(outfits: outfits)*/
                         
                         navigateToCreatedOutfit = true
                     } label: {
@@ -73,6 +75,9 @@ struct NewOutfitView: View {
                 }
             }
         })
+        .onAppear() {
+            self.clothesViewModel.fetchClothes()
+        }
         
 }
     
@@ -81,23 +86,32 @@ struct NewOutfitView: View {
 
 
 struct ScrollingClothingView: View {
-    let image: UIImage
+    let clothingImage: String
 
     var body: some View {
         ZStack {
             HStack {
-                Image(uiImage: image)
+                AsyncImage(url: URL(string: clothingImage)) { image in
+                    image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
-                .onDrag {return NSItemProvider(object: self.image as UIImage)}
+                .onDrag { return NSItemProvider(object: self.clothingImage as String as NSItemProviderWriting) }
+                } placeholder: {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .foregroundColor(.white.opacity(0.7))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
             }
         }
     }
 }
 
 struct DropArea: View {
-    @State var draggedImage: UIImage
+    @State var draggedImage: String
     @State var active = 0
     
     var body: some View {
@@ -116,18 +130,28 @@ struct DropArea: View {
         }
         .background(Rectangle().fill(Color.gray))
         .frame(width: 300, height: 300)
-        .onDrop(of: ["outfitImage.jpg"], delegate: dropDelegate)
+        .onDrop(of: ["outfitLink"], delegate: dropDelegate)
     }
 }
 
 struct GridCell: View {
     let active: Bool
-    let image: UIImage?
+    let image: String?
     
     var body: some View {
-        let img = Image(uiImage: image!)
-            .resizable()
-            .frame(width: 150, height: 150)
+        let img = AsyncImage(url: URL(string: image!)) { image in
+            image
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 150, height: 150)
+        } placeholder: {
+            Image(systemName: "photo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100, alignment: .center)
+                .foregroundColor(.white.opacity(0.7))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
         
         return Rectangle()
             .fill(self.active ? Color.purple : Color.clear)
@@ -137,18 +161,21 @@ struct GridCell: View {
 }
 
 struct ImageDropDelegate: DropDelegate {
-    @Binding var image: UIImage
+    @Binding var image: String
     @Binding var active: Int
     
     func performDrop(info: DropInfo) -> Bool {
-        guard info.hasItemsConforming(to: ["outfitImage.jpg"]) else {
+        guard info.hasItemsConforming(to: ["outfitLink"]) else {
             return false
         }
         
-        if let item = info.itemProviders(for: ["outfitImage.jpg"]).first {
-            item.loadItem(forTypeIdentifier: "outfitImage.jpg", options: nil) {(imageData, error) in
+        let gridPosition = getGridPosition(location: info.location)
+        self.active = gridPosition
+        
+        if let item = info.itemProviders(for: ["outfitLink"]).first {
+            item.loadItem(forTypeIdentifier: "outfitLink", options: nil) {(imageData, error) in
                 DispatchQueue.main.async {
-                    if let imageData = imageData as? UIImage {
+                    if let imageData = imageData as? String {
                         self.image = imageData
                     }
                 }
@@ -192,20 +219,38 @@ struct ImageDropDelegate: DropDelegate {
 }*/
 
 extension NewOutfitView {
-    private func uploadItem() {
-        let imgData = image.jpegData(compressionQuality: 0.4)
+    private func uploadOutfit() {
+        let photoData = image.jpegData(compressionQuality: 0.5)
         let user = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
-        let imgN = UUID().uuidString
+        let photoName = UUID().uuidString
         let ref = Storage.storage().reference().child("users").child(user!).child("outfits")
+        
+        //create image metadata so it can be viewed in firebase console
+        let imageMetaData = StorageMetadata()
+        imageMetaData.contentType = "image/jpeg"
 
-        ref.child(imgN).putData(imgData!, metadata: nil) { (meta, err) in
+        ref.child(photoName).putData(photoData!, metadata: imageMetaData) { (meta, err) in
             if err != nil {return}
+            
+            ref.child(photoName).downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+            }
+                
+                let imageURL = url.absoluteString
+                print("Download URL: \(imageURL)")
+                UserDefaults.standard.set(imageURL, forKey: "url")
+                
+                db.collection("users").document(user!).collection("outfits").addDocument(data: ["outfitLink":imageURL])
+                
+            })
+            
         }
 
-        db.collection("users").document(user!).collection("outfits").addDocument(data: ["imgName":imgN])
         
-        let outfits = Outfits(image: image)
+        
+        //let outfits = Outfits(image: image)
         
         /*let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)*/
         

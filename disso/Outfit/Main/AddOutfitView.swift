@@ -27,6 +27,9 @@ struct AddOutfitView: View {
             //.navigationTitle("New Outfit")
         }
         .navigationViewStyle(.stack)
+        .onAppear() {
+            self.clothesViewModel.fetchClothes()
+        }
         /*.sheet(isPresented: $showNewOutfit) {
             NewOutfitView(clothes: clothes)
         }*/

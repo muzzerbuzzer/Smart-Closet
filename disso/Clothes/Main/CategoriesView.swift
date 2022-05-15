@@ -27,9 +27,9 @@ struct CategoriesView: View {
                 }
             }
             .navigationTitle("Categories")
-            .onAppear() {
+            /*.onAppear() {
                 self.clothesViewModel.fetchClothes()
-            }
+            }*/
         }
         .navigationViewStyle(.stack)
     }

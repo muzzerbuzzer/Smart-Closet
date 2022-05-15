@@ -10,7 +10,7 @@ import UIKit
 
 struct Outfits: Identifiable {
     let id = UUID()
-    let image: UIImage
+    let image: String
 }
 
 extension Outfits {
