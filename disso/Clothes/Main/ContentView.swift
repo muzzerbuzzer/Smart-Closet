@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel = ClothesViewModel()
-    
     var body: some View {
        //NavigationView {
             TabBar()
@@ -31,10 +29,6 @@ struct ContentView: View {
         })*/
         
         
-    }
-    
-    init() {
-        viewModel.fetchClothes()
     }
 }
 

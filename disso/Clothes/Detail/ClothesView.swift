@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ClothesView: View {
     var clothes: Clothes
-    @EnvironmentObject var clothesViewModel: ClothesViewModel
-    @ObservedObject private var viewModel = ClothesViewModel()
+    //@EnvironmentObject var clothesViewModel: ClothesViewModel
+    //@ObservedObject private var viewModel = ClothesViewModel()
     
     
     var body: some View {
@@ -70,9 +70,9 @@ struct ClothesView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
-        .onAppear() {
-            self.viewModel.fetchClothes()
-        }
+        /*.onAppear() {
+            self.clothesViewModel.fetchClothes()
+        }*/
 
     }
 }

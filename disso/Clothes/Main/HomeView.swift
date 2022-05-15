@@ -13,7 +13,9 @@ struct HomeView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     @EnvironmentObject var calendarViewModel: CalendarViewModel
     
-    @ObservedObject private var viewModel = ClothesViewModel()
+    //@ObservedObject var model = ClothesViewModel()
+    
+    //@ObservedObject private var viewModel = ClothesViewModel()
     
     /*@State private var selectedView = "Clothes"
     let views = ["Clothes", "Outfits"]*/
@@ -29,7 +31,7 @@ struct HomeView: View {
         
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
             .onAppear() {
-                self.viewModel.fetchClothes()
+                self.clothesViewModel.fetchClothes()
             }
         //}
         .navigationViewStyle(StackNavigationViewStyle())
@@ -45,6 +47,7 @@ struct HomeView: View {
             .accentColor(.purple)
         })*/
     }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -55,7 +58,7 @@ struct HomeView_Previews: PreviewProvider {
                 .environmentObject(SessionServiceImpl())
                 .environmentObject(CalendarViewModel())
             
-                .toolbar(content: {
+                /*.toolbar(content: {
 
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
@@ -65,7 +68,7 @@ struct HomeView_Previews: PreviewProvider {
                                 .foregroundColor(.purple)
                         }
                }
-            })
+            })*/
         }
 
     }

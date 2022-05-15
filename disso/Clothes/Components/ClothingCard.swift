@@ -14,7 +14,8 @@ import FirebaseAuth
 struct ClothingCard: View {
     var clothes: Clothes
     
-    @ObservedObject private var viewModel = ClothesViewModel()
+    //@EnvironmentObject var clothesViewModel: ClothesViewModel
+    //@ObservedObject private var viewModel = ClothesViewModel()
     
     var body: some View {
         VStack {
@@ -77,9 +78,9 @@ struct ClothingCard: View {
         .background(LinearGradient(gradient: Gradient(colors:[Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
-        .onAppear() {
-            self.viewModel.fetchClothes()
-        }
+        /*.onAppear() {
+            self.clothesViewModel.fetchClothes()
+        }*/
     }
 }
 

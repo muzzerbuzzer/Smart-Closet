@@ -73,7 +73,7 @@ struct Clothes: Identifiable {
     //let dateAdded: String
 }
 
-/*extension Clothes {
+extension Clothes {
     static let all: [Clothes] = [
         /*Clothes(
             name: "Flower Corset hfjdhfs",
@@ -110,4 +110,4 @@ struct Clothes: Identifiable {
             dateAdded: "2022-16-03"
         )*/
     ]
-}*/
+}

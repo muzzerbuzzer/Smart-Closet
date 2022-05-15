@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ClothesList: View {
     var clothes: [Clothes]
-    @ObservedObject private var viewModel = ClothesViewModel()
+    //@ObservedObject private var viewModel = ClothesViewModel()
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
     
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct ClothesList: View {
             }
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(clothes) { clothes in
+                ForEach(clothesViewModel.closet) { clothes in
                     NavigationLink(destination: ClothesView(clothes: clothes)) {
                         ClothingCard(clothes: clothes)
                     }
@@ -33,10 +34,11 @@ struct ClothesList: View {
                                 
       }
       .padding(.horizontal)
-      .onAppear() {
-          self.viewModel.fetchClothes()
-      }
+      /*.onAppear() {
+          self.clothesViewModel.fetchClothes()
+      }*/
   }
+
 }
 
 struct ClothesList_Previews: PreviewProvider {

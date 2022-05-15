@@ -12,8 +12,6 @@ struct CategoriesView: View {
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     @EnvironmentObject var calendarViewModel: CalendarViewModel
     
-    @ObservedObject private var viewModel = ClothesViewModel()
-    
     var body: some View {
         NavigationView {
             List {
@@ -30,7 +28,7 @@ struct CategoriesView: View {
             }
             .navigationTitle("Categories")
             .onAppear() {
-                self.viewModel.fetchClothes()
+                self.clothesViewModel.fetchClothes()
             }
         }
         .navigationViewStyle(.stack)
