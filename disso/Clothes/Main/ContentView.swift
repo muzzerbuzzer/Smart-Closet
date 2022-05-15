@@ -16,7 +16,7 @@ struct ContentView: View {
             
         //}
         
-            /*.toolbar(content: {
+            .toolbar(content: {
 
                 ToolbarItem {
                     
@@ -26,7 +26,7 @@ struct ContentView: View {
                             .foregroundColor(.purple)
                     }
            }
-        })*/
+        })
         
         
     }
