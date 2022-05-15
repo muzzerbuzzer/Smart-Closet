@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 03/04/2022.
 //
 
+//Input password text field without having to re-write the code multiple times
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import SwiftUI
 
 struct InputPasswordView: View {
@@ -17,6 +20,7 @@ struct InputPasswordView: View {
     
     var body: some View {
         
+        //uses secureField so that when password is being typed it is not shown as text
         SecureField(placeholder, text: $password)
             .frame(maxWidth: .infinity,
                     minHeight: 44)
@@ -25,6 +29,7 @@ struct InputPasswordView: View {
             
                 ZStack(alignment: .leading) {
                     
+                    //adds sfSymbol to the password box
                     if let systemImage =  sfSymbol {
                         
                         Image(systemName: systemImage)

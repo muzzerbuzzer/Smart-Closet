@@ -5,6 +5,10 @@
 //  Created by Nika Pakravan on 05/04/2022.
 //
 
+//Contains code for the current session user; whether they are logged in or not
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
+
 import Combine
 import Foundation
 import FirebaseAuth
@@ -21,6 +25,8 @@ protocol SessionService {
     func logout()
 }
 
+//creates session service as an observable object so that it can be used in other views
+//to see whether user is logged in or not
 final class SessionServiceImpl: ObservableObject, SessionService {
     
     @Published var state: SessionState = .loggedOut
@@ -38,6 +44,7 @@ final class SessionServiceImpl: ObservableObject, SessionService {
     
 }
 
+//contains Firebase's authentication handler to see whether user is logged in or not
 private extension SessionServiceImpl {
     
     func setupFirebaseAuthHandler() {
@@ -56,6 +63,7 @@ private extension SessionServiceImpl {
         
     }
     
+    //connects to Firebase Database to store users first and last name values
     func handleRefresh(with uid: String) {
         
         Database

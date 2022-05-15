@@ -7,6 +7,9 @@
 
 import Foundation
 
+//creates an array of tasks for the calendar, and allows the calendar to have tasks added as well as removed
+/*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
+video tutorial on YouTube*/
 class CalendarViewModel: ObservableObject {
     @Published var tasks = [Task]()
     

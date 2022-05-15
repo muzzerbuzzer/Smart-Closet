@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 03/04/2022.
 //
 
+//Input normal text field without having to re-write the code multiple times
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import SwiftUI
 
 struct InputTextFieldView: View {
@@ -18,6 +21,7 @@ struct InputTextFieldView: View {
     
     var body: some View {
         
+        //creates text field
         TextField(placeholder, text: $text)
             .frame(maxWidth: .infinity,
                     minHeight: 44)
@@ -27,6 +31,7 @@ struct InputTextFieldView: View {
             
                 ZStack(alignment: .leading) {
                     
+                    //adds sfSymbol to the text box
                     if let systemImage =  sfSymbol {
                         
                         Image(systemName: systemImage)

@@ -5,10 +5,14 @@
 //  Created by Nika Pakravan on 04/04/2022.
 //
 
+//Creates buttons without having to re-write the code multiple times
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import SwiftUI
 
 struct ButtonComponentView: View {
     
+    //provides a new name for the existing data type
     typealias ActionHandler = () -> Void
     
     let title: String
@@ -19,6 +23,7 @@ struct ButtonComponentView: View {
     
     private let cornerRadius: CGFloat = 10
     
+    //initialises the button component, with everything it includes
     internal init(title: String,
                   background: Color = .purple,
                   foreground: Color = .white,
@@ -32,6 +37,7 @@ struct ButtonComponentView: View {
     }
     
     var body: some View {
+        //creats the actual button
         Button(action: handler, label: {
             Text(title)
                 .frame(maxWidth: .infinity, maxHeight: 50)

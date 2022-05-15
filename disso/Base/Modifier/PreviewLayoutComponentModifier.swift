@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 03/04/2022.
 //
 
+//Allows for a layout component to be previewed without having to re-write the code multiple times
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import SwiftUI
 
 struct PreviewLayoutComponentModifier: ViewModifier {
