@@ -53,8 +53,10 @@ struct NewOutfitView: View {
                     OutfitImagesView()
                 } label: {
                     Button {
-                        image = outfitView.asImage
+                        image = outfitView.snapshot()
                         uploadOutfit()
+                        
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                         
                         navigateToCreatedOutfit = true
                     } label: {
@@ -243,6 +245,23 @@ extension NewOutfitView {
 
 
 extension View {
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
+}
+
+/*extension View {
     var asImage: UIImage {
         //must ignore safe area due to bug in ios 15+
         let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.top))
@@ -258,7 +277,7 @@ extension View {
             view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
         }
     }
-}
+}*/
 
         
 
