@@ -24,11 +24,6 @@ struct NewOutfitView: View {
     
    var outfitView: some View {
        DropArea()
-       /*Text("outfit creation happens here")
-           .padding()
-           .background(Color.purple)
-           .foregroundColor(.white)
-           .clipShape(Capsule())*/
     }
 
     var body: some View {
@@ -37,8 +32,6 @@ struct NewOutfitView: View {
         Divider()
         Spacer()
             HStack {
-                //DropArea(draggedImage: UIImage())
-                //Text("outfit creation happens here")
                 outfitView
             }
             Spacer()
@@ -63,9 +56,6 @@ struct NewOutfitView: View {
                         image = outfitView.asImage
                         uploadOutfit()
                         
-                        /*let outfits = Outfits(image: outfitImage)
-                        outfitsViewModel.addOutfit(outfits: outfits)*/
-                        
                         navigateToCreatedOutfit = true
                     } label: {
                         Label("Save", systemImage: "checkmark")
@@ -75,142 +65,139 @@ struct NewOutfitView: View {
                 }
             }
         })
-        /*.onAppear() {
-            self.clothesViewModel.fetchClothes()
-        }*/
         
 }
     
-    
-}
+    struct ScrollingClothingView: View {
+        let clothingImage: String
 
-
-struct ScrollingClothingView: View {
-    let clothingImage: String
-
-    var body: some View {
-        ZStack {
-            HStack {
-                AsyncImage(url: URL(string: clothingImage)) { image in
-                    image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 70, height: 70)
-                .onDrag { return NSItemProvider(object: self.clothingImage as NSString) }
-                } placeholder: {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100, alignment: .center)
-                        .foregroundColor(.white.opacity(0.7))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                }
-            }
-        }
-    }
-}
-
-struct DropArea: View {
-    @State var draggedImage: [Int: String] = [:]
-    @State var active = 0
-    
-    var body: some View {
-        let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
-        
-        return VStack {
-            HStack {
-                GridCell(active: self.active == 1, image: draggedImage[1])
-                GridCell(active: self.active == 3, image: draggedImage[3])
-            }
-            
-            HStack {
-                GridCell(active: self.active == 2, image: draggedImage[2])
-                GridCell(active: self.active == 4, image: draggedImage[4])
-            }
-        }
-        .background(Rectangle().fill(Color.gray))
-        .frame(width: 300, height: 300)
-        .onDrop(of: ["outfitLink-url"], delegate: dropDelegate)
-    }
-}
-
-struct GridCell: View {
-    let active: Bool
-    let image: String?
-    
-    var body: some View {
-        
-        let img = AsyncImage(url: URL(string: image ?? "")) { image in
-            image
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 150, height: 150)
-        } placeholder: {
-            Image(systemName: "photo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100, alignment: .center)
-                .foregroundColor(.white.opacity(0.7))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
-        
-        return Rectangle()
-            .fill(self.active ? Color.purple : Color.clear)
-            .frame(width: 150, height: 150)
-            .overlay(img)
-    }
-}
-
-struct ImageDropDelegate: DropDelegate {
-    @Binding var draggedImage: [Int: String]
-    @Binding var active: Int
-    
-    func performDrop(info: DropInfo) -> Bool {
-        guard info.hasItemsConforming(to: ["outfitLink-url"]) else {
-            return false
-        }
-        
-        let gridPosition = getGridPosition(location: info.location)
-        self.active = gridPosition
-        
-        if let item = info.itemProviders(for: ["outfitLink-url"]).first {
-            item.loadItem(forTypeIdentifier: "outfitLink-url", options: nil) {(imageData, error) in
-                DispatchQueue.main.async {
-                    if let imageData = imageData as? String {
-                        self.draggedImage[gridPosition] = NSString(string: imageData) as String
-                        //imageData
-                        print("done")
+        var body: some View {
+            ZStack {
+                HStack {
+                    AsyncImage(url: URL(string: clothingImage)) { image in
+                        image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 70, height: 70)
+                    .onDrag { return NSItemProvider(object: self.clothingImage as NSString) }
+                    } placeholder: {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .foregroundColor(.white.opacity(0.7))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
             }
         }
+    }
+
+    struct DropArea: View {
+        @State var draggedImage: [Int: String] = [:]
+        @State var active = 0
         
-        return true
-    }
-    
-    func dropUpdated(info: DropInfo) -> DropProposal? {
-        self.active = getGridPosition(location: info.location)
-        
-        return nil
-    }
-    
-    func dropExited(info: DropInfo) {
-        self.active = 0
-    }
-    
-    func getGridPosition(location: CGPoint) -> Int {
-        if location.x > 150 && location.y > 150 {
-            return 4
-        } else if location.x > 150 && location.y < 150 {
-            return 3
-        } else if location.x < 150 && location.y > 150 {
-            return 2
-        } else if location.x < 150 && location.y < 150 {
-            return 1
-        } else {
-            return 0
+        var body: some View {
+            let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
+            
+            return VStack {
+                HStack {
+                    GridCell(active: self.active == 1, image: draggedImage[1])
+                    GridCell(active: self.active == 3, image: draggedImage[3])
+                }
+                
+                HStack {
+                    GridCell(active: self.active == 2, image: draggedImage[2])
+                    GridCell(active: self.active == 4, image: draggedImage[4])
+                }
+            }
+            .background(Rectangle().fill(Color.gray))
+            .frame(width: 300, height: 300)
+            .onDrop(of: ["public.text"], delegate: dropDelegate)
         }
     }
+
+    struct GridCell: View {
+        let active: Bool
+        let image: String?
+        
+        var body: some View {
+            
+            let img = AsyncImage(url: URL(string: image ?? "")) { image in
+                image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 150, height: 150)
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .foregroundColor(.white.opacity(0.7))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            
+            return Rectangle()
+                .fill(self.active ? Color.purple : Color.clear)
+                .frame(width: 150, height: 150)
+                .overlay(img)
+        }
+    }
+
+    struct ImageDropDelegate: DropDelegate {
+        @Binding var draggedImage: [Int: String]
+        @Binding var active: Int
+        
+        func validateDrop(info: DropInfo) -> Bool {
+            return info.hasItemsConforming(to: ["public.text"])
+            }
+            
+        func performDrop(info: DropInfo) -> Bool {
+            let gridPosition = getGridPosition(location: info.location)
+            self.active = gridPosition
+            
+            if let item = info.itemProviders(for: ["public.text"]).first {
+                item.loadItem(forTypeIdentifier: "public.text", options: nil) {(imageData, error) in
+                    DispatchQueue.main.async {
+                        if let imageData = imageData as? Data {
+                            self.draggedImage[gridPosition] = String(decoding: imageData, as: UTF8.self)
+                        }
+                    }
+                }
+                           
+                return true
+                           
+            } else {
+                return false
+            }
+
+            }
+        
+        func dropUpdated(info: DropInfo) -> DropProposal? {
+            self.active = getGridPosition(location: info.location)
+            
+            return nil
+        }
+        
+        func dropExited(info: DropInfo) {
+            self.active = 0
+        }
+        
+        func getGridPosition(location: CGPoint) -> Int {
+            if location.x > 150 && location.y > 150 {
+                return 4
+            } else if location.x > 150 && location.y < 150 {
+                return 3
+            } else if location.x < 150 && location.y > 150 {
+                return 2
+            } else if location.x < 150 && location.y < 150 {
+                return 1
+            } else {
+                return 0
+            }
+        }
+    }
+    
 }
 
 /*struct NewOutfitView_Previews: PreviewProvider {
@@ -251,15 +238,9 @@ extension NewOutfitView {
             
         }
 
-        
-        
-        //let outfits = Outfits(image: image)
-        
-        /*let clothes = Clothes(name: name, image: image, colour: selectedColour.rawValue, pattern: pattern, category: selectedCategory.rawValue)*/
-        
-        //clothesViewModel.addClothes(clothes: clothes)
     }
 }
+
 
 extension View {
     var asImage: UIImage {
@@ -280,5 +261,5 @@ extension View {
 }
 
         
-        //outfitsViewModel.addOutfit(outfits: outfits)
+
 
