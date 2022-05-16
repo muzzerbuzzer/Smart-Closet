@@ -59,7 +59,7 @@ struct NewOutfitView: View {
                         image = DropArea().asImage
                         uploadOutfit()
                         
-                        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                         
                         navigateToCreatedOutfit = true
                     } label: {
