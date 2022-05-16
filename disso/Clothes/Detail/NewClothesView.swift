@@ -153,17 +153,17 @@ extension NewClothesView{
         let photoData = image.jpegData(compressionQuality: 0.5)
         let user = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
-        let imgN = UUID().uuidString
+        let photoName = UUID().uuidString
         let ref = Storage.storage().reference().child("users").child(user!).child("clothes")
         
         //create image metadata so it can be viewed in firebase console
         let imageMetaData = StorageMetadata()
         imageMetaData.contentType = "image/jpeg"
 
-        ref.child(imgN).putData(photoData!, metadata: imageMetaData) { (meta, err) in
+        ref.child(photoName).putData(photoData!, metadata: imageMetaData) { (meta, err) in
             if err != nil {return}
             
-            ref.child(imgN).downloadURL(completion: { url, error in
+            ref.child(photoName).downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
                 }
