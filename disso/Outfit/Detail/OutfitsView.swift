@@ -11,6 +11,9 @@ struct OutfitsView: View {
     var outfits: Outfits
     @EnvironmentObject var outfitsViewModel: OutfitsViewModel
     
+    @State var sheet = false
+    @State var items : [Any] = []
+    
     var body: some View {
         ScrollView {
             
@@ -31,10 +34,10 @@ struct OutfitsView: View {
                 Button("Delete") {
                     //
                 }
+
                 
 
             }
-            
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
@@ -46,3 +49,4 @@ struct OutfitsView_Previews: PreviewProvider {
         OutfitsView(outfits: Outfits.all[0])
     }
 }
+

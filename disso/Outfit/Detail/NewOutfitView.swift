@@ -23,12 +23,12 @@ struct NewOutfitView: View {
     @State private var navigateToCreatedOutfit = false
     
    var outfitView: some View {
-       //DropArea(draggedImage: clothingImage)
-       Text("outfit creation happens here")
+       DropArea()
+       /*Text("outfit creation happens here")
            .padding()
            .background(Color.purple)
            .foregroundColor(.white)
-           .clipShape(Capsule())
+           .clipShape(Capsule())*/
     }
 
     var body: some View {
@@ -96,7 +96,7 @@ struct ScrollingClothingView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
-                .onDrag { return NSItemProvider(object: self.clothingImage as String as NSItemProviderWriting) }
+                .onDrag { return NSItemProvider(object: self.clothingImage as NSString) }
                 } placeholder: {
                     Image(systemName: "photo")
                         .resizable()
@@ -111,26 +111,26 @@ struct ScrollingClothingView: View {
 }
 
 struct DropArea: View {
-    @State var draggedImage: String
+    @State var draggedImage: [Int: String] = [:]
     @State var active = 0
     
     var body: some View {
-        let dropDelegate = ImageDropDelegate(image: $draggedImage, active: $active)
+        let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
         
         return VStack {
             HStack {
-                GridCell(active: self.active == 1, image: draggedImage)
-                GridCell(active: self.active == 3, image: draggedImage)
+                GridCell(active: self.active == 1, image: draggedImage[1])
+                GridCell(active: self.active == 3, image: draggedImage[3])
             }
             
             HStack {
-                GridCell(active: self.active == 2, image: draggedImage)
-                GridCell(active: self.active == 4, image: draggedImage)
+                GridCell(active: self.active == 2, image: draggedImage[2])
+                GridCell(active: self.active == 4, image: draggedImage[4])
             }
         }
         .background(Rectangle().fill(Color.gray))
         .frame(width: 300, height: 300)
-        .onDrop(of: ["outfitLink"], delegate: dropDelegate)
+        .onDrop(of: ["outfitLink-url"], delegate: dropDelegate)
     }
 }
 
@@ -139,7 +139,8 @@ struct GridCell: View {
     let image: String?
     
     var body: some View {
-        let img = AsyncImage(url: URL(string: image!)) { image in
+        
+        let img = AsyncImage(url: URL(string: image ?? "")) { image in
             image
         .resizable()
         .aspectRatio(contentMode: .fit)
@@ -161,22 +162,24 @@ struct GridCell: View {
 }
 
 struct ImageDropDelegate: DropDelegate {
-    @Binding var image: String
+    @Binding var draggedImage: [Int: String]
     @Binding var active: Int
     
     func performDrop(info: DropInfo) -> Bool {
-        guard info.hasItemsConforming(to: ["outfitLink"]) else {
+        guard info.hasItemsConforming(to: ["outfitLink-url"]) else {
             return false
         }
         
         let gridPosition = getGridPosition(location: info.location)
         self.active = gridPosition
         
-        if let item = info.itemProviders(for: ["outfitLink"]).first {
-            item.loadItem(forTypeIdentifier: "outfitLink", options: nil) {(imageData, error) in
+        if let item = info.itemProviders(for: ["outfitLink-url"]).first {
+            item.loadItem(forTypeIdentifier: "outfitLink-url", options: nil) {(imageData, error) in
                 DispatchQueue.main.async {
                     if let imageData = imageData as? String {
-                        self.image = imageData
+                        self.draggedImage[gridPosition] = NSString(string: imageData) as String
+                        //imageData
+                        print("done")
                     }
                 }
             }

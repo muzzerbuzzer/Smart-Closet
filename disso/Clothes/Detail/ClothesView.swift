@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct ClothesView: View {
     var clothes: Clothes
+    @State private var name: String = ""
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     //@ObservedObject private var viewModel = ClothesViewModel()
     
@@ -61,7 +64,7 @@ struct ClothesView: View {
             
                 
                 Button("Delete") {
-                    //clothesViewModel.deleteClothes(clothesToDelete: clothes)
+                    //deleteItem()
                 }
                 
 
@@ -80,5 +83,23 @@ struct ClothesView: View {
 /*struct ClothesView_Previews: PreviewProvider {
     static var previews: some View {
         //ClothesView(clothes: Clothes.all[0])
+    }
+}*/
+
+/*extension ClothesView {
+    private func deleteItem(/*completion: @escaping (Bool) -> ()*/) {
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser?.uid
+        //let ref = Firestore.firestore().reference().child("users").child(user!).child("clothes")
+        
+        db.collection("users").document(user!).collection("clothes").document(name).delete() /*{ error in
+            if let error = error {
+                print("error deleting document \(error.localizedDescription)")
+                completion(false)
+            } else {
+                print("successfully deleted")
+                completion(true)
+            }
+        }*/
     }
 }*/

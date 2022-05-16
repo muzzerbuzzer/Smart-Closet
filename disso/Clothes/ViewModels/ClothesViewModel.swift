@@ -13,16 +13,6 @@ class ClothesViewModel: ObservableObject {
     
     @Published private(set) var closet: [Clothes] = []
     
-    func deleteClothes(clothesToDelete: Clothes) {
-        
-        let user = Auth.auth().currentUser?.uid
-        //get a ref to the database
-        
-        //specify the document to delete
-        db.collection("users").document(user!).collection("clothes").document(clothesToDelete.name).delete()
-    }
-    
-    
     func addClothes(clothes: Clothes) {
         closet.append(clothes)
     }
