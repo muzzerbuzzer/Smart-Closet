@@ -27,7 +27,7 @@ struct TabBar: View {
             
             OutfitImagesView()
                 .tabItem {
-                    Label("Favourites", systemImage: "heart")
+                    Label("Outfits", systemImage: "heart")
                 }
             
             CategoriesView()

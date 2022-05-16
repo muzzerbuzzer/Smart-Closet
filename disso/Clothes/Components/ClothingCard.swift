@@ -25,11 +25,11 @@ struct ClothingCard: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .overlay(alignment: .bottom) {
-                        Text(clothes.name)
+                        /*Text(clothes.name)
                             .font(.headline)
                             .foregroundColor(.black)
                             .frame(maxWidth: 136)
-                            .padding()
+                            .padding()*/
                     }
             } placeholder: {
                 Image(systemName: "photo")
@@ -39,11 +39,11 @@ struct ClothingCard: View {
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(alignment: .bottom) {
-                        Text(clothes.name)
+                        /*Text(clothes.name)
                             .font(.headline)
                             .foregroundColor(.black)
                             .frame(maxWidth: 136)
-                            .padding()
+                            .padding()*/
                     }
             }
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClothesView: View {
     var clothes: Clothes
-    //@EnvironmentObject var clothesViewModel: ClothesViewModel
+    @EnvironmentObject var clothesViewModel: ClothesViewModel
     //@ObservedObject private var viewModel = ClothesViewModel()
     
     
@@ -61,7 +61,7 @@ struct ClothesView: View {
             
                 
                 Button("Delete") {
-                    //
+                    //clothesViewModel.deleteClothes(clothesToDelete: clothes)
                 }
                 
 

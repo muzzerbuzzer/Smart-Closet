@@ -23,12 +23,12 @@ struct NewOutfitView: View {
     @State private var navigateToCreatedOutfit = false
     
    var outfitView: some View {
-        /*Text("outfit creation happens here")
-            .padding()
-            .background(Color.purple)
-            .foregroundColor(.white)
-            .clipShape(Capsule())*/
-       DropArea(draggedImage: clothingImage)
+       //DropArea(draggedImage: clothingImage)
+       Text("outfit creation happens here")
+           .padding()
+           .background(Color.purple)
+           .foregroundColor(.white)
+           .clipShape(Capsule())
     }
 
     var body: some View {
@@ -60,7 +60,7 @@ struct NewOutfitView: View {
                     OutfitImagesView()
                 } label: {
                     Button {
-                        let outfitImage = outfitView.asImage
+                        image = outfitView.asImage
                         uploadOutfit()
                         
                         /*let outfits = Outfits(image: outfitImage)
@@ -75,9 +75,9 @@ struct NewOutfitView: View {
                 }
             }
         })
-        .onAppear() {
+        /*.onAppear() {
             self.clothesViewModel.fetchClothes()
-        }
+        }*/
         
 }
     

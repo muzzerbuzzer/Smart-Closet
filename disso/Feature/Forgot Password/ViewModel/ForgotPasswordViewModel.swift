@@ -5,9 +5,7 @@
 //  Created by Nika Pakravan on 06/04/2022.
 //
 
-//ViewModel for the current user details to help transform the information from the model and converts them into
-//values that can be displayed on the view
-
+//ViewModel for the current user details to help transform the information from the model and converts them into values that can be displayed on the view
 /*This code has been re-used from tundsdev's
  'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import Combine
@@ -33,6 +31,8 @@ final class ForgotPasswordViewModelImpl: ObservableObject, ForgotPasswordViewMod
         self.service = service
     }
     
+    //code can be found on Firebase website which allows reset passwrd email
+    //to be sent to users
     func sendPasswordReset() {
         
         //not weak because not capturing self 

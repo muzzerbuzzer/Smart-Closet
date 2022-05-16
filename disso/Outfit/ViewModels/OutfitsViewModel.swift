@@ -13,7 +13,7 @@ class OutfitsViewModel: ObservableObject {
     
     
     init() {
-        createdOutfits = Outfits.all
+        fetchOutfits()
 
     }
     
@@ -26,7 +26,7 @@ class OutfitsViewModel: ObservableObject {
     func fetchOutfits() {
         let user = Auth.auth().currentUser?.uid
         
-        db.collection("users").document(user!).collection("clothes").addSnapshotListener { (querySnapshot, error) in
+        db.collection("users").document(user!).collection("outfits").addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("No documents")
                     return
