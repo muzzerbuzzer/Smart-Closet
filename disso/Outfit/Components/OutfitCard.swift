@@ -19,10 +19,10 @@ struct OutfitCard: View {
             AsyncImage(url: URL(string: outfits.image)) { image in
                 image
                     .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: 160, height: 217, alignment: .center)
                     .aspectRatio(contentMode: .fill)
-                    .overlay(alignment: .bottom) {
-
-                    }
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
@@ -30,15 +30,10 @@ struct OutfitCard: View {
                     .frame(width: 40, height: 40, alignment: .center)
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .overlay(alignment: .bottom) {
 
-                    }
             }
             }
         .frame(width: 160, height: 217, alignment: .top)
-        .background(LinearGradient(gradient: Gradient(colors:[Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
         }
 }
 

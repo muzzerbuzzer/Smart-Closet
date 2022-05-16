@@ -90,9 +90,9 @@ struct ClothesView: View {
     private func deleteItem(/*completion: @escaping (Bool) -> ()*/) {
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser?.uid
-        //let ref = Firestore.firestore().reference().child("users").child(user!).child("clothes")
+        let ref = Storage.storage().reference().child("users").child(user!).child("clothes")
         
-        db.collection("users").document(user!).collection("clothes").document(name).delete() /*{ error in
+        db.collection("users").document(user!).collection("clothes").document(ref).delete() /*{ error in
             if let error = error {
                 print("error deleting document \(error.localizedDescription)")
                 completion(false)

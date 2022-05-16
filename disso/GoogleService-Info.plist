@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow the application access to add to your photo gallery.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow the application access to your photo gallery.</string>
 	<key>CLIENT_ID</key>
 	<string>24362785246-7fqm76vgjn8ossdc44aa8qho16f80i2b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
@@ -30,11 +34,5 @@
 	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:24362785246:ios:d981e54e2ea4da8b71654f</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow permission to save photo to the photo library.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please allow permission to select photos from the photo library.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Photo Library Access Warning</string>
 </dict>
 </plist>
