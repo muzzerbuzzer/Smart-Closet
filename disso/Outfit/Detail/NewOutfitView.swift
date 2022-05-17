@@ -8,7 +8,6 @@
 //new outfit creation page
 /* The main drag and drop logic is from javier at The SwiftUILab. However, mostly all of it has been amended to fit the code
  The code to snapshot the outfit creation as image is re-used from Codakuma's blog post "A better way to create images from SwiftUI views."
- This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
  Part of the code is from John Gallaugher's "Ch.8.22 Saving Images to Firebase Storage w/a Cloud Firestore Reference" video tutorial on YouTube
  Uploading the data is from a part of code from UTrend on GitHub
  Uploading the image is from Josh Kinney's 'Create an Image Picker, Access Camera and Photo Library in SwiftUI (NEW 2021)'
