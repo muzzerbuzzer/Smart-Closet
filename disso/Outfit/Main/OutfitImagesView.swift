@@ -5,6 +5,7 @@
 //  Created by Nika Pakravan on 14/03/2022.
 //
 
+//code is written by me
 import Foundation
 import SwiftUI
 
@@ -18,7 +19,7 @@ struct OutfitImagesView: View {
         ScrollView {
             
             Button {
-                //button to add outfit to calendar
+                //button to add new outfit to view
                 navigateToAddOutfit = true
             } label: {
                 Text("Add Outfit")
@@ -31,27 +32,7 @@ struct OutfitImagesView: View {
             
             
         }
-        
-        /*.toolbar(content: {
-            
-            //done button
-            ToolbarItem {
-                NavigationLink(isActive: $navigateToAddOutfit) {
-                    AddOutfitFormView()
-                } label: {
-                    Button {
-                        
-                        navigateToAddOutfit = true
-                    } label: {
-                        Label("Add", systemImage: "plus")
-                            .labelStyle(.iconOnly)
-                            .foregroundColor(.purple)
-                    }
-                }
-            }
-
-        })*/
-                .navigationTitle("Outfits")
+        .navigationTitle("Outfits")
         .navigationViewStyle(.stack)
         .sheet(isPresented: $navigateToAddOutfit) {
             AddOutfitFormView()

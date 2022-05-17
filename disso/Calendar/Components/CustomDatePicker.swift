@@ -7,7 +7,7 @@
 
 //creates an array of tasks for the calendar, and allows the calendar to have tasks added as well as removed
 /*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
-video tutorial on YouTube*/
+video tutorial on YouTube. Only difference is that all references to “task” have been renamed to “outfit”, and colour names have been changed.*/
 import SwiftUI
 
 struct CustomDatePicker: View {

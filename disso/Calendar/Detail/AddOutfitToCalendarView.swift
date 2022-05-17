@@ -6,7 +6,8 @@
 //
 
 //code for add to calendar form
-/*This code has been written by the author, with assistance from other classes*/
+/*This code has been written by the author, with assistance from the imagePickerModel by Josh Kinney
+*/
 import Foundation
 import SwiftUI
 import Photos
@@ -55,7 +56,8 @@ struct AddOutfittoCalendarView: View {
  
             }
             
-            //sheet to show gallery so user can choose outfit image
+            //sheet to show gallery so user can choose outfit image. code logic is from Josh Kinney
+
             .sheet(isPresented: $openGallery) {
                 ImagePickerModel(selectedImage: $outfitImage, sourceType: .photoLibrary)
             }

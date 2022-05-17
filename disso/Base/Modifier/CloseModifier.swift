@@ -23,6 +23,7 @@ struct CloseModifier: ViewModifier {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Image(systemName: "xmark")
+                    //colour is from the author
                         .foregroundColor(.purple)
                 })
             }

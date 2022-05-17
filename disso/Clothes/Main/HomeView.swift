@@ -5,6 +5,12 @@
 //  Created by Nika Pakravan on 14/03/2022.
 //
 
+//home view
+/*This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Part of the code is from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube
+ One section is from Firebase's SwiftUI: Fetching data from Firestore in real-time video tutorial on YouTube
+ Rest of the code is written by me*/
 import Foundation
 import SwiftUI
 
@@ -13,15 +19,7 @@ struct HomeView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     @EnvironmentObject var calendarViewModel: CalendarViewModel
     
-    //@ObservedObject var model = ClothesViewModel()
-    
-    //@ObservedObject private var viewModel = ClothesViewModel()
-    
-    /*@State private var selectedView = "Clothes"
-    let views = ["Clothes", "Outfits"]*/
-    
     var body: some View {
-        //NavigationView {
         
             ScrollView {
                 
@@ -29,23 +27,15 @@ struct HomeView: View {
                 
             }
         
+        //session service from tundsdev on YouTUbe
             .navigationTitle("\(sessionService.userDetails? .firstName ?? "N/A")'s Closet")
+        //From Firebase on YouTube
             .onAppear() {
                 self.clothesViewModel.fetchClothes()
             }
-        //}
+
         .navigationViewStyle(StackNavigationViewStyle())
         
-
-        
-        /*.toolbar(content: {
-            Picker("Category", selection: $selectedView) {
-                ForEach(views, id: \.self) {
-                }
-            }
-            .pickerStyle(.menu)
-            .accentColor(.purple)
-        })*/
     }
 
 }
@@ -57,18 +47,7 @@ struct HomeView_Previews: PreviewProvider {
                 .environmentObject(ClothesViewModel())
                 .environmentObject(SessionServiceImpl())
                 .environmentObject(CalendarViewModel())
-            
-                /*.toolbar(content: {
 
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        
-                        NavigationLink(destination: CalendarView()) {
-                            Label("Calendar", systemImage: "calendar")
-                                .labelStyle(.iconOnly)
-                                .foregroundColor(.purple)
-                        }
-               }
-            })*/
         }
 
     }

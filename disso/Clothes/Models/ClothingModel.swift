@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 16/03/2022.
 //
 
+//clothing item model
+/*This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Actual code is written by me*/
 import Foundation
 import UIKit
 
@@ -70,44 +73,10 @@ struct Clothes: Identifiable {
     let colour: Colour.RawValue
     let pattern: String
     let category: Category.RawValue
-    //let dateAdded: String
 }
 
 extension Clothes {
     static let all: [Clothes] = [
-        /*Clothes(
-            name: "Flower Corset hfjdhfs",
-            //image: nil,
-            image: "https://i.pinimg.com/474x/da/17/14/da1714131be5faab9eaffb63160a8d29.jpg",
-            colour: "Multicolour",
-            pattern: "Floral",
-            category: "Corset"
-            //dateAdded: "2022-16-03"
-        ),
-        Clothes(
-            name: "Wide-Leg Light-Wash Jeans",
-            image: "https://assetsprx.matchesfashion.com/img/product/920/1364600_1.jpg",
-            //image: nil,
-            colour: "Light Blue",
-            pattern: "Jean",
-            category: "Jeans"
-            //dateAdded: "2022-16-03"
-        ),
-        Clothes(
-            name: "Platform Converse",
-            image: "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwecab2c34/images/a_107/560846C_A_107X1.jpg?sw=2000",
-            colour: "White",
-            pattern: "Plain",
-            category: "Shoes"
-            //dateAdded: "2022-16-03"
-        ),
-        Clothes(
-            name: "The New Yorker Tote",
-            image: "https://pictures.depop.com/b0/7092085/371707248_vQt0PR5IOG/P0.jpg",
-            colour: "White",
-            pattern: "Letters",
-            category: "Bag"
-            //dateAdded: "2022-16-03"
-        )*/
+
     ]
 }

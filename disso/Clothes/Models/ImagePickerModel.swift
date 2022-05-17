@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 14/04/2022.
 //
 
+//sets up the image picker model so that users can upload images from their photo gallery in multiple places within the application
+/*This code has been re-used from Josh Kinney's 'Create an Image Picker, Access Camera and Photo Library in SwiftUI (NEW 2021)'
+video tutorial on YouTube*/
 import SwiftUI
 import UIKit
 import FirebaseStorage
@@ -15,13 +18,12 @@ struct ImagePickerModel: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
     
-    
-    
-    
+    //sources the photo library
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerModel>) -> UIImagePickerController {
         
+        //initialises the image picker
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = false
         imagePicker.sourceType = sourceType
@@ -32,7 +34,6 @@ struct ImagePickerModel: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        //leave alone for rn
         
     }
     
@@ -56,25 +57,7 @@ struct ImagePickerModel: UIViewControllerRepresentable {
             
             //dismisses sheet when all is completed
             parent.presentationMode.wrappedValue.dismiss()
-            
-            /*let reference = Storage.storage().reference().child("clothesImages/\(Auth.auth().currentUser?.uid ?? "")/item.png")
-            var data = NSData()
-            data = parent.selectedImage.jpegData(compressionQuality: 0.8)! as NSData
-            
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/png"
-            
-            //let reference = Storage.storage().reference().child("clothesImage/item.jpg")
-            
-            reference.putData(data as Data, metadata: metaData) { (metadata, error) in
-                if error == nil {
-                    reference.downloadURL(completion: { (url, error) in
-                        print("Done, URL is \(String(describing: url))")
-                    })
-                } else {
-                    print("Error \(String(describing: error))")
-                }
-            }*/
+        
             
         }
         

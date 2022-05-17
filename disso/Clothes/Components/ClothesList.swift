@@ -5,11 +5,15 @@
 //  Created by Nika Pakravan on 16/03/2022.
 //
 
+//clothing list for main view
+/*Most of this is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Values have been re-named to fit the applications needs
+ Those codes are by me
+*/
 import SwiftUI
 
 struct ClothesList: View {
     var clothes: [Clothes]
-    //@ObservedObject private var viewModel = ClothesViewModel()
     @EnvironmentObject var clothesViewModel: ClothesViewModel
     
     var body: some View {
@@ -34,19 +38,10 @@ struct ClothesList: View {
                                 
       }
       .padding(.horizontal)
-      /*.onAppear() {
-          self.clothesViewModel.fetchClothes()
-      }*/
   }
 
 }
 
-/*struct ClothesList_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView {
-            ClothesList(clothes: Clothes.all)
-        }
-    }
-}*/
+
 
 

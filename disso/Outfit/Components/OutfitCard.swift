@@ -5,6 +5,11 @@
 //  Created by Nika Pakravan on 28/04/2022.
 //
 
+//outfit card for main view
+/*Most of this is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Only some aspects are removed
+ Values have been re-named to fit the applications needs
+ Those codes are by me*/
 import SwiftUI
 import Photos
 import PhotosUI

@@ -5,10 +5,15 @@
 //  Created by Nika Pakravan on 14/03/2022.
 //
 
+//categories
+/*Part of this code is from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube
+ The rest is written by me*/
 import Foundation
 import SwiftUI
 
 struct SettingsView: View {
+    //From tundsdev
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
@@ -19,10 +24,12 @@ struct SettingsView: View {
             
             VStack(alignment: .leading,
                    spacing: 16) {
+                //From tundsdev
                 Text("First Name: \(sessionService.userDetails? .firstName ?? "N/A")")
                 Text("Last Name: \(sessionService.userDetails? .lastName ?? "N/A")")
             }
             
+            //From tundsdev
             ButtonComponentView(title: "Logout") {
                 sessionService.logout()
             }
@@ -38,9 +45,8 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        //NavigationView {
             SettingsView()
+        //From tundsdev
                 .environmentObject(SessionServiceImpl())
-        //}
     }
 }

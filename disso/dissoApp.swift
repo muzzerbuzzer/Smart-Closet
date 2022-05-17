@@ -9,7 +9,7 @@
 import SwiftUI
 import Firebase
 
-//setting up Firebase. straight from the website
+//setting up Firebase. straight from the Firebase SDK
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
@@ -22,7 +22,9 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct dissoApp: App {
     
+    // From tundsdev’s YouTube Tutorial
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    //State objects are written by the author
     @StateObject var sessionService = SessionServiceImpl()
     @StateObject var clothesViewModel = ClothesViewModel()
     @StateObject var outfitsViewModel = OutfitsViewModel()

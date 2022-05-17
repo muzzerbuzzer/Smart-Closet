@@ -25,6 +25,7 @@ struct ButtonComponentView: View {
     
     //initialises the button component, with everything it includes
     internal init(title: String,
+                  //purple colour is by the author
                   background: Color = .purple,
                   foreground: Color = .white,
                   border: Color = .clear,
@@ -60,6 +61,7 @@ struct ButtonComponentView_Previews: PreviewProvider {
                 .preview(with: "Primary Login Button View")
             ButtonComponentView(title: "Secondary Login Button",
                                 background: .clear,
+                                //purple colour is by the author
                                 foreground: .purple,
                                 border: .purple) { }
                 .preview(with: "Secondary Login Button View")

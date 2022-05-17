@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 16/03/2022.
 //
 
+//individual clothes view
+/*This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Rest of the code is written by me*/
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -13,11 +16,11 @@ struct ClothesView: View {
     var clothes: Clothes
     @State private var name: String = ""
     @EnvironmentObject var clothesViewModel: ClothesViewModel
-    //@ObservedObject private var viewModel = ClothesViewModel()
-    
+
     
     var body: some View {
         ScrollView {
+            //from DesignCode
             AsyncImage(url: URL(string: clothes.image)) { image in
                 image
                     .resizable()
@@ -35,10 +38,9 @@ struct ClothesView: View {
                 Text(clothes.name)
                     .font(.largeTitle)
                     .bold()
-                    //.multilineTextAlignment(.left)
                     
                 if !clothes.colour.isEmpty {
-                    VStack(/*alignment: .leading,*/ spacing: 20) {
+                    VStack(spacing: 20) {
                         Text("Colour: \(clothes.colour)")
                             .font(.headline)
 
@@ -46,7 +48,7 @@ struct ClothesView: View {
                 }
                 
                 if !clothes.pattern.isEmpty {
-                    VStack(/*alignment: .leading,*/ spacing: 20) {
+                    VStack(spacing: 20) {
                         Text("Pattern: \(clothes.pattern)")
                             .font(.headline)
 
@@ -54,7 +56,7 @@ struct ClothesView: View {
                 }
 
                 if !clothes.category.isEmpty {
-                    VStack(/*alignment: .leading,*/ spacing: 20) {
+                    VStack(spacing: 20) {
                         Text("Category: \(clothes.category)")
                             .font(.headline)
 
@@ -62,7 +64,6 @@ struct ClothesView: View {
                 }
                 
             
-                
                 Button("Delete") {
                     //deleteItem()
                 }
@@ -70,36 +71,11 @@ struct ClothesView: View {
 
             }
             
+            //from DesignCode
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
-        /*.onAppear() {
-            self.clothesViewModel.fetchClothes()
-        }*/
 
     }
 }
 
-/*struct ClothesView_Previews: PreviewProvider {
-    static var previews: some View {
-        //ClothesView(clothes: Clothes.all[0])
-    }
-}*/
-
-/*extension ClothesView {
-    private func deleteItem(/*completion: @escaping (Bool) -> ()*/) {
-        let db = Firestore.firestore()
-        let user = Auth.auth().currentUser?.uid
-        let ref = Storage.storage().reference().child("users").child(user!).child("clothes")
-        
-        db.collection("users").document(user!).collection("clothes").document(ref).delete() /*{ error in
-            if let error = error {
-                print("error deleting document \(error.localizedDescription)")
-                completion(false)
-            } else {
-                print("successfully deleted")
-                completion(true)
-            }
-        }*/
-    }
-}*/
