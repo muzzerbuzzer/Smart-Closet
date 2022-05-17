@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 28/04/2022.
 //
 
+//individual outfits view
+/*This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Rest of the code is written by me*/
 import SwiftUI
 
 struct OutfitsView: View {
@@ -17,6 +20,7 @@ struct OutfitsView: View {
     var body: some View {
         ScrollView {
             
+            //Code from DesignCode
             AsyncImage(url: URL(string: outfits.image)) { image in
                 image
                     .resizable()

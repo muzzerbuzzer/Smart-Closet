@@ -5,6 +5,17 @@
 //  Created by Nika Pakravan on 11/04/2022.
 //
 
+//new outfit creation page
+/* The main drag and drop logic is from javier at The SwiftUILab. However, mostly all of it has been amended to fit the code
+ The code to snapshot the outfit creation as image is re-used from Codakuma's blog post "A better way to create images from SwiftUI views."
+ This code's logic is from DesignCode's "Build a Recipe App from scratch with SwiftUI - Part 1", as well as part 2
+ Part of the code is from John Gallaugher's "Ch.8.22 Saving Images to Firebase Storage w/a Cloud Firestore Reference" video tutorial on YouTube
+ Uploading the data is from a part of code from UTrend on GitHub
+ Uploading the image is from Josh Kinney's 'Create an Image Picker, Access Camera and Photo Library in SwiftUI (NEW 2021)'
+ video tutorial on YouTube
+ One small portion is from SwiftOnTap blog post "onDrop(of:delegate:)"
+ One small portion is from Paul Hudson's blog "How to convert a SwiftUI view to an image"
+ Rest of the code is written by me*/
 import Foundation
 import SwiftUI
 import FirebaseAuth
@@ -25,10 +36,6 @@ struct NewOutfitView: View {
     @State var actives = Bool()
     @State var gridImage = String()
     
-   /*var outfitView: some View {
-       DropArea()
-    }*/
-
     @State var draggedImage: [Int: String] = [:]
     @State var active = 0
     
@@ -37,8 +44,8 @@ struct NewOutfitView: View {
         VStack {
         Divider()
         Spacer()
-            //HStack {
-                //outfitView
+            
+            //Drag and drop logic is from javier at The SwiftUILab. names have been ammended
                 let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
                 
                 VStack {
@@ -55,7 +62,6 @@ struct NewOutfitView: View {
                 .background(Rectangle().fill(Color.gray))
                 .frame(width: 300, height: 300)
                 .onDrop(of: ["public.text"], delegate: dropDelegate)
-            //}
             Spacer()
             Divider()
              ScrollView(.horizontal) {
@@ -81,6 +87,8 @@ struct NewOutfitView: View {
                         image = body.asImage
                         uploadOutfit()
                         
+                        //save created image to gallery
+                        //from a hackingWithSwift blog post
                         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                         
                         navigateToCreatedOutfit = true
@@ -120,36 +128,14 @@ struct NewOutfitView: View {
         }
     }
 
-    /*struct DropArea: View {
-        @State var draggedImage: [Int: String] = [:]
-        @State var active = 0
-        
-        var body: some View {
-            let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
-            
-            return VStack {
-                HStack {
-                    GridCell(active: self.active == 1, image: draggedImage[1])
-                    GridCell(active: self.active == 3, image: draggedImage[3])
-                }
-                
-                HStack {
-                    GridCell(active: self.active == 2, image: draggedImage[2])
-                    GridCell(active: self.active == 4, image: draggedImage[4])
-                }
-            }
-            .background(Rectangle().fill(Color.gray))
-            .frame(width: 300, height: 300)
-            .onDrop(of: ["public.text"], delegate: dropDelegate)
-        }
-    }*/
-
+    //Drag and drop logic is from javier at The SwiftUILab. parts have been ammended
     struct GridCell: View {
         let active: Bool
         let image: String?
         
         var body: some View {
             
+            //this was written by me
             let img = AsyncImage(url: URL(string: image ?? "")) { image in
                 image
             .resizable()
@@ -164,6 +150,7 @@ struct NewOutfitView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             
+            //Drag and drop logic is from javier at The SwiftUILab. names have been ammended
             return Rectangle()
                 .fill(self.active ? Color.purple : Color.clear)
                 .frame(width: 150, height: 150)
@@ -171,7 +158,9 @@ struct NewOutfitView: View {
         }
     }
 
+    //Entire struct -> Drag and drop logic is from javier at The SwiftUILab. "public.text" name was been ammended
     struct ImageDropDelegate: DropDelegate {
+        //dragged image was ammended
         @Binding var draggedImage: [Int: String]
         @Binding var active: Int
         
@@ -186,7 +175,9 @@ struct NewOutfitView: View {
             if let item = info.itemProviders(for: ["public.text"]).first {
                 item.loadItem(forTypeIdentifier: "public.text", options: nil) {(imageData, error) in
                     DispatchQueue.main.async {
+                        //this portion was changed by me to work with a string as image
                         if let imageData = imageData as? Data {
+                            //decoding: imageData, as: UTF8.self was obtained from SwiftOnTap blog
                             self.draggedImage[gridPosition] = String(decoding: imageData, as: UTF8.self)
                         }
                     }
@@ -227,15 +218,8 @@ struct NewOutfitView: View {
     
 }
 
-/*struct NewOutfitView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*NewOutfitView(clothes: Clothes.all, outfits: Outfits.all)
-            .environmentObject(ClothesViewModel())
-            .environmentObject(OutfitsViewModel())*/
-    }
-}*/
-
 extension NewOutfitView {
+    //Full function logic from UTrend on GitHub
     private func uploadOutfit() {
         let photoData = image.jpegData(compressionQuality: 0.5)
         let user = Auth.auth().currentUser?.uid
@@ -244,17 +228,20 @@ extension NewOutfitView {
         let ref = Storage.storage().reference().child("users").child(user!).child("outfits")
         
         //create image metadata so it can be viewed in firebase console
+        //metadata code is from John Gallaugher on YouTube
         let imageMetaData = StorageMetadata()
         imageMetaData.contentType = "image/jpeg"
 
         ref.child(photoName).putData(photoData!, metadata: imageMetaData) { (meta, err) in
             if err != nil {return}
             
+            //downloading the URL is from iOS Academy
             ref.child(photoName).downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
             }
                 
+                //downloading the URL is from iOS Academy
                 let imageURL = url.absoluteString
                 print("Download URL: \(imageURL)")
                 UserDefaults.standard.set(imageURL, forKey: "url")
@@ -270,6 +257,8 @@ extension NewOutfitView {
 }
 
 extension View {
+    
+    //entire code is from Codakuma's blog post
     var asImage: UIImage {
         //must ignore safe area due to bug in ios 15+
         let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.top))
