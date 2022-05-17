@@ -11,17 +11,17 @@ import Foundation
 /*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
 video tutorial on YouTube*/
 class CalendarViewModel: ObservableObject {
+    
+    //"task" (outfit) array
     @Published var tasks = [Task]()
-    
-    /*init() {
-        addedOutfits = Task.all
 
-    }*/
     
+    //adds a "task" (outfit)
     func addTask(_ task: Task) {
         tasks.append(task)
       }
     
+    //removes a "task" (outfit)
     func removeTask(_ task: Task) {
         if let index = tasks.firstIndex(where: { $0.id == task.id }) {
           tasks.remove(at: index)

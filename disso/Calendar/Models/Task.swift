@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 23/04/2022.
 //
 
+//model for the task
+/*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
+video tutorial on YouTube*/
 import SwiftUI
 
 //task model and sample tasks
@@ -36,42 +39,5 @@ func getSampleDate(offset: Int) -> Date {
 
 // sample tasks
 var tasks: [TaskMetaData] = [
-
-    /*TaskMetaData(task: [
-    
-        Task(title: "Talk to iJustine"),
-        Task(title: "Work on Dissertation"),
-        Task(title: "Workout !!!")
-    ], taskDate: getSampleDate(offset: 1)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Talk to Neil")
-    ], taskDate: getSampleDate(offset: -3)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Meeting wtih Friends")
-    ], taskDate: getSampleDate(offset: -8)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Next Version of Report")
-    ], taskDate: getSampleDate(offset: 10)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Gym")
-    ], taskDate: getSampleDate(offset: -22)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Movies @ Odeon Swiss")
-    ], taskDate: getSampleDate(offset: 15)),
-    
-    TaskMetaData(task: [
-        
-        Task(title: "Dinner with Neil")
-    ], taskDate: getSampleDate(offset: -20)),*/
     
 ]

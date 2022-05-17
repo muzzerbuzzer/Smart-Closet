@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 03/04/2022.
 //
 
+//view for login service - uses the viewmodel, service, and model
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 
 //for the buttons - register & forgot password, its placed both in a stack & not outside just in case someone has an older version of ios (14 & below) so that there are no bugs
 import SwiftUI
@@ -21,11 +24,13 @@ struct LoginView: View {
         VStack(spacing: 16) {
             
             VStack(spacing: 16) {
+                //text field for email
                 InputTextFieldView(text: $vm.credentials.email,
                                    placeholder: "Email",
                                    keyboardType: .emailAddress,
                                    sfSymbol: "envelope")
                 
+                //text field for password(wont be able to see the text)
                 InputPasswordView(password: $vm.credentials.password,
                                   placeholder: "Password",
                                   sfSymbol: "lock")
@@ -33,6 +38,7 @@ struct LoginView: View {
             
             HStack {
                 Spacer()
+                //forgot password button to go to that view
                 Button(action: {
                     showForgotPassword.toggle()
                 }, label: {
@@ -48,10 +54,12 @@ struct LoginView: View {
             
             VStack(spacing: 16) {
                 
+                //will login
                 ButtonComponentView(title: "Login") {
                     vm.login()
                 }
                 
+                //redirects users to the register view
                 ButtonComponentView(title: "Register",
                                     background: .clear,
                                     foreground: .purple,
@@ -71,6 +79,7 @@ struct LoginView: View {
         .alert(isPresented: $vm.hasError,
                content: {
         
+                //error handling
                 if case .failed(let error) = vm.state {
                     return Alert(
                         title: Text("Error"),

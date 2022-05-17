@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 23/04/2022.
 //
 
+//creates an array of tasks for the calendar, and allows the calendar to have tasks added as well as removed
+/*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
+video tutorial on YouTube*/
 import SwiftUI
 
 struct CustomDatePicker: View {
@@ -27,6 +30,7 @@ struct CustomDatePicker: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
+                    //dates
                     Text(extraDate()[0])
                         .font(.caption)
                         .fontWeight(.semibold)
@@ -38,6 +42,7 @@ struct CustomDatePicker: View {
                 Spacer(minLength: 0)
                 
                 Button {
+                    //creating animation for chaning the month
                     withAnimation {
                         currentMonth -= 1
                     }
@@ -49,6 +54,7 @@ struct CustomDatePicker: View {
                 
                 Button {
                     withAnimation {
+                        //creating animation for chaning the month
                         currentMonth += 1
                     }
                 } label: {
@@ -70,8 +76,7 @@ struct CustomDatePicker: View {
                 }
             }
             
-            //Dates
-            // lazy grid here
+            //Dates lazy grid here
             let columns = Array(repeating: GridItem(.flexible()), count: 7)
             
             LazyVGrid(columns: columns, spacing: 15) {
@@ -99,6 +104,7 @@ struct CustomDatePicker: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.vertical, 25)
                 
+                //adding task date
                 if let task = tasks.first(where: { task in
                     return isSameDay(date1: task.taskDate, date2: currentDate)
                 }){
@@ -144,6 +150,7 @@ struct CustomDatePicker: View {
     }
     
     @ViewBuilder
+    //view ontop of numbers on calendar for added outfits
     func CardView(value: DateValue) -> some View {
         
         VStack {

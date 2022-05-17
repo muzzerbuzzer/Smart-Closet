@@ -5,15 +5,20 @@
 //  Created by Nika Pakravan on 05/04/2022.
 //
 
+//ViewModel for the user creation details to help transform the information from the model and converts them into values that can be displayed on the view
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import Foundation
 import Combine
 
+//cases for the registration state
 enum RegistrationState {
     case successfull
     case failed(error: Error)
     case na
 }
 
+//properties necessary for registering 
 protocol RegistrationViewModel {
     func register()
     var hasError: Bool { get }
@@ -34,6 +39,7 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     
     private var subscriptions = Set<AnyCancellable>()
     
+    //initialising registration service
     init(service: RegistrationService) {
         self.service = service
         setupErrorSubscriptions()
@@ -62,6 +68,7 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
 
 private extension RegistrationViewModelImpl {
     
+    //error handling
     func setupErrorSubscriptions() {
         
         $state

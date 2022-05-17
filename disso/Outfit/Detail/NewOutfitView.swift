@@ -22,21 +22,40 @@ struct NewOutfitView: View {
     @State var image = UIImage()
     @State private var navigateToCreatedOutfit = false
     
-    @State var active = Bool()
+    @State var actives = Bool()
     @State var gridImage = String()
     
-   var outfitView: some View {
+   /*var outfitView: some View {
        DropArea()
-    }
+    }*/
 
+    @State var draggedImage: [Int: String] = [:]
+    @State var active = 0
+    
     var body: some View {
         
         VStack {
         Divider()
         Spacer()
-            HStack {
-                outfitView
-            }
+            //HStack {
+                //outfitView
+                let dropDelegate = ImageDropDelegate(draggedImage: $draggedImage, active: $active)
+                
+                VStack {
+                    HStack {
+                        GridCell(active: self.active == 1, image: draggedImage[1])
+                        GridCell(active: self.active == 3, image: draggedImage[3])
+                    }
+                    
+                    HStack {
+                        GridCell(active: self.active == 2, image: draggedImage[2])
+                        GridCell(active: self.active == 4, image: draggedImage[4])
+                    }
+                }
+                .background(Rectangle().fill(Color.gray))
+                .frame(width: 300, height: 300)
+                .onDrop(of: ["public.text"], delegate: dropDelegate)
+            //}
             Spacer()
             Divider()
              ScrollView(.horizontal) {
@@ -48,6 +67,9 @@ struct NewOutfitView: View {
                  .padding()
          } .frame(height: 70)
         }
+        .onAppear() {
+            self.clothesViewModel.fetchClothes()
+        }
         
         
         .toolbar(content: {
@@ -56,7 +78,7 @@ struct NewOutfitView: View {
                     OutfitImagesView()
                 } label: {
                     Button {
-                        image = DropArea().asImage
+                        image = body.asImage
                         uploadOutfit()
                         
                         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -98,7 +120,7 @@ struct NewOutfitView: View {
         }
     }
 
-    struct DropArea: View {
+    /*struct DropArea: View {
         @State var draggedImage: [Int: String] = [:]
         @State var active = 0
         
@@ -120,7 +142,7 @@ struct NewOutfitView: View {
             .frame(width: 300, height: 300)
             .onDrop(of: ["public.text"], delegate: dropDelegate)
         }
-    }
+    }*/
 
     struct GridCell: View {
         let active: Bool
@@ -244,6 +266,7 @@ extension NewOutfitView {
         }
 
     }
+    
 }
 
 extension View {

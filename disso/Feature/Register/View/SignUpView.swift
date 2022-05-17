@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 04/04/2022.
 //
 
+//sign up view
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import SwiftUI
 
 struct SignUpView: View {
@@ -22,11 +25,13 @@ struct SignUpView: View {
                 
                 VStack(spacing: 16) {
                     
+                    //text fields for putting in information
                     InputTextFieldView(text: $vm.userDetails.email,
                                        placeholder: "Email",
                                        keyboardType: .emailAddress,
                                        sfSymbol: "envelope")
                     
+                    //password text field does not show the text
                     InputPasswordView(password: $vm.userDetails.password,
                                       placeholder: "Password",
                                       sfSymbol: "lock")
@@ -44,13 +49,16 @@ struct SignUpView: View {
                                        sfSymbol: nil)
                 }
                 
+                //when button pressed user has signed up
                 ButtonComponentView(title: "Sign Up") {
                     vm.register()
                 }
             }
             .padding(.horizontal, 15)
             .navigationTitle("Sign Up")
+            //close modifier
             .applyClose()
+            //error handling
             .alert(isPresented: $vm.hasError,
                    content: {
             

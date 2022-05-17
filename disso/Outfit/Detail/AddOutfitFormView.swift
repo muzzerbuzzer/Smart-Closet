@@ -1,27 +1,25 @@
 //
-//  AddOutfitToCalendarView.swift
+//  AddOutfitFormView.swift
 //  disso
 //
-//  Created by Nika Pakravan on 01/05/2022.
+//  Created by Nika Pakravan on 17/05/2022.
 //
 
-//code for add to calendar form
-/*This code has been written by the author, with assistance from other classes*/
 import Foundation
 import SwiftUI
 import Photos
 import PhotosUI
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 
-struct AddOutfittoCalendarView: View {
-    @EnvironmentObject var calendarViewModel: CalendarViewModel
-    
-    @State private var name: String = ""
+struct AddOutfitFormView: View {
+    @State private var navigateToCreatedOutfit = false
     @State private var outfitImage = UIImage()
-    
     @State var addImage = false
     @State var openGallery = false
+    //@State var image = UIImage()
     
-    @State private var navigateToCalendar = false
     
     @Environment(\.dismiss) private var dismiss
     
@@ -30,9 +28,6 @@ struct AddOutfittoCalendarView: View {
             
             //form to add information
             Form {
-                Section(header: Text("Name")) {
-                    TextField("Item Name", text: $name)
-                }
                 
                 Section(header: Text("Image")) {
                     Button(action: {
@@ -54,7 +49,7 @@ struct AddOutfittoCalendarView: View {
 
  
             }
-            
+
             //sheet to show gallery so user can choose outfit image
             .sheet(isPresented: $openGallery) {
                 ImagePickerModel(selectedImage: $outfitImage, sourceType: .photoLibrary)
@@ -69,18 +64,17 @@ struct AddOutfittoCalendarView: View {
                             .labelStyle(.iconOnly)
                             .foregroundColor(.purple)
                     }
-                } 
+                }
                 
-                //done button
+                
                 ToolbarItem {
-                    NavigationLink(isActive: $navigateToCalendar) {
-                        CalendarHomeView()
+                    NavigationLink(isActive: $navigateToCreatedOutfit) {
+                        OutfitImagesView()
                     } label: {
                         Button {
-                            let task = Task(title: name, outfit: outfitImage)
-                            //calendarViewModel.addTask(task)
+                            uploadOutfit()
                             
-                            navigateToCalendar = true
+                            navigateToCreatedOutfit = true
                         } label: {
                             Label("Save", systemImage: "checkmark")
                                 .labelStyle(.iconOnly)
@@ -88,18 +82,53 @@ struct AddOutfittoCalendarView: View {
                         }
                     }
                 }
-    
             })
-            .navigationTitle("Add Outfit to Calendar")
+            
+            .navigationTitle("Add Outfit")
             .navigationBarTitleDisplayMode(.inline)
         }
+        
         .navigationViewStyle(.stack)
     }
 }
 
-struct AddOutfittoCalendarView_Previews: PreviewProvider {
+/*struct AddOutfitFormView: PreviewProvider {
     static var previews: some View {
-        AddOutfittoCalendarView()
-            .environmentObject(CalendarViewModel())
+        AddOutfitFormView()
+           // .environmentObject(CalendarViewModel())
     }
-}
+}*/
+
+    extension AddOutfitFormView {
+        private func uploadOutfit() {
+            let photoData = outfitImage.jpegData(compressionQuality: 0.5)
+            let user = Auth.auth().currentUser?.uid
+            let db = Firestore.firestore()
+            let photoName = UUID().uuidString
+            let ref = Storage.storage().reference().child("users").child(user!).child("outfits")
+            
+            //create image metadata so it can be viewed in firebase console
+            let imageMetaData = StorageMetadata()
+            imageMetaData.contentType = "image/jpeg"
+
+            ref.child(photoName).putData(photoData!, metadata: imageMetaData) { (meta, err) in
+                if err != nil {return}
+                
+                ref.child(photoName).downloadURL(completion: { url, error in
+                    guard let url = url, error == nil else {
+                        return
+                }
+                    
+                    let imageURL = url.absoluteString
+                    print("Download URL: \(imageURL)")
+                    UserDefaults.standard.set(imageURL, forKey: "url")
+                    
+                    db.collection("users").document(user!).collection("outfits").addDocument(data: ["outfitLink":imageURL])
+                    
+                })
+                
+            }
+
+        }
+        
+    }

@@ -5,16 +5,21 @@
 //  Created by Nika Pakravan on 06/04/2022.
 //
 
+//ViewModel for the login details to help transform the information from the model and converts them into values that can be displayed on the view
+/*This code has been re-used from tundsdev's
+ 'Firebase SwiftUI Auth, Login, Registration, Password Reset, Sign Out - Bug Fix In Description' video tutorial on YouTube*/
 import Foundation
 import Combine
 import UIKit
 
+//login state info
 enum LoginState {
     case successfull
     case failed(error: Error)
     case na
 }
 
+//info required for login
 protocol LoginViewModel {
     func login()
     var service: LoginService { get }
@@ -39,11 +44,13 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
         setupErrorSubscriptions()
     }
     
+    //login function that will be re-used in the view
     func login() {
         service
             .login(with: credentials)
             .sink { res in
                 
+                //error handling
                 switch res {
                 case .failure(let err):
                     self.state = .failed(error: err)
@@ -60,6 +67,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
 
 private extension LoginViewModelImpl {
     
+    //error handling for login 
     func setupErrorSubscriptions() {
         
         $state

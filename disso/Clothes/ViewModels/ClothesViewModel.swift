@@ -19,7 +19,6 @@ class ClothesViewModel: ObservableObject {
     
     init() {
         fetchClothes()
-        //closet = Clothes.all
     }
     
     private var db = Firestore.firestore()

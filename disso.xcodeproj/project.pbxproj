@@ -36,6 +36,7 @@
 		AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADB527FCB4AF006B9D3F /* ResetPasswordView.swift */; };
 		AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADB827FCC21A006B9D3F /* AccountDetails.swift */; };
 		AFA2ADBC27FCC4AC006B9D3F /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */; };
+		AFB489BE283362400011F71F /* AddOutfitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB489BD2833623F0011F71F /* AddOutfitFormView.swift */; };
 		AFCF370E27DFD798004067AA /* dissoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF370D27DFD798004067AA /* dissoApp.swift */; };
 		AFCF371527DFD90C004067AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371427DFD90C004067AA /* ContentView.swift */; };
 		AFCF371727DFDA2B004067AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF371627DFDA2B004067AA /* HomeView.swift */; };
@@ -116,6 +117,7 @@
 		AFA2ADB527FCB4AF006B9D3F /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		AFA2ADB827FCC21A006B9D3F /* AccountDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetails.swift; sourceTree = "<group>"; };
 		AFA2ADBB27FCC4AC006B9D3F /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		AFB489BD2833623F0011F71F /* AddOutfitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitFormView.swift; sourceTree = "<group>"; };
 		AFCF370D27DFD798004067AA /* dissoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dissoApp.swift; sourceTree = "<group>"; };
 		AFCF371427DFD90C004067AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCF371627DFDA2B004067AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			children = (
 				AFFB8746281B290300C33214 /* OutfitsView.swift */,
 				AFECFD422804CC9100ABB119 /* NewOutfitView.swift */,
+				AFB489BD2833623F0011F71F /* AddOutfitFormView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				AFCF375F27E238E2004067AA /* ClothingCard.swift in Sources */,
 				AFA2ADB627FCB4AF006B9D3F /* ResetPasswordView.swift in Sources */,
 				AFA2ADB927FCC21A006B9D3F /* AccountDetails.swift in Sources */,
+				AFB489BE283362400011F71F /* AddOutfitFormView.swift in Sources */,
 				AFFB874D281B2B8400C33214 /* OutfitModel.swift in Sources */,
 				AFCF372327DFDB8A004067AA /* TabBar.swift in Sources */,
 				AFECFD412804C38900ABB119 /* AddOutfitView.swift in Sources */,

@@ -5,6 +5,9 @@
 //  Created by Nika Pakravan on 23/04/2022.
 //
 
+//code for calendar view
+/*This code has been re-used from Kavsoft's 'SwiftUI 3.0 Elegant Task App UI With Custom Date Picker - Custom Graphical Date Picker - Xcode 13'
+video tutorial on YouTube*/
 import SwiftUI
 
 struct CalendarHomeView: View {
@@ -30,6 +33,7 @@ struct CalendarHomeView: View {
             HStack {
                 
                 Button {
+                    //button to add outfit to calendar
                     showAddOutfitToCalendar = true
                 } label: {
                     Text("Add Outfit")

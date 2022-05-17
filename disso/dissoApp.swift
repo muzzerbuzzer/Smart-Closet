@@ -5,9 +5,11 @@
 //  Created by Nika Pakravan on 12/03/2022.
 //
 
+//information for the entire app
 import SwiftUI
 import Firebase
 
+//setting up Firebase. straight from the website
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
@@ -29,6 +31,7 @@ struct dissoApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
+                //session service - which environment objects to show if they are logged in or out
                 switch sessionService.state {
                 case .loggedIn:
                     ContentView()
